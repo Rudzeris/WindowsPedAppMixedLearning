@@ -38,16 +38,22 @@
             this.PrevButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.TheoryPanel = new System.Windows.Forms.Panel();
-            this.TheoryTextBox = new System.Windows.Forms.RichTextBox();
+            this.TheoryButton4 = new System.Windows.Forms.Button();
+            this.TheoryButton3 = new System.Windows.Forms.Button();
+            this.TheoryButton2 = new System.Windows.Forms.Button();
+            this.TheoryButton1 = new System.Windows.Forms.Button();
             this.LiteraturesPanel = new System.Windows.Forms.Panel();
             this.LiteraturesTextBox = new System.Windows.Forms.RichTextBox();
             this.InformationPanel = new System.Windows.Forms.Panel();
             this.InformationTextBox = new System.Windows.Forms.RichTextBox();
+            this.TheoryTextPanel = new System.Windows.Forms.Panel();
+            this.TheoryTextBox1 = new System.Windows.Forms.RichTextBox();
             this.MainMenuPanel.SuspendLayout();
             this.MainButtonPanel.SuspendLayout();
             this.TheoryPanel.SuspendLayout();
             this.LiteraturesPanel.SuspendLayout();
             this.InformationPanel.SuspendLayout();
+            this.TheoryTextPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenuPanel
@@ -156,21 +162,58 @@
             // 
             this.TheoryPanel.BackColor = System.Drawing.SystemColors.Control;
             this.TheoryPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TheoryPanel.Controls.Add(this.TheoryTextBox);
+            this.TheoryPanel.Controls.Add(this.TheoryButton4);
+            this.TheoryPanel.Controls.Add(this.TheoryButton3);
+            this.TheoryPanel.Controls.Add(this.TheoryButton2);
+            this.TheoryPanel.Controls.Add(this.TheoryButton1);
             this.TheoryPanel.Location = new System.Drawing.Point(474, 12);
             this.TheoryPanel.Name = "TheoryPanel";
             this.TheoryPanel.Size = new System.Drawing.Size(440, 580);
             this.TheoryPanel.TabIndex = 1;
             // 
-            // TheoryTextBox
+            // TheoryButton4
             // 
-            this.TheoryTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TheoryTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TheoryTextBox.Location = new System.Drawing.Point(20, 20);
-            this.TheoryTextBox.Name = "TheoryTextBox";
-            this.TheoryTextBox.Size = new System.Drawing.Size(400, 540);
-            this.TheoryTextBox.TabIndex = 2;
-            this.TheoryTextBox.Text = "";
+            this.TheoryButton4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TheoryButton4.Location = new System.Drawing.Point(54, 356);
+            this.TheoryButton4.Name = "TheoryButton4";
+            this.TheoryButton4.Size = new System.Drawing.Size(160, 46);
+            this.TheoryButton4.TabIndex = 7;
+            this.TheoryButton4.Text = "Теория\r\nТеория";
+            this.TheoryButton4.UseVisualStyleBackColor = true;
+            this.TheoryButton4.Click += new System.EventHandler(this.TheoryButton4_Click);
+            // 
+            // TheoryButton3
+            // 
+            this.TheoryButton3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TheoryButton3.Location = new System.Drawing.Point(54, 256);
+            this.TheoryButton3.Name = "TheoryButton3";
+            this.TheoryButton3.Size = new System.Drawing.Size(160, 46);
+            this.TheoryButton3.TabIndex = 6;
+            this.TheoryButton3.Text = "Теория\r\nТеория";
+            this.TheoryButton3.UseVisualStyleBackColor = true;
+            this.TheoryButton3.Click += new System.EventHandler(this.TheoryButton3_Click);
+            // 
+            // TheoryButton2
+            // 
+            this.TheoryButton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TheoryButton2.Location = new System.Drawing.Point(54, 156);
+            this.TheoryButton2.Name = "TheoryButton2";
+            this.TheoryButton2.Size = new System.Drawing.Size(160, 46);
+            this.TheoryButton2.TabIndex = 5;
+            this.TheoryButton2.Text = "Теория\r\nТеория";
+            this.TheoryButton2.UseVisualStyleBackColor = true;
+            this.TheoryButton2.Click += new System.EventHandler(this.TheoryButton2_Click);
+            // 
+            // TheoryButton1
+            // 
+            this.TheoryButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TheoryButton1.Location = new System.Drawing.Point(54, 56);
+            this.TheoryButton1.Name = "TheoryButton1";
+            this.TheoryButton1.Size = new System.Drawing.Size(160, 46);
+            this.TheoryButton1.TabIndex = 4;
+            this.TheoryButton1.Text = "Теория\r\nТеория";
+            this.TheoryButton1.UseVisualStyleBackColor = true;
+            this.TheoryButton1.Click += new System.EventHandler(this.TheoryButton1_Click);
             // 
             // LiteraturesPanel
             // 
@@ -212,16 +255,37 @@
             this.InformationTextBox.TabIndex = 1;
             this.InformationTextBox.Text = "";
             // 
+            // TheoryTextPanel
+            // 
+            this.TheoryTextPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.TheoryTextPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TheoryTextPanel.Controls.Add(this.TheoryTextBox1);
+            this.TheoryTextPanel.Location = new System.Drawing.Point(937, 12);
+            this.TheoryTextPanel.Name = "TheoryTextPanel";
+            this.TheoryTextPanel.Size = new System.Drawing.Size(440, 580);
+            this.TheoryTextPanel.TabIndex = 3;
+            // 
+            // TheoryTextBox1
+            // 
+            this.TheoryTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TheoryTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TheoryTextBox1.Location = new System.Drawing.Point(20, 20);
+            this.TheoryTextBox1.Name = "TheoryTextBox1";
+            this.TheoryTextBox1.Size = new System.Drawing.Size(400, 540);
+            this.TheoryTextBox1.TabIndex = 1;
+            this.TheoryTextBox1.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1389, 661);
+            this.Controls.Add(this.TheoryPanel);
+            this.Controls.Add(this.TheoryTextPanel);
             this.Controls.Add(this.MainMenuPanel);
             this.Controls.Add(this.InformationPanel);
             this.Controls.Add(this.LiteraturesPanel);
-            this.Controls.Add(this.TheoryPanel);
             this.Controls.Add(this.MainButtonPanel);
             this.HelpButton = true;
             this.Name = "Form1";
@@ -231,6 +295,7 @@
             this.TheoryPanel.ResumeLayout(false);
             this.LiteraturesPanel.ResumeLayout(false);
             this.InformationPanel.ResumeLayout(false);
+            this.TheoryTextPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -249,8 +314,13 @@
         private Button OpenMainMenuButton;
         private Button PrevButton;
         private RichTextBox LiteraturesTextBox;
-        private RichTextBox TheoryTextBox;
         private Panel InformationPanel;
         private RichTextBox InformationTextBox;
+        private Button TheoryButton4;
+        private Button TheoryButton3;
+        private Button TheoryButton2;
+        private Button TheoryButton1;
+        private Panel TheoryTextPanel;
+        private RichTextBox TheoryTextBox1;
     }
 }
