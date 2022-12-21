@@ -31,7 +31,7 @@
             this.MainMenuPanel = new System.Windows.Forms.Panel();
             this.OpenInformationButton = new System.Windows.Forms.Button();
             this.OpenLiteraturesButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.OpenTasksButton = new System.Windows.Forms.Button();
             this.OpenTheoryButton = new System.Windows.Forms.Button();
             this.MainButtonPanel = new System.Windows.Forms.Panel();
             this.OpenMainMenuButton = new System.Windows.Forms.Button();
@@ -48,12 +48,29 @@
             this.InformationTextBox = new System.Windows.Forms.RichTextBox();
             this.TheoryTextPanel = new System.Windows.Forms.Panel();
             this.TheoryTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.TasksPanel = new System.Windows.Forms.Panel();
+            this.OpenTask4Button = new System.Windows.Forms.Button();
+            this.OpenTask3Button = new System.Windows.Forms.Button();
+            this.OpenTask2Button = new System.Windows.Forms.Button();
+            this.OpenTask1Button = new System.Windows.Forms.Button();
+            this.Task1Panel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Task11 = new System.Windows.Forms.Button();
+            this.Task12 = new System.Windows.Forms.Button();
+            this.Task14 = new System.Windows.Forms.Button();
+            this.Task13 = new System.Windows.Forms.Button();
+            this.Task16 = new System.Windows.Forms.Button();
+            this.Task15 = new System.Windows.Forms.Button();
+            this.Task18 = new System.Windows.Forms.Button();
+            this.Task17 = new System.Windows.Forms.Button();
             this.MainMenuPanel.SuspendLayout();
             this.MainButtonPanel.SuspendLayout();
             this.TheoryPanel.SuspendLayout();
             this.LiteraturesPanel.SuspendLayout();
             this.InformationPanel.SuspendLayout();
             this.TheoryTextPanel.SuspendLayout();
+            this.TasksPanel.SuspendLayout();
+            this.Task1Panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenuPanel
@@ -62,7 +79,7 @@
             this.MainMenuPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MainMenuPanel.Controls.Add(this.OpenInformationButton);
             this.MainMenuPanel.Controls.Add(this.OpenLiteraturesButton);
-            this.MainMenuPanel.Controls.Add(this.button2);
+            this.MainMenuPanel.Controls.Add(this.OpenTasksButton);
             this.MainMenuPanel.Controls.Add(this.OpenTheoryButton);
             this.MainMenuPanel.Location = new System.Drawing.Point(12, 12);
             this.MainMenuPanel.Name = "MainMenuPanel";
@@ -91,15 +108,15 @@
             this.OpenLiteraturesButton.UseVisualStyleBackColor = true;
             this.OpenLiteraturesButton.Click += new System.EventHandler(this.OpenLiteratures);
             // 
-            // button2
+            // OpenTasksButton
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(140, 420);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "-";
-            this.button2.UseVisualStyleBackColor = true;
+            this.OpenTasksButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OpenTasksButton.Location = new System.Drawing.Point(140, 420);
+            this.OpenTasksButton.Name = "OpenTasksButton";
+            this.OpenTasksButton.Size = new System.Drawing.Size(160, 30);
+            this.OpenTasksButton.TabIndex = 1;
+            this.OpenTasksButton.Text = "-";
+            this.OpenTasksButton.UseVisualStyleBackColor = true;
             // 
             // OpenTheoryButton
             // 
@@ -271,9 +288,173 @@
             this.TheoryTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TheoryTextBox1.Location = new System.Drawing.Point(20, 20);
             this.TheoryTextBox1.Name = "TheoryTextBox1";
+            this.TheoryTextBox1.ReadOnly = true;
             this.TheoryTextBox1.Size = new System.Drawing.Size(400, 540);
             this.TheoryTextBox1.TabIndex = 1;
             this.TheoryTextBox1.Text = "";
+            // 
+            // TasksPanel
+            // 
+            this.TasksPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.TasksPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TasksPanel.Controls.Add(this.OpenTask4Button);
+            this.TasksPanel.Controls.Add(this.OpenTask3Button);
+            this.TasksPanel.Controls.Add(this.OpenTask2Button);
+            this.TasksPanel.Controls.Add(this.OpenTask1Button);
+            this.TasksPanel.Location = new System.Drawing.Point(12, 12);
+            this.TasksPanel.Name = "TasksPanel";
+            this.TasksPanel.Size = new System.Drawing.Size(440, 580);
+            this.TasksPanel.TabIndex = 8;
+            // 
+            // OpenTask4Button
+            // 
+            this.OpenTask4Button.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OpenTask4Button.Location = new System.Drawing.Point(54, 356);
+            this.OpenTask4Button.Name = "OpenTask4Button";
+            this.OpenTask4Button.Size = new System.Drawing.Size(160, 46);
+            this.OpenTask4Button.TabIndex = 7;
+            this.OpenTask4Button.Text = "Задание 4";
+            this.OpenTask4Button.UseVisualStyleBackColor = true;
+            // 
+            // OpenTask3Button
+            // 
+            this.OpenTask3Button.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OpenTask3Button.Location = new System.Drawing.Point(54, 256);
+            this.OpenTask3Button.Name = "OpenTask3Button";
+            this.OpenTask3Button.Size = new System.Drawing.Size(160, 46);
+            this.OpenTask3Button.TabIndex = 6;
+            this.OpenTask3Button.Text = "Задание 3";
+            this.OpenTask3Button.UseVisualStyleBackColor = true;
+            // 
+            // OpenTask2Button
+            // 
+            this.OpenTask2Button.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OpenTask2Button.Location = new System.Drawing.Point(54, 156);
+            this.OpenTask2Button.Name = "OpenTask2Button";
+            this.OpenTask2Button.Size = new System.Drawing.Size(160, 46);
+            this.OpenTask2Button.TabIndex = 5;
+            this.OpenTask2Button.Text = "Задание 2";
+            this.OpenTask2Button.UseVisualStyleBackColor = true;
+            // 
+            // OpenTask1Button
+            // 
+            this.OpenTask1Button.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OpenTask1Button.Location = new System.Drawing.Point(54, 56);
+            this.OpenTask1Button.Name = "OpenTask1Button";
+            this.OpenTask1Button.Size = new System.Drawing.Size(160, 46);
+            this.OpenTask1Button.TabIndex = 4;
+            this.OpenTask1Button.Text = "Задание 1";
+            this.OpenTask1Button.UseVisualStyleBackColor = true;
+            // 
+            // Task1Panel
+            // 
+            this.Task1Panel.BackColor = System.Drawing.SystemColors.Control;
+            this.Task1Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Task1Panel.Controls.Add(this.Task18);
+            this.Task1Panel.Controls.Add(this.Task17);
+            this.Task1Panel.Controls.Add(this.Task16);
+            this.Task1Panel.Controls.Add(this.Task15);
+            this.Task1Panel.Controls.Add(this.Task14);
+            this.Task1Panel.Controls.Add(this.Task13);
+            this.Task1Panel.Controls.Add(this.Task12);
+            this.Task1Panel.Controls.Add(this.Task11);
+            this.Task1Panel.Controls.Add(this.label1);
+            this.Task1Panel.Location = new System.Drawing.Point(474, 12);
+            this.Task1Panel.Name = "Task1Panel";
+            this.Task1Panel.Size = new System.Drawing.Size(440, 580);
+            this.Task1Panel.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(438, 80);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Text";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Task11
+            // 
+            this.Task11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task11.Location = new System.Drawing.Point(20, 120);
+            this.Task11.Name = "Task11";
+            this.Task11.Size = new System.Drawing.Size(160, 46);
+            this.Task11.TabIndex = 5;
+            this.Task11.Text = "1";
+            this.Task11.UseVisualStyleBackColor = true;
+            // 
+            // Task12
+            // 
+            this.Task12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task12.Location = new System.Drawing.Point(260, 120);
+            this.Task12.Name = "Task12";
+            this.Task12.Size = new System.Drawing.Size(160, 46);
+            this.Task12.TabIndex = 6;
+            this.Task12.Text = "1";
+            this.Task12.UseVisualStyleBackColor = true;
+            // 
+            // Task14
+            // 
+            this.Task14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task14.Location = new System.Drawing.Point(260, 220);
+            this.Task14.Name = "Task14";
+            this.Task14.Size = new System.Drawing.Size(160, 46);
+            this.Task14.TabIndex = 8;
+            this.Task14.Text = "1";
+            this.Task14.UseVisualStyleBackColor = true;
+            // 
+            // Task13
+            // 
+            this.Task13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task13.Location = new System.Drawing.Point(20, 220);
+            this.Task13.Name = "Task13";
+            this.Task13.Size = new System.Drawing.Size(160, 46);
+            this.Task13.TabIndex = 7;
+            this.Task13.Text = "1";
+            this.Task13.UseVisualStyleBackColor = true;
+            // 
+            // Task16
+            // 
+            this.Task16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task16.Location = new System.Drawing.Point(260, 320);
+            this.Task16.Name = "Task16";
+            this.Task16.Size = new System.Drawing.Size(160, 46);
+            this.Task16.TabIndex = 10;
+            this.Task16.Text = "1";
+            this.Task16.UseVisualStyleBackColor = true;
+            // 
+            // Task15
+            // 
+            this.Task15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task15.Location = new System.Drawing.Point(20, 320);
+            this.Task15.Name = "Task15";
+            this.Task15.Size = new System.Drawing.Size(160, 46);
+            this.Task15.TabIndex = 9;
+            this.Task15.Text = "1";
+            this.Task15.UseVisualStyleBackColor = true;
+            // 
+            // Task18
+            // 
+            this.Task18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task18.Location = new System.Drawing.Point(260, 420);
+            this.Task18.Name = "Task18";
+            this.Task18.Size = new System.Drawing.Size(160, 46);
+            this.Task18.TabIndex = 12;
+            this.Task18.Text = "1";
+            this.Task18.UseVisualStyleBackColor = true;
+            // 
+            // Task17
+            // 
+            this.Task17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task17.Location = new System.Drawing.Point(20, 420);
+            this.Task17.Name = "Task17";
+            this.Task17.Size = new System.Drawing.Size(160, 46);
+            this.Task17.TabIndex = 11;
+            this.Task17.Text = "1";
+            this.Task17.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -281,6 +462,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1389, 661);
+            this.Controls.Add(this.Task1Panel);
+            this.Controls.Add(this.TasksPanel);
             this.Controls.Add(this.TheoryPanel);
             this.Controls.Add(this.TheoryTextPanel);
             this.Controls.Add(this.MainMenuPanel);
@@ -296,6 +479,8 @@
             this.LiteraturesPanel.ResumeLayout(false);
             this.InformationPanel.ResumeLayout(false);
             this.TheoryTextPanel.ResumeLayout(false);
+            this.TasksPanel.ResumeLayout(false);
+            this.Task1Panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -309,7 +494,7 @@
         private Button OpenTheoryButton;
         private Button OpenInformationButton;
         private Button OpenLiteraturesButton;
-        private Button button2;
+        private Button OpenTasksButton;
         private Button BackButton;
         private Button OpenMainMenuButton;
         private Button PrevButton;
@@ -322,5 +507,20 @@
         private Button TheoryButton1;
         private Panel TheoryTextPanel;
         private RichTextBox TheoryTextBox1;
+        private Panel TasksPanel;
+        private Button OpenTask4Button;
+        private Button OpenTask3Button;
+        private Button OpenTask2Button;
+        private Button OpenTask1Button;
+        private Panel Task1Panel;
+        private Label label1;
+        private Button Task12;
+        private Button Task11;
+        private Button Task18;
+        private Button Task17;
+        private Button Task16;
+        private Button Task15;
+        private Button Task14;
+        private Button Task13;
     }
 }
