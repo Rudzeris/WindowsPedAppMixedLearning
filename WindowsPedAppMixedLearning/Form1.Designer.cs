@@ -63,16 +63,16 @@
             this.Task22 = new System.Windows.Forms.Button();
             this.Task21 = new System.Windows.Forms.Button();
             this.Task2Text = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Task1Panel = new System.Windows.Forms.Panel();
+            this.Task18 = new System.Windows.Forms.Button();
+            this.Task17 = new System.Windows.Forms.Button();
+            this.Task16 = new System.Windows.Forms.Button();
+            this.Task15 = new System.Windows.Forms.Button();
+            this.Task14 = new System.Windows.Forms.Button();
+            this.Task13 = new System.Windows.Forms.Button();
+            this.Task12 = new System.Windows.Forms.Button();
+            this.Task11 = new System.Windows.Forms.Button();
+            this.Task1Text = new System.Windows.Forms.Label();
             this.MainMenuPanel.SuspendLayout();
             this.MainButtonPanel.SuspendLayout();
             this.TheoryPanel.SuspendLayout();
@@ -81,7 +81,7 @@
             this.TheoryTextPanel.SuspendLayout();
             this.TasksPanel.SuspendLayout();
             this.Task2Panel.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.Task1Panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenuPanel
@@ -480,115 +480,127 @@
             this.Task2Text.Text = "Text";
             this.Task2Text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // Task1Panel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(474, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(440, 580);
-            this.panel1.TabIndex = 10;
+            this.Task1Panel.BackColor = System.Drawing.SystemColors.Control;
+            this.Task1Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Task1Panel.Controls.Add(this.Task18);
+            this.Task1Panel.Controls.Add(this.Task17);
+            this.Task1Panel.Controls.Add(this.Task16);
+            this.Task1Panel.Controls.Add(this.Task15);
+            this.Task1Panel.Controls.Add(this.Task14);
+            this.Task1Panel.Controls.Add(this.Task13);
+            this.Task1Panel.Controls.Add(this.Task12);
+            this.Task1Panel.Controls.Add(this.Task11);
+            this.Task1Panel.Controls.Add(this.Task1Text);
+            this.Task1Panel.Location = new System.Drawing.Point(474, 12);
+            this.Task1Panel.Name = "Task1Panel";
+            this.Task1Panel.Size = new System.Drawing.Size(440, 580);
+            this.Task1Panel.TabIndex = 10;
             // 
-            // button1
+            // Task18
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(260, 420);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 46);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Task18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task18.Location = new System.Drawing.Point(260, 420);
+            this.Task18.Name = "Task18";
+            this.Task18.Size = new System.Drawing.Size(160, 46);
+            this.Task18.TabIndex = 12;
+            this.Task18.Text = "1";
+            this.Task18.UseVisualStyleBackColor = true;
+            this.Task18.Click += new System.EventHandler(this.Task11_Click);
             // 
-            // button2
+            // Task17
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(20, 420);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 46);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Task17.BackColor = System.Drawing.Color.Fuchsia;
+            this.Task17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task17.Location = new System.Drawing.Point(20, 420);
+            this.Task17.Name = "Task17";
+            this.Task17.Size = new System.Drawing.Size(160, 46);
+            this.Task17.TabIndex = 11;
+            this.Task17.Text = "1";
+            this.Task17.UseVisualStyleBackColor = false;
+            this.Task17.Click += new System.EventHandler(this.Task11_Click);
             // 
-            // button3
+            // Task16
             // 
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(260, 320);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(160, 46);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "1";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Task16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task16.Location = new System.Drawing.Point(260, 320);
+            this.Task16.Name = "Task16";
+            this.Task16.Size = new System.Drawing.Size(160, 46);
+            this.Task16.TabIndex = 10;
+            this.Task16.Text = "1";
+            this.Task16.UseVisualStyleBackColor = true;
+            this.Task16.Click += new System.EventHandler(this.Task11_Click);
             // 
-            // button4
+            // Task15
             // 
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(20, 320);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(160, 46);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "1";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Task15.BackColor = System.Drawing.Color.Red;
+            this.Task15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task15.Location = new System.Drawing.Point(20, 320);
+            this.Task15.Name = "Task15";
+            this.Task15.Size = new System.Drawing.Size(160, 46);
+            this.Task15.TabIndex = 9;
+            this.Task15.Text = "1";
+            this.Task15.UseVisualStyleBackColor = false;
+            this.Task15.Click += new System.EventHandler(this.Task11_Click);
             // 
-            // button5
+            // Task14
             // 
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(260, 220);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(160, 46);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "1";
-            this.button5.UseVisualStyleBackColor = true;
+            this.Task14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task14.Location = new System.Drawing.Point(260, 220);
+            this.Task14.Name = "Task14";
+            this.Task14.Size = new System.Drawing.Size(160, 46);
+            this.Task14.TabIndex = 8;
+            this.Task14.Text = "1";
+            this.Task14.UseVisualStyleBackColor = true;
+            this.Task14.Click += new System.EventHandler(this.Task11_Click);
             // 
-            // button6
+            // Task13
             // 
-            this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.Location = new System.Drawing.Point(20, 220);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(160, 46);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "1";
-            this.button6.UseVisualStyleBackColor = true;
+            this.Task13.BackColor = System.Drawing.Color.Blue;
+            this.Task13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task13.Location = new System.Drawing.Point(20, 220);
+            this.Task13.Name = "Task13";
+            this.Task13.Size = new System.Drawing.Size(160, 46);
+            this.Task13.TabIndex = 7;
+            this.Task13.Text = "1";
+            this.Task13.UseVisualStyleBackColor = false;
+            this.Task13.Click += new System.EventHandler(this.Task11_Click);
             // 
-            // button7
+            // Task12
             // 
-            this.button7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(260, 120);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(160, 46);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "1";
-            this.button7.UseVisualStyleBackColor = true;
+            this.Task12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task12.Location = new System.Drawing.Point(260, 120);
+            this.Task12.Name = "Task12";
+            this.Task12.Size = new System.Drawing.Size(160, 46);
+            this.Task12.TabIndex = 6;
+            this.Task12.Text = "1";
+            this.Task12.UseVisualStyleBackColor = true;
+            this.Task12.Click += new System.EventHandler(this.Task11_Click);
             // 
-            // button8
+            // Task11
             // 
-            this.button8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button8.Location = new System.Drawing.Point(20, 120);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(160, 46);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "1";
-            this.button8.UseVisualStyleBackColor = true;
+            this.Task11.BackColor = System.Drawing.Color.Lime;
+            this.Task11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task11.Location = new System.Drawing.Point(20, 120);
+            this.Task11.Name = "Task11";
+            this.Task11.Size = new System.Drawing.Size(160, 46);
+            this.Task11.TabIndex = 5;
+            this.Task11.Text = "1";
+            this.Task11.UseVisualStyleBackColor = false;
+            this.Task11.Click += new System.EventHandler(this.Task11_Click);
             // 
-            // label2
+            // Task1Text
             // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(438, 80);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Text";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Task1Text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Task1Text.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Task1Text.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Task1Text.Location = new System.Drawing.Point(0, 0);
+            this.Task1Text.Name = "Task1Text";
+            this.Task1Text.Size = new System.Drawing.Size(438, 80);
+            this.Task1Text.TabIndex = 0;
+            this.Task1Text.Text = "Text";
+            this.Task1Text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -596,8 +608,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1389, 661);
+            this.Controls.Add(this.Task1Panel);
             this.Controls.Add(this.Task2Panel);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.TasksPanel);
             this.Controls.Add(this.TheoryPanel);
             this.Controls.Add(this.TheoryTextPanel);
@@ -616,7 +628,7 @@
             this.TheoryTextPanel.ResumeLayout(false);
             this.TasksPanel.ResumeLayout(false);
             this.Task2Panel.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.Task1Panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -657,16 +669,16 @@
         private Button Task25;
         private Button Task24;
         private Button Task23;
-        private Panel panel1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private Button button8;
-        private Label label2;
+        private Panel Task1Panel;
+        private Button Task18;
+        private Button Task17;
+        private Button Task16;
+        private Button Task15;
+        private Button Task14;
+        private Button Task13;
+        private Button Task12;
+        private Button Task11;
+        private Label Task1Text;
         private Button Task2B2;
     }
 }

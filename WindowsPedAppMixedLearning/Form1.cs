@@ -1,3 +1,5 @@
+using System.Diagnostics.Eventing.Reader;
+
 namespace WindowsPedAppMixedLearning
 {
     public partial class Form1 : Form
@@ -10,6 +12,7 @@ namespace WindowsPedAppMixedLearning
         string Theory3 = "C";
         string Theory4 = "D";
         char TheoryPoint = '#';
+        char Task2Char = '#';
 
         public Form1()
         {
@@ -47,8 +50,8 @@ namespace WindowsPedAppMixedLearning
             Task2Panel.Location= locationDefault;
             Task2Panel.Size = new Size(sizeDefault.X,sizeDefault.Y);
 
-            panel1.Location= locationDefault;
-            panel1.Size = new Size(sizeDefault.X,sizeDefault.Y);
+            Task1Panel.Location= locationDefault;
+            Task1Panel.Size = new Size(sizeDefault.X,sizeDefault.Y);
         }
 
         private void CloseAll()
@@ -63,13 +66,20 @@ namespace WindowsPedAppMixedLearning
             NextButton.Enabled = false;
             Task2Panel.Visible = false;
             TasksPanel.Visible= false;
-            panel1.Visible = false;
+            Task1Panel.Visible = false;
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            if (TextPanel == "Theory" || TextPanel == "Literatures" || TextPanel == "Information") OpenMainMenu(sender, e);
+            if (TextPanel == "Theory" || TextPanel == "Literatures" || TextPanel == "Information" || TextPanel == "Tasks") OpenMainMenu(sender, e);
             else if (TextPanel == "TheoryText") OpenTheory(sender, e);
+            else if (TextPanel == "Task1" || TextPanel == "Task3") OpenTask(sender, e);
+            else if (TextPanel == "Task2")
+            {
+                if (Task2Char == '1') OpenTask(sender, e);
+                else if (Task2Char == '2') Task2_1();
+                else if (Task2Char == '3') Task2_2();
+            }
         }
 
         private void PrevButton_Click(object sender, EventArgs e)
@@ -94,6 +104,12 @@ namespace WindowsPedAppMixedLearning
                         OpenTheory(sender, e);
                         break;
                 }
+            }
+            if (TextPanel == "Task2")
+            {
+                if (Task2Char == '1') Task2_2();
+                else if (Task2Char=='2') Task2_3();
+                else if (Task2Char=='3') Task2_Result();
             }
         }
 
@@ -180,20 +196,23 @@ namespace WindowsPedAppMixedLearning
             TextPanel = "Tasks";
             CloseAll();
             TasksPanel.Visible = true;
+            NextButton.Enabled = false;
         }
 
         private void OpenTask1(object sender, EventArgs e)
         {
             TextPanel = "Task1";
             CloseAll();
+            Task1Panel.Visible = true;
+            Task1ButtonDefault();
+            //Task1ButtonSwitch();
         }
-
-        char Task2 = '#';
         private void OpenTask2(object sender, EventArgs e)
         {
             TextPanel = "Task2";
             CloseAll();
             Task2Panel.Visible = true;
+            Task2ButtonVisible(true);
             Task2_1();
         }
 
@@ -211,10 +230,22 @@ namespace WindowsPedAppMixedLearning
 
         int[] Task2Answer = {0,0,0,0,0,0,0,0};
         int[] Task2Question = { 0, 0, 0, 0, 0, 0, 0, 0 };
+        int[] Points = { 0, 0, 0 };
+
+        private void Task2_PointDelete(int x)
+        {
+            for (int i = 2; i >= x-1; i--)
+            {
+                Points[i] = 0;
+            }
+        }
+
         private void Task2_1()
         {
-            Task2 = '1';
-            Task2Text.Text = "Text";
+            NextButton.Enabled = false;
+            Task2_PointDelete(1);
+            Task2Char = '1';
+            Task2Text.Text = "Text1";
             DefaultTask2();
             // Сколько баллов будет давать каждый ответ:
             Task2Question[0] = 1;
@@ -245,6 +276,100 @@ namespace WindowsPedAppMixedLearning
             Task2Answer[7] = 0;
             Task2B2.Text = "Проверить";
         }
+        private void Task2_2()
+        {
+            NextButton.Enabled = false;
+            Task2_PointDelete(2);
+            Task2Char = '2';
+            Task2Text.Text = "Text2";
+            DefaultTask2();
+            // Сколько баллов будет давать каждый ответ:
+            Task2Question[0] = 1;
+            Task21.Text = "1";
+            Task2Question[1] = 1;
+            Task22.Text = "2";
+            Task2Question[2] = 1;
+            Task23.Text = "3";
+            Task2Question[3] = -1;
+            Task24.Text = "4";
+            Task2Question[4] = -1;
+            Task25.Text = "5";
+            Task2Question[5] = -1;
+            Task26.Text = "6";
+            Task2Question[6] = -1;
+            Task27.Text = "7";
+            Task2Question[7] = 1;
+            Task28.Text = "8";
+
+            // Дальше не менять - там будем записывать ответы
+            Task2Answer[0] = 0;
+            Task2Answer[1] = 0;
+            Task2Answer[2] = 0;
+            Task2Answer[3] = 0;
+            Task2Answer[4] = 0;
+            Task2Answer[5] = 0;
+            Task2Answer[6] = 0;
+            Task2Answer[7] = 0;
+            Task2B2.Text = "Проверить";
+        }
+
+        private void Task2_3()
+        {
+            NextButton.Enabled = false;
+            Task2_PointDelete(3);
+            Task2Char = '3';
+            Task2Text.Text = "Text3";
+            DefaultTask2();
+            // Сколько баллов будет давать каждый ответ:
+            Task2Question[0] = 1;
+            Task21.Text = "1";
+            Task2Question[1] = 1;
+            Task22.Text = "2";
+            Task2Question[2] = 1;
+            Task23.Text = "3";
+            Task2Question[3] = -1;
+            Task24.Text = "4";
+            Task2Question[4] = -1;
+            Task25.Text = "5";
+            Task2Question[5] = -1;
+            Task26.Text = "6";
+            Task2Question[6] = -1;
+            Task27.Text = "7";
+            Task2Question[7] = 1;
+            Task28.Text = "8";
+
+            // Дальше не менять - там будем записывать ответы
+            Task2Answer[0] = 0;
+            Task2Answer[1] = 0;
+            Task2Answer[2] = 0;
+            Task2Answer[3] = 0;
+            Task2Answer[4] = 0;
+            Task2Answer[5] = 0;
+            Task2Answer[6] = 0;
+            Task2Answer[7] = 0;
+            Task2B2.Text = "Проверить";
+        }
+
+        private void Task2_Result()
+        {
+            Task2ButtonVisible(false);
+            Task2Text.Text = "Ваш результат: "+(Points.Sum()).ToString();
+            NextButton.Enabled = false;
+            Task2Char = '1';
+        }
+
+        private void Task2ButtonVisible(bool x)
+        {
+            Task21.Visible = x;
+            Task22.Visible = x;
+            Task23.Visible = x;
+            Task24.Visible = x;
+            Task25.Visible = x;
+            Task26.Visible = x;
+            Task27.Visible = x;
+            Task28.Visible = x;
+            Task2B2.Visible = x;
+        }
         private void OpenTask3(object sender, EventArgs e)
         {
             TextPanel = "Task1";
@@ -254,6 +379,7 @@ namespace WindowsPedAppMixedLearning
 
         private void Task2B2_Click(object sender, EventArgs e)
         {
+            NextButton.Enabled = true;
             int a = Task2Answer.Sum();
             if (a < 0)
             {
@@ -267,6 +393,9 @@ namespace WindowsPedAppMixedLearning
                     b += i;
             }
             Task2Text.Text="Вы набрали: "+(a).ToString()+" из "+(b).ToString();
+            if (Task2Char == '1') Points[0] = a;
+            if (Task2Char == '2') Points[1] = a;
+            if (Task2Char == '3') Points[2] = a;
         }
 
         private void Task21_Click(object sender, EventArgs e)
@@ -379,6 +508,108 @@ namespace WindowsPedAppMixedLearning
                 Task2Answer[7] = 0;
                 Task28.BackColor = Color.White;
             }
+        }
+
+        private void Task1ButtonDefault()
+        {
+            k = 0;
+            Task11.Enabled = true;
+            Task12.Enabled = true;
+            Task13.Enabled = true;
+            Task14.Enabled = true;
+            Task15.Enabled = true;
+            Task16.Enabled = true;
+            Task17.Enabled = true;
+            Task18.Enabled = true;
+
+            //Task11.BackColor = Color.White;
+            Task12.BackColor = Color.White;
+            //Task13.BackColor = Color.White;
+            Task14.BackColor = Color.White;
+            //Task15.BackColor = Color.White;
+            Task16.BackColor = Color.White;
+            //Task17.BackColor = Color.White;
+            Task18.BackColor = Color.White;
+        }
+
+        int k = 0;
+        private void Task1ButtonSwitch()
+        {
+            if (k % 2 == 0)
+            {
+                Task12.Enabled = false;
+                Task14.Enabled = false;
+                Task16.Enabled = false;
+                Task18.Enabled = false;
+
+                if (Task11.BackColor!=Color.Blue)
+                    Task11.Enabled = true;
+                if (Task13.BackColor != Color.Blue)
+                    Task13.Enabled = true;
+                if (Task15.BackColor != Color.Blue)
+                    Task15.Enabled = true;
+                if (Task17.BackColor != Color.Blue)
+                    Task17.Enabled = true;
+            }
+            else
+            {
+                Task11.Enabled = false;
+                Task13.Enabled = false;
+                Task15.Enabled = false;
+                Task17.Enabled = false;
+
+                if (Task12.BackColor != Color.Blue)
+                    Task12.Enabled = true;
+                if (Task14.BackColor != Color.Blue)
+                    Task14.Enabled = true;
+                if (Task16.BackColor != Color.Blue)
+                    Task16.Enabled = true;
+                if (Task18.BackColor != Color.Blue)
+                    Task18.Enabled = true;
+            }
+        }
+
+        private bool Task1ColorSearch(Color C)
+        {
+            bool cs1 = false;
+            if (Task12.BackColor == C)
+            {
+                Task12.BackColor = Color.White;
+                cs1 = true;
+            }
+            if(Task14.BackColor==C)
+            {
+                Task14.BackColor = Color.White;
+                cs1 = true;
+            }
+            if (Task16.BackColor==C)
+            {
+                Task16.BackColor = Color.White;
+                cs1 = true;
+            }
+            if (Task18.BackColor == C)
+            {
+                Task18.BackColor = Color.White;
+                cs1 = true;
+            }
+            return cs1;
+        }
+
+        Color A=Color.White;
+        private void Task11_Click(object sender, EventArgs e)
+        {
+            if (((Button)sender).BackColor == Color.White)
+            {
+                ((Button)sender).BackColor = A;
+                A = Color.White;
+            }
+            else
+                if (Task1ColorSearch(((Button)sender).BackColor))
+                return;
+            else
+                A = ((Button)sender).BackColor;
+            
+            
         }
     }
 }
