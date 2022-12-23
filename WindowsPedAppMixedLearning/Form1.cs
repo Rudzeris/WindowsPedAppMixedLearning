@@ -214,6 +214,7 @@ namespace WindowsPedAppMixedLearning
             Task2Panel.Visible = true;
             Task2ButtonVisible(true);
             Task2_1();
+            Task2B2.Text = "Ответить";
         }
 
         private void DefaultTask2()
@@ -231,6 +232,7 @@ namespace WindowsPedAppMixedLearning
         int[] Task2Answer = {0,0,0,0,0,0,0,0};
         int[] Task2Question = { 0, 0, 0, 0, 0, 0, 0, 0 };
         int[] Points = { 0, 0, 0 };
+        int[] Points2 = { 0, 0, 0 };
 
         private void Task2_PointDelete(int x)
         {
@@ -274,7 +276,7 @@ namespace WindowsPedAppMixedLearning
             Task2Answer[5] = 0;
             Task2Answer[6] = 0;
             Task2Answer[7] = 0;
-            Task2B2.Text = "Проверить";
+            //Task2B2.Text = "Проверить";
         }
         private void Task2_2()
         {
@@ -310,7 +312,7 @@ namespace WindowsPedAppMixedLearning
             Task2Answer[5] = 0;
             Task2Answer[6] = 0;
             Task2Answer[7] = 0;
-            Task2B2.Text = "Проверить";
+            //Task2B2.Text = "Проверить";
         }
 
         private void Task2_3()
@@ -347,13 +349,13 @@ namespace WindowsPedAppMixedLearning
             Task2Answer[5] = 0;
             Task2Answer[6] = 0;
             Task2Answer[7] = 0;
-            Task2B2.Text = "Проверить";
+            //Task2B2.Text = "Проверить";
         }
 
         private void Task2_Result()
         {
             Task2ButtonVisible(false);
-            Task2Text.Text = "Ваш результат: "+(Points.Sum()).ToString();
+            Task2Text.Text = "Ваш результат: "+(Points.Sum()).ToString() + " из "+(Points2.Sum()).ToString();
             NextButton.Enabled = false;
             Task2Char = '1';
         }
@@ -393,9 +395,21 @@ namespace WindowsPedAppMixedLearning
                     b += i;
             }
             Task2Text.Text="Вы набрали: "+(a).ToString()+" из "+(b).ToString();
-            if (Task2Char == '1') Points[0] = a;
-            if (Task2Char == '2') Points[1] = a;
-            if (Task2Char == '3') Points[2] = a;
+            if (Task2Char == '1')
+            {
+                Points[0] = a;
+                Points2[0] = b;
+            }
+            if (Task2Char == '2')
+            {
+                Points[1] = a;
+                Points2[1] = b;
+            }
+            if (Task2Char == '3')
+            {
+                Points[2] = a;
+                Points2[2] = b;
+            }
         }
 
         private void Task21_Click(object sender, EventArgs e)
