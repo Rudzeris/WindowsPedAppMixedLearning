@@ -303,7 +303,7 @@
             this.LiteraturesTextBox.ReadOnly = true;
             this.LiteraturesTextBox.Size = new System.Drawing.Size(400, 540);
             this.LiteraturesTextBox.TabIndex = 1;
-            this.LiteraturesTextBox.Text = "";
+            this.LiteraturesTextBox.Text = resources.GetString("LiteraturesTextBox.Text");
             // 
             // InformationPanel
             // 
@@ -324,7 +324,7 @@
             this.InformationTextBox.ReadOnly = true;
             this.InformationTextBox.Size = new System.Drawing.Size(400, 540);
             this.InformationTextBox.TabIndex = 1;
-            this.InformationTextBox.Text = "";
+            this.InformationTextBox.Text = resources.GetString("InformationTextBox.Text");
             // 
             // TheoryTextPanel
             // 
@@ -1020,14 +1020,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1389, 661);
+            this.Controls.Add(this.InformationPanel);
+            this.Controls.Add(this.LiteraturesPanel);
             this.Controls.Add(this.Task2Panel);
             this.Controls.Add(this.MainMenuPanel);
             this.Controls.Add(this.Task1Panel);
             this.Controls.Add(this.TheoryPanel);
             this.Controls.Add(this.TasksPanel);
             this.Controls.Add(this.TheoryTextPanel);
-            this.Controls.Add(this.InformationPanel);
-            this.Controls.Add(this.LiteraturesPanel);
             this.Controls.Add(this.MainButtonPanel);
             this.Controls.Add(this.Task3Panel);
             this.HelpButton = true;
