@@ -52,6 +52,9 @@ namespace WindowsPedAppMixedLearning
 
             Task1Panel.Location= locationDefault;
             Task1Panel.Size = new Size(sizeDefault.X,sizeDefault.Y);
+
+            Task3Panel.Location= locationDefault;
+            Task3Panel.Size = new Size(sizeDefault.X,sizeDefault.Y);
         }
 
         private void CloseAll()
@@ -74,10 +77,10 @@ namespace WindowsPedAppMixedLearning
         {
             if (TextPanel == "Theory" || TextPanel == "Literatures" || TextPanel == "Information" || TextPanel == "Tasks") OpenMainMenu(sender, e);
             else if (TextPanel == "TheoryText") OpenTheory(sender, e);
-            else if (TextPanel == "Task1" || TextPanel == "Task3") OpenTask(sender, e);
+            else if (TextPanel == "Task1" || TextPanel == "Task3") OpenTasks(sender, e);
             else if (TextPanel == "Task2")
             {
-                if (Task2Char == '1') OpenTask(sender, e);
+                if (Task2Char == '1') OpenTasks(sender, e);
                 else if (Task2Char == '2') Task2_1();
                 else if (Task2Char == '3') Task2_2();
             }
@@ -192,7 +195,7 @@ namespace WindowsPedAppMixedLearning
             OpenTheoryText(sender, e);
         }
 
-        private void OpenTask(object sender, EventArgs e)
+        private void OpenTasks(object sender, EventArgs e)
         {
             TextPanel = "Tasks";
             CloseAll();
@@ -377,9 +380,10 @@ namespace WindowsPedAppMixedLearning
         }
         private void OpenTask3(object sender, EventArgs e)
         {
-            TextPanel = "Task1";
+            TextPanel = "Task3";
             CloseAll();
             Task3Panel.Visible = true;
+            Task3Result.Text = "Проверить";
         }
 
         private void Task2B2_Click(object sender, EventArgs e)
@@ -626,6 +630,79 @@ namespace WindowsPedAppMixedLearning
             Task1Text.Text = "Верно";
             if(k!=4)
                 Task1Text.Text = "Неверно";
+        }
+
+        private void Task3RadioDefaultChecked()
+        {
+            Task3_11.Checked = false;
+            Task3_12.Checked = false;
+            Task3_13.Checked = false;
+            Task3_14.Checked = false;
+
+            Task3_21.Checked = false;
+            Task3_22.Checked = false;
+            Task3_23.Checked = false;
+            Task3_24.Checked = false;
+
+            Task3_31.Checked = false;
+            Task3_32.Checked = false;
+            Task3_33.Checked = false;
+            Task3_34.Checked = false;
+
+            Task3_41.Checked = false;
+            Task3_42.Checked = false;
+            Task3_43.Checked = false;
+            Task3_44.Checked = false;
+
+            Task3_51.Checked = false;
+            Task3_52.Checked = false;
+            Task3_53.Checked = false;
+            Task3_54.Checked = false;
+
+            Task3_61.Checked = false;
+            Task3_62.Checked = false;
+            Task3_63.Checked = false;
+            Task3_64.Checked = false;
+
+            Task3_71.Checked = false;
+            Task3_72.Checked = false;
+            Task3_73.Checked = false;
+            Task3_74.Checked = false;
+        }
+
+        private void Task3Result_click(object sender, EventArgs e)
+        {
+            int k = 0;
+            if (Task3_11.Checked)
+            {
+                k++;
+            }
+            if (Task3_21.Checked)
+            {
+                k++;
+            }
+            if (Task3_31.Checked)
+            {
+                k++;
+            }
+            if (Task3_41.Checked)
+            {
+                k++;
+            }
+            if (Task3_51.Checked)
+            {
+                k++;
+            }
+            if (Task3_61.Checked)
+            {
+                k++;
+            }
+            if (Task3_71.Checked)
+            {
+                k++;
+            }
+            Task3RadioDefaultChecked();
+            Task3Result.Text = "Верно: " + k.ToString() + " из 7";
         }
     }
 }
