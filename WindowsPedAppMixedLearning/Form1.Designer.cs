@@ -166,7 +166,7 @@
             this.OpenTasksButton.Name = "OpenTasksButton";
             this.OpenTasksButton.Size = new System.Drawing.Size(278, 56);
             this.OpenTasksButton.TabIndex = 1;
-            this.OpenTasksButton.Text = "-";
+            this.OpenTasksButton.Text = "Задания";
             this.OpenTasksButton.UseVisualStyleBackColor = true;
             this.OpenTasksButton.Click += new System.EventHandler(this.OpenTasks);
             // 

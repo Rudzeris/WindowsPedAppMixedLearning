@@ -206,7 +206,7 @@ namespace WindowsPedAppMixedLearning
         private void OpenTask1(object sender, EventArgs e)
         {
             TextPanel = "Task1";
-            Task1Text.Text = "Task1";
+            //Task1Text.Text = "Task1";
             CloseAll();
             Task1Panel.Visible = true;
             Task1ButtonDefault();
