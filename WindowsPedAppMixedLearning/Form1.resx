@@ -57,4 +57,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Task16.Text" xml:space="preserve">
+    <value>Модель смешанного обучения, которая предполагает, что часть занятий у учащихся проходит в обычном классе, а на один урок они перемещаются в компьютерный класс, где индивидуально работают в онлайн-среде</value>
+  </data>
+  <data name="Task14.Text" xml:space="preserve">
+    <value>Все учащиеся делятся на группы по видам учебной деятельности: работа с учителем, онлайн-обучение и проектная работа. Каждая группа работает в отдельной части класса - станции. В течение урока ученики переходят от станции к станции так, чтобы побывать на каждой из них</value>
+  </data>
 </root>

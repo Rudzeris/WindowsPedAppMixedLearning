@@ -658,16 +658,6 @@ namespace WindowsPedAppMixedLearning
             Task3_52.Checked = false;
             Task3_53.Checked = false;
             Task3_54.Checked = false;
-
-            Task3_61.Checked = false;
-            Task3_62.Checked = false;
-            Task3_63.Checked = false;
-            Task3_64.Checked = false;
-
-            Task3_71.Checked = false;
-            Task3_72.Checked = false;
-            Task3_73.Checked = false;
-            Task3_74.Checked = false;
         }
 
         private void Task3Result_click(object sender, EventArgs e)
@@ -690,14 +680,6 @@ namespace WindowsPedAppMixedLearning
                 k++;
             }
             if (Task3_51.Checked)
-            {
-                k++;
-            }
-            if (Task3_61.Checked)
-            {
-                k++;
-            }
-            if (Task3_71.Checked)
             {
                 k++;
             }
