@@ -256,33 +256,33 @@
             // TheoryButton4
             // 
             this.TheoryButton4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TheoryButton4.Location = new System.Drawing.Point(54, 356);
+            this.TheoryButton4.Location = new System.Drawing.Point(54, 312);
             this.TheoryButton4.Name = "TheoryButton4";
-            this.TheoryButton4.Size = new System.Drawing.Size(160, 46);
+            this.TheoryButton4.Size = new System.Drawing.Size(333, 82);
             this.TheoryButton4.TabIndex = 7;
-            this.TheoryButton4.Text = "Теория\r\nТеория";
+            this.TheoryButton4.Text = "Преимущества и недостатки смешанного обучения";
             this.TheoryButton4.UseVisualStyleBackColor = true;
             this.TheoryButton4.Click += new System.EventHandler(this.TheoryButton4_Click);
             // 
             // TheoryButton3
             // 
             this.TheoryButton3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TheoryButton3.Location = new System.Drawing.Point(54, 256);
+            this.TheoryButton3.Location = new System.Drawing.Point(54, 184);
             this.TheoryButton3.Name = "TheoryButton3";
-            this.TheoryButton3.Size = new System.Drawing.Size(160, 46);
+            this.TheoryButton3.Size = new System.Drawing.Size(333, 82);
             this.TheoryButton3.TabIndex = 6;
-            this.TheoryButton3.Text = "Теория\r\nТеория";
+            this.TheoryButton3.Text = "Модели смешанного обучения";
             this.TheoryButton3.UseVisualStyleBackColor = true;
             this.TheoryButton3.Click += new System.EventHandler(this.TheoryButton3_Click);
             // 
             // TheoryButton2
             // 
             this.TheoryButton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TheoryButton2.Location = new System.Drawing.Point(54, 156);
+            this.TheoryButton2.Location = new System.Drawing.Point(54, 440);
             this.TheoryButton2.Name = "TheoryButton2";
-            this.TheoryButton2.Size = new System.Drawing.Size(160, 46);
+            this.TheoryButton2.Size = new System.Drawing.Size(333, 82);
             this.TheoryButton2.TabIndex = 5;
-            this.TheoryButton2.Text = "Теория\r\nТеория";
+            this.TheoryButton2.Text = "Анализ эффективности смешанного обучения";
             this.TheoryButton2.UseVisualStyleBackColor = true;
             this.TheoryButton2.Click += new System.EventHandler(this.TheoryButton2_Click);
             // 
@@ -291,9 +291,9 @@
             this.TheoryButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TheoryButton1.Location = new System.Drawing.Point(54, 56);
             this.TheoryButton1.Name = "TheoryButton1";
-            this.TheoryButton1.Size = new System.Drawing.Size(160, 46);
+            this.TheoryButton1.Size = new System.Drawing.Size(333, 83);
             this.TheoryButton1.TabIndex = 4;
-            this.TheoryButton1.Text = "Теория\r\nТеория";
+            this.TheoryButton1.Text = "Основы смешанного обучения";
             this.TheoryButton1.UseVisualStyleBackColor = true;
             this.TheoryButton1.Click += new System.EventHandler(this.TheoryButton1_Click);
             // 
@@ -375,9 +375,9 @@
             this.OpenTask3Button.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OpenTask3Button.Location = new System.Drawing.Point(54, 256);
             this.OpenTask3Button.Name = "OpenTask3Button";
-            this.OpenTask3Button.Size = new System.Drawing.Size(160, 46);
+            this.OpenTask3Button.Size = new System.Drawing.Size(333, 82);
             this.OpenTask3Button.TabIndex = 6;
-            this.OpenTask3Button.Text = "Задание 3";
+            this.OpenTask3Button.Text = "Тест";
             this.OpenTask3Button.UseVisualStyleBackColor = true;
             this.OpenTask3Button.Click += new System.EventHandler(this.OpenTask3);
             // 
@@ -386,9 +386,9 @@
             this.OpenTask2Button.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OpenTask2Button.Location = new System.Drawing.Point(54, 156);
             this.OpenTask2Button.Name = "OpenTask2Button";
-            this.OpenTask2Button.Size = new System.Drawing.Size(160, 46);
+            this.OpenTask2Button.Size = new System.Drawing.Size(333, 82);
             this.OpenTask2Button.TabIndex = 5;
-            this.OpenTask2Button.Text = "Задание 2";
+            this.OpenTask2Button.Text = "Соответствия";
             this.OpenTask2Button.UseVisualStyleBackColor = true;
             this.OpenTask2Button.Click += new System.EventHandler(this.OpenTask2);
             // 
@@ -397,9 +397,9 @@
             this.OpenTask1Button.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OpenTask1Button.Location = new System.Drawing.Point(54, 56);
             this.OpenTask1Button.Name = "OpenTask1Button";
-            this.OpenTask1Button.Size = new System.Drawing.Size(160, 46);
+            this.OpenTask1Button.Size = new System.Drawing.Size(333, 82);
             this.OpenTask1Button.TabIndex = 4;
-            this.OpenTask1Button.Text = "Задание 1";
+            this.OpenTask1Button.Text = "Найди пару";
             this.OpenTask1Button.UseVisualStyleBackColor = true;
             this.OpenTask1Button.Click += new System.EventHandler(this.OpenTask1);
             // 
@@ -664,7 +664,7 @@
             this.Task1Text.Name = "Task1Text";
             this.Task1Text.Size = new System.Drawing.Size(438, 80);
             this.Task1Text.TabIndex = 0;
-            this.Task1Text.Text = "Text";
+            this.Task1Text.Text = "Соответствия";
             this.Task1Text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Task3Panel
@@ -1163,10 +1163,10 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1389, 661);
             this.Controls.Add(this.Task3Panel);
-            this.Controls.Add(this.Task1Panel);
             this.Controls.Add(this.Task2Panel);
-            this.Controls.Add(this.TasksPanel);
+            this.Controls.Add(this.Task1Panel);
             this.Controls.Add(this.TheoryPanel);
+            this.Controls.Add(this.TasksPanel);
             this.Controls.Add(this.TheoryTextPanel);
             this.Controls.Add(this.MainMenuPanel);
             this.Controls.Add(this.InformationPanel);
