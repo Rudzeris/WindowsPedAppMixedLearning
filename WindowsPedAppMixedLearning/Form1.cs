@@ -253,25 +253,25 @@ namespace WindowsPedAppMixedLearning
             NextButton.Enabled = false;
             Task2_PointDelete(1);
             Task2Char = '1';
-            Task2Text.Text = "Text1";
+            Task2Text.Text = "Какие принципы организации и проведения «перевернутых» уроков?";
             DefaultTask2();
             // Сколько баллов будет давать каждый ответ:
             Task2Question[0] = 1;
-            Task21.Text = "1";
+            Task21.Text = "Интерактивный урок";
             Task2Question[1] = 1;
-            Task22.Text = "2";
+            Task22.Text = "Доступная информация";
             Task2Question[2] = 1;
-            Task23.Text = "3";
+            Task23.Text = "Самостоятельная работа";
             Task2Question[3] = -1;
-            Task24.Text = "4";
+            Task24.Text = "Быстрый интернет";
             Task2Question[4] = -1;
-            Task25.Text = "5";
+            Task25.Text = "Большой объем информации";
             Task2Question[5] = -1;
-            Task26.Text = "6";
+            Task26.Text = "";
             Task2Question[6] = -1;
-            Task27.Text = "7";
+            Task27.Text = "";
             Task2Question[7] = 1;
-            Task28.Text = "8";
+            Task28.Text = "Безопасность при работе";
 
             // Дальше не менять - там будем записывать ответы
             Task2Answer[0] = 0;
@@ -289,25 +289,25 @@ namespace WindowsPedAppMixedLearning
             NextButton.Enabled = false;
             Task2_PointDelete(2);
             Task2Char = '2';
-            Task2Text.Text = "Text2";
+            Task2Text.Text = "Проблемы которые могут возникнуть при внедрении смешанногго обучения";
             DefaultTask2();
             // Сколько баллов будет давать каждый ответ:
-            Task2Question[0] = 1;
-            Task21.Text = "1";
+            Task2Question[0] = -1;
+            Task21.Text = "Развитие 'Мягких навыков'";
             Task2Question[1] = 1;
-            Task22.Text = "2";
+            Task22.Text = "Низкий уровень информационной культуры";
             Task2Question[2] = 1;
-            Task23.Text = "3";
+            Task23.Text = "Неодостаточное обеспечение";
             Task2Question[3] = -1;
-            Task24.Text = "4";
+            Task24.Text = "Сокращение аудиторной нагрузки";
             Task2Question[4] = -1;
-            Task25.Text = "5";
-            Task2Question[5] = -1;
-            Task26.Text = "6";
+            Task25.Text = "Единная платформа";
+            Task2Question[5] = 1;
+            Task26.Text = "Боязнь преподавателей";
             Task2Question[6] = -1;
-            Task27.Text = "7";
+            Task27.Text = "Активные методы взаимодействия";
             Task2Question[7] = 1;
-            Task28.Text = "8";
+            Task28.Text = "Отсутствие любознательности";
 
             // Дальше не менять - там будем записывать ответы
             Task2Answer[0] = 0;
