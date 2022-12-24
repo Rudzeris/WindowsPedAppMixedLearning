@@ -112,8 +112,8 @@ namespace WindowsPedAppMixedLearning
             if (TextPanel == "Task2")
             {
                 if (Task2Char == '1') Task2_2();
-                else if (Task2Char=='2') Task2_3();
-                else if (Task2Char=='3') Task2_Result();
+                else if (Task2Char=='2') Task2_Result();
+                //else if (Task2Char=='3') Task2_Result();
             }
         }
 
@@ -266,12 +266,16 @@ namespace WindowsPedAppMixedLearning
             Task24.Text = "Быстрый интернет";
             Task2Question[4] = -1;
             Task25.Text = "Большой объем информации";
-            Task2Question[5] = -1;
-            Task26.Text = "";
-            Task2Question[6] = -1;
+            Task2Question[5] = 1;
+            Task26.Text = "Безопасность при работе";
+
+            Task27.Visible = false;
+            Task28.Visible = false;
+
+            Task2Question[6] = 0;
             Task27.Text = "";
-            Task2Question[7] = 1;
-            Task28.Text = "Безопасность при работе";
+            Task2Question[7] = 0;
+            Task28.Text = "";
 
             // Дальше не менять - там будем записывать ответы
             Task2Answer[0] = 0;
@@ -308,6 +312,9 @@ namespace WindowsPedAppMixedLearning
             Task27.Text = "Активные методы взаимодействия";
             Task2Question[7] = 1;
             Task28.Text = "Отсутствие любознательности";
+
+            Task27.Visible = true;
+            Task28.Visible = true;
 
             // Дальше не менять - там будем записывать ответы
             Task2Answer[0] = 0;
