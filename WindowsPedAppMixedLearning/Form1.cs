@@ -67,6 +67,7 @@ namespace WindowsPedAppMixedLearning
             Task2Panel.Visible = false;
             TasksPanel.Visible= false;
             Task1Panel.Visible = false;
+            Task3Panel.Visible = false;
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -378,7 +379,7 @@ namespace WindowsPedAppMixedLearning
         {
             TextPanel = "Task1";
             CloseAll();
-
+            Task3Panel.Visible = true;
         }
 
         private void Task2B2_Click(object sender, EventArgs e)
