@@ -202,9 +202,11 @@ namespace WindowsPedAppMixedLearning
         private void OpenTask1(object sender, EventArgs e)
         {
             TextPanel = "Task1";
+            Task1Text.Text = "Task1";
             CloseAll();
             Task1Panel.Visible = true;
             Task1ButtonDefault();
+            Task1ButtonVisible(true);
             //Task1ButtonSwitch();
         }
         private void OpenTask2(object sender, EventArgs e)
@@ -547,42 +549,6 @@ namespace WindowsPedAppMixedLearning
         }
 
         int k = 0;
-        private void Task1ButtonSwitch()
-        {
-            if (k % 2 == 0)
-            {
-                Task12.Enabled = false;
-                Task14.Enabled = false;
-                Task16.Enabled = false;
-                Task18.Enabled = false;
-
-                if (Task11.BackColor!=Color.Blue)
-                    Task11.Enabled = true;
-                if (Task13.BackColor != Color.Blue)
-                    Task13.Enabled = true;
-                if (Task15.BackColor != Color.Blue)
-                    Task15.Enabled = true;
-                if (Task17.BackColor != Color.Blue)
-                    Task17.Enabled = true;
-            }
-            else
-            {
-                Task11.Enabled = false;
-                Task13.Enabled = false;
-                Task15.Enabled = false;
-                Task17.Enabled = false;
-
-                if (Task12.BackColor != Color.Blue)
-                    Task12.Enabled = true;
-                if (Task14.BackColor != Color.Blue)
-                    Task14.Enabled = true;
-                if (Task16.BackColor != Color.Blue)
-                    Task16.Enabled = true;
-                if (Task18.BackColor != Color.Blue)
-                    Task18.Enabled = true;
-            }
-        }
-
         private bool Task1ColorSearch(Color C)
         {
             bool cs1 = false;
@@ -624,6 +590,41 @@ namespace WindowsPedAppMixedLearning
                 A = ((Button)sender).BackColor;
             
             
+        }
+
+        private void Task1ButtonVisible(bool x)
+        {
+            Task11.Visible = x;
+            Task12.Visible = x;
+            Task13.Visible = x;
+            Task14.Visible = x;
+            Task15.Visible = x;
+            Task16.Visible = x;
+            Task17.Visible = x;
+            Task18.Visible = x;
+            Task1ResultButton.Visible = x;
+        }
+
+        private void Task1ResultButton_Click(object sender, EventArgs e)
+        {
+            int k = 0;
+            if (Task11.BackColor == Task12.BackColor)
+            {
+                k++;
+            }if (Task13.BackColor == Task14.BackColor)
+            {
+                k++;
+            }if (Task15.BackColor == Task16.BackColor)
+            {
+                k++;
+            }if (Task17.BackColor == Task18.BackColor)
+            {
+                k++;
+            }
+            Task1ButtonVisible(false);
+            Task1Text.Text = "Верно";
+            if(k!=4)
+                Task1Text.Text = "Неверно";
         }
     }
 }

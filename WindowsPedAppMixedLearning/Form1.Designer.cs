@@ -73,6 +73,7 @@
             this.Task12 = new System.Windows.Forms.Button();
             this.Task11 = new System.Windows.Forms.Button();
             this.Task1Text = new System.Windows.Forms.Label();
+            this.Task1ResultButton = new System.Windows.Forms.Button();
             this.MainMenuPanel.SuspendLayout();
             this.MainButtonPanel.SuspendLayout();
             this.TheoryPanel.SuspendLayout();
@@ -484,6 +485,7 @@
             // 
             this.Task1Panel.BackColor = System.Drawing.SystemColors.Control;
             this.Task1Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Task1Panel.Controls.Add(this.Task1ResultButton);
             this.Task1Panel.Controls.Add(this.Task18);
             this.Task1Panel.Controls.Add(this.Task17);
             this.Task1Panel.Controls.Add(this.Task16);
@@ -602,6 +604,17 @@
             this.Task1Text.Text = "Text";
             this.Task1Text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Task1ResultButton
+            // 
+            this.Task1ResultButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task1ResultButton.Location = new System.Drawing.Point(20, 492);
+            this.Task1ResultButton.Name = "Task1ResultButton";
+            this.Task1ResultButton.Size = new System.Drawing.Size(400, 68);
+            this.Task1ResultButton.TabIndex = 14;
+            this.Task1ResultButton.Text = "Проверить";
+            this.Task1ResultButton.UseVisualStyleBackColor = true;
+            this.Task1ResultButton.Click += new System.EventHandler(this.Task1ResultButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -680,5 +693,6 @@
         private Button Task11;
         private Label Task1Text;
         private Button Task2B2;
+        private Button Task1ResultButton;
     }
 }
