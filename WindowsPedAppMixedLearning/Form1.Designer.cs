@@ -126,7 +126,7 @@
             // 
             // MainMenuPanel
             // 
-            this.MainMenuPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.MainMenuPanel.BackColor = System.Drawing.Color.Transparent;
             this.MainMenuPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MainMenuPanel.Controls.Add(this.OpenInformationButton);
             this.MainMenuPanel.Controls.Add(this.OpenLiteraturesButton);
@@ -139,46 +139,50 @@
             // 
             // OpenInformationButton
             // 
+            this.OpenInformationButton.BackColor = System.Drawing.Color.White;
             this.OpenInformationButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OpenInformationButton.Location = new System.Drawing.Point(80, 384);
             this.OpenInformationButton.Name = "OpenInformationButton";
             this.OpenInformationButton.Size = new System.Drawing.Size(278, 56);
             this.OpenInformationButton.TabIndex = 3;
             this.OpenInformationButton.Text = "О приложении";
-            this.OpenInformationButton.UseVisualStyleBackColor = true;
+            this.OpenInformationButton.UseVisualStyleBackColor = false;
             this.OpenInformationButton.Click += new System.EventHandler(this.OpenInformation);
             // 
             // OpenLiteraturesButton
             // 
+            this.OpenLiteraturesButton.BackColor = System.Drawing.Color.White;
             this.OpenLiteraturesButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OpenLiteraturesButton.Location = new System.Drawing.Point(80, 296);
             this.OpenLiteraturesButton.Name = "OpenLiteraturesButton";
             this.OpenLiteraturesButton.Size = new System.Drawing.Size(278, 56);
             this.OpenLiteraturesButton.TabIndex = 2;
             this.OpenLiteraturesButton.Text = "Доп. литература";
-            this.OpenLiteraturesButton.UseVisualStyleBackColor = true;
+            this.OpenLiteraturesButton.UseVisualStyleBackColor = false;
             this.OpenLiteraturesButton.Click += new System.EventHandler(this.OpenLiteratures);
             // 
             // OpenTasksButton
             // 
+            this.OpenTasksButton.BackColor = System.Drawing.Color.White;
             this.OpenTasksButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OpenTasksButton.Location = new System.Drawing.Point(80, 210);
             this.OpenTasksButton.Name = "OpenTasksButton";
             this.OpenTasksButton.Size = new System.Drawing.Size(278, 56);
             this.OpenTasksButton.TabIndex = 1;
             this.OpenTasksButton.Text = "Задания";
-            this.OpenTasksButton.UseVisualStyleBackColor = true;
+            this.OpenTasksButton.UseVisualStyleBackColor = false;
             this.OpenTasksButton.Click += new System.EventHandler(this.OpenTasks);
             // 
             // OpenTheoryButton
             // 
+            this.OpenTheoryButton.BackColor = System.Drawing.Color.White;
             this.OpenTheoryButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OpenTheoryButton.Location = new System.Drawing.Point(80, 124);
             this.OpenTheoryButton.Name = "OpenTheoryButton";
             this.OpenTheoryButton.Size = new System.Drawing.Size(278, 56);
             this.OpenTheoryButton.TabIndex = 0;
             this.OpenTheoryButton.Text = "Теория";
-            this.OpenTheoryButton.UseVisualStyleBackColor = true;
+            this.OpenTheoryButton.UseVisualStyleBackColor = false;
             this.OpenTheoryButton.Click += new System.EventHandler(this.OpenTheory);
             // 
             // MainButtonPanel
@@ -194,6 +198,7 @@
             // 
             // OpenMainMenuButton
             // 
+            this.OpenMainMenuButton.BackColor = System.Drawing.Color.White;
             this.OpenMainMenuButton.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OpenMainMenuButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.OpenMainMenuButton.Location = new System.Drawing.Point(129, 3);
@@ -201,11 +206,12 @@
             this.OpenMainMenuButton.Size = new System.Drawing.Size(180, 47);
             this.OpenMainMenuButton.TabIndex = 2;
             this.OpenMainMenuButton.Text = "⌂";
-            this.OpenMainMenuButton.UseVisualStyleBackColor = true;
+            this.OpenMainMenuButton.UseVisualStyleBackColor = false;
             this.OpenMainMenuButton.Click += new System.EventHandler(this.OpenMainMenu);
             // 
             // NextButton
             // 
+            this.NextButton.BackColor = System.Drawing.Color.White;
             this.NextButton.Enabled = false;
             this.NextButton.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NextButton.Location = new System.Drawing.Point(315, 3);
@@ -213,23 +219,24 @@
             this.NextButton.Size = new System.Drawing.Size(120, 47);
             this.NextButton.TabIndex = 1;
             this.NextButton.Text = "→";
-            this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.UseVisualStyleBackColor = false;
             this.NextButton.Click += new System.EventHandler(this.PrevButton_Click);
             // 
             // BackButton
             // 
+            this.BackButton.BackColor = System.Drawing.Color.White;
             this.BackButton.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BackButton.Location = new System.Drawing.Point(3, 3);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(120, 47);
             this.BackButton.TabIndex = 0;
             this.BackButton.Text = "←";
-            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // TheoryPanel
             // 
-            this.TheoryPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.TheoryPanel.BackColor = System.Drawing.Color.Transparent;
             this.TheoryPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TheoryPanel.Controls.Add(this.TheoryButton4);
             this.TheoryPanel.Controls.Add(this.TheoryButton3);
@@ -242,51 +249,55 @@
             // 
             // TheoryButton4
             // 
+            this.TheoryButton4.BackColor = System.Drawing.Color.White;
             this.TheoryButton4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TheoryButton4.Location = new System.Drawing.Point(54, 312);
             this.TheoryButton4.Name = "TheoryButton4";
             this.TheoryButton4.Size = new System.Drawing.Size(333, 82);
             this.TheoryButton4.TabIndex = 7;
             this.TheoryButton4.Text = "Преимущества и недостатки смешанного обучения";
-            this.TheoryButton4.UseVisualStyleBackColor = true;
+            this.TheoryButton4.UseVisualStyleBackColor = false;
             this.TheoryButton4.Click += new System.EventHandler(this.TheoryButton4_Click);
             // 
             // TheoryButton3
             // 
+            this.TheoryButton3.BackColor = System.Drawing.Color.White;
             this.TheoryButton3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TheoryButton3.Location = new System.Drawing.Point(54, 184);
             this.TheoryButton3.Name = "TheoryButton3";
             this.TheoryButton3.Size = new System.Drawing.Size(333, 82);
             this.TheoryButton3.TabIndex = 6;
             this.TheoryButton3.Text = "Модели смешанного обучения";
-            this.TheoryButton3.UseVisualStyleBackColor = true;
+            this.TheoryButton3.UseVisualStyleBackColor = false;
             this.TheoryButton3.Click += new System.EventHandler(this.TheoryButton3_Click);
             // 
             // TheoryButton2
             // 
+            this.TheoryButton2.BackColor = System.Drawing.Color.White;
             this.TheoryButton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TheoryButton2.Location = new System.Drawing.Point(54, 440);
             this.TheoryButton2.Name = "TheoryButton2";
             this.TheoryButton2.Size = new System.Drawing.Size(333, 82);
             this.TheoryButton2.TabIndex = 5;
             this.TheoryButton2.Text = "Анализ эффективности смешанного обучения";
-            this.TheoryButton2.UseVisualStyleBackColor = true;
+            this.TheoryButton2.UseVisualStyleBackColor = false;
             this.TheoryButton2.Click += new System.EventHandler(this.TheoryButton2_Click);
             // 
             // TheoryButton1
             // 
+            this.TheoryButton1.BackColor = System.Drawing.Color.White;
             this.TheoryButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TheoryButton1.Location = new System.Drawing.Point(54, 56);
             this.TheoryButton1.Name = "TheoryButton1";
             this.TheoryButton1.Size = new System.Drawing.Size(333, 83);
             this.TheoryButton1.TabIndex = 4;
             this.TheoryButton1.Text = "Основы смешанного обучения";
-            this.TheoryButton1.UseVisualStyleBackColor = true;
+            this.TheoryButton1.UseVisualStyleBackColor = false;
             this.TheoryButton1.Click += new System.EventHandler(this.TheoryButton1_Click);
             // 
             // LiteraturesPanel
             // 
-            this.LiteraturesPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.LiteraturesPanel.BackColor = System.Drawing.Color.Transparent;
             this.LiteraturesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LiteraturesPanel.Controls.Add(this.LiteraturesTextBox);
             this.LiteraturesPanel.Location = new System.Drawing.Point(474, 12);
@@ -296,6 +307,7 @@
             // 
             // LiteraturesTextBox
             // 
+            this.LiteraturesTextBox.BackColor = System.Drawing.Color.AntiqueWhite;
             this.LiteraturesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LiteraturesTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LiteraturesTextBox.Location = new System.Drawing.Point(20, 20);
@@ -307,7 +319,7 @@
             // 
             // InformationPanel
             // 
-            this.InformationPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.InformationPanel.BackColor = System.Drawing.Color.Transparent;
             this.InformationPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.InformationPanel.Controls.Add(this.InformationTextBox);
             this.InformationPanel.Location = new System.Drawing.Point(474, 12);
@@ -317,6 +329,7 @@
             // 
             // InformationTextBox
             // 
+            this.InformationTextBox.BackColor = System.Drawing.Color.AntiqueWhite;
             this.InformationTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.InformationTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InformationTextBox.Location = new System.Drawing.Point(20, 20);
@@ -328,7 +341,7 @@
             // 
             // TheoryTextPanel
             // 
-            this.TheoryTextPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.TheoryTextPanel.BackColor = System.Drawing.Color.Transparent;
             this.TheoryTextPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TheoryTextPanel.Controls.Add(this.TheoryTextBox1);
             this.TheoryTextPanel.Location = new System.Drawing.Point(937, 12);
@@ -338,6 +351,7 @@
             // 
             // TheoryTextBox1
             // 
+            this.TheoryTextBox1.BackColor = System.Drawing.Color.AntiqueWhite;
             this.TheoryTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TheoryTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TheoryTextBox1.Location = new System.Drawing.Point(20, 20);
@@ -349,7 +363,7 @@
             // 
             // TasksPanel
             // 
-            this.TasksPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.TasksPanel.BackColor = System.Drawing.Color.Transparent;
             this.TasksPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TasksPanel.Controls.Add(this.OpenTask3Button);
             this.TasksPanel.Controls.Add(this.OpenTask2Button);
@@ -361,41 +375,44 @@
             // 
             // OpenTask3Button
             // 
+            this.OpenTask3Button.BackColor = System.Drawing.Color.White;
             this.OpenTask3Button.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OpenTask3Button.Location = new System.Drawing.Point(54, 492);
             this.OpenTask3Button.Name = "OpenTask3Button";
             this.OpenTask3Button.Size = new System.Drawing.Size(333, 82);
             this.OpenTask3Button.TabIndex = 6;
             this.OpenTask3Button.Text = "Тест";
-            this.OpenTask3Button.UseVisualStyleBackColor = true;
+            this.OpenTask3Button.UseVisualStyleBackColor = false;
             this.OpenTask3Button.Visible = false;
             this.OpenTask3Button.Click += new System.EventHandler(this.OpenTask3);
             // 
             // OpenTask2Button
             // 
+            this.OpenTask2Button.BackColor = System.Drawing.Color.White;
             this.OpenTask2Button.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OpenTask2Button.Location = new System.Drawing.Point(54, 156);
             this.OpenTask2Button.Name = "OpenTask2Button";
             this.OpenTask2Button.Size = new System.Drawing.Size(333, 82);
             this.OpenTask2Button.TabIndex = 5;
             this.OpenTask2Button.Text = "Соответствия";
-            this.OpenTask2Button.UseVisualStyleBackColor = true;
+            this.OpenTask2Button.UseVisualStyleBackColor = false;
             this.OpenTask2Button.Click += new System.EventHandler(this.OpenTask2);
             // 
             // OpenTask1Button
             // 
+            this.OpenTask1Button.BackColor = System.Drawing.Color.White;
             this.OpenTask1Button.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OpenTask1Button.Location = new System.Drawing.Point(54, 56);
             this.OpenTask1Button.Name = "OpenTask1Button";
             this.OpenTask1Button.Size = new System.Drawing.Size(333, 82);
             this.OpenTask1Button.TabIndex = 4;
             this.OpenTask1Button.Text = "Найди пару";
-            this.OpenTask1Button.UseVisualStyleBackColor = true;
+            this.OpenTask1Button.UseVisualStyleBackColor = false;
             this.OpenTask1Button.Click += new System.EventHandler(this.OpenTask1);
             // 
             // Task2Panel
             // 
-            this.Task2Panel.BackColor = System.Drawing.SystemColors.Control;
+            this.Task2Panel.BackColor = System.Drawing.Color.Transparent;
             this.Task2Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Task2Panel.Controls.Add(this.Task2B2);
             this.Task2Panel.Controls.Add(this.Task28);
@@ -414,101 +431,110 @@
             // 
             // Task2B2
             // 
+            this.Task2B2.BackColor = System.Drawing.Color.White;
             this.Task2B2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task2B2.Location = new System.Drawing.Point(20, 492);
             this.Task2B2.Name = "Task2B2";
             this.Task2B2.Size = new System.Drawing.Size(400, 68);
             this.Task2B2.TabIndex = 13;
             this.Task2B2.Text = "Ы";
-            this.Task2B2.UseVisualStyleBackColor = true;
+            this.Task2B2.UseVisualStyleBackColor = false;
             this.Task2B2.Click += new System.EventHandler(this.Task2B2_Click);
             // 
             // Task28
             // 
+            this.Task28.BackColor = System.Drawing.Color.White;
             this.Task28.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task28.Location = new System.Drawing.Point(260, 371);
             this.Task28.Name = "Task28";
             this.Task28.Size = new System.Drawing.Size(160, 69);
             this.Task28.TabIndex = 12;
             this.Task28.Text = "1";
-            this.Task28.UseVisualStyleBackColor = true;
+            this.Task28.UseVisualStyleBackColor = false;
             this.Task28.Click += new System.EventHandler(this.Task28_Click);
             // 
             // Task27
             // 
+            this.Task27.BackColor = System.Drawing.Color.White;
             this.Task27.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task27.Location = new System.Drawing.Point(19, 371);
             this.Task27.Name = "Task27";
             this.Task27.Size = new System.Drawing.Size(160, 69);
             this.Task27.TabIndex = 11;
             this.Task27.Text = "1";
-            this.Task27.UseVisualStyleBackColor = true;
+            this.Task27.UseVisualStyleBackColor = false;
             this.Task27.Click += new System.EventHandler(this.Task27_Click);
             // 
             // Task26
             // 
+            this.Task26.BackColor = System.Drawing.Color.White;
             this.Task26.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task26.Location = new System.Drawing.Point(259, 287);
             this.Task26.Name = "Task26";
             this.Task26.Size = new System.Drawing.Size(160, 69);
             this.Task26.TabIndex = 10;
             this.Task26.Text = "1";
-            this.Task26.UseVisualStyleBackColor = true;
+            this.Task26.UseVisualStyleBackColor = false;
             this.Task26.Click += new System.EventHandler(this.Task26_Click);
             // 
             // Task25
             // 
+            this.Task25.BackColor = System.Drawing.Color.White;
             this.Task25.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task25.Location = new System.Drawing.Point(19, 287);
             this.Task25.Name = "Task25";
             this.Task25.Size = new System.Drawing.Size(160, 69);
             this.Task25.TabIndex = 9;
             this.Task25.Text = "1";
-            this.Task25.UseVisualStyleBackColor = true;
+            this.Task25.UseVisualStyleBackColor = false;
             this.Task25.Click += new System.EventHandler(this.Task25_Click);
             // 
             // Task24
             // 
+            this.Task24.BackColor = System.Drawing.Color.White;
             this.Task24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task24.Location = new System.Drawing.Point(260, 203);
             this.Task24.Name = "Task24";
             this.Task24.Size = new System.Drawing.Size(160, 69);
             this.Task24.TabIndex = 8;
             this.Task24.Text = "1";
-            this.Task24.UseVisualStyleBackColor = true;
+            this.Task24.UseVisualStyleBackColor = false;
             this.Task24.Click += new System.EventHandler(this.Task24_Click);
             // 
             // Task23
             // 
+            this.Task23.BackColor = System.Drawing.Color.White;
             this.Task23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task23.Location = new System.Drawing.Point(20, 203);
             this.Task23.Name = "Task23";
             this.Task23.Size = new System.Drawing.Size(160, 69);
             this.Task23.TabIndex = 7;
             this.Task23.Text = "1";
-            this.Task23.UseVisualStyleBackColor = true;
+            this.Task23.UseVisualStyleBackColor = false;
             this.Task23.Click += new System.EventHandler(this.Task23_Click);
             // 
             // Task22
             // 
+            this.Task22.BackColor = System.Drawing.Color.White;
             this.Task22.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task22.Location = new System.Drawing.Point(260, 120);
             this.Task22.Name = "Task22";
             this.Task22.Size = new System.Drawing.Size(160, 69);
             this.Task22.TabIndex = 6;
             this.Task22.Text = "1";
-            this.Task22.UseVisualStyleBackColor = true;
+            this.Task22.UseVisualStyleBackColor = false;
             this.Task22.Click += new System.EventHandler(this.Task22_Click);
             // 
             // Task21
             // 
+            this.Task21.BackColor = System.Drawing.Color.White;
             this.Task21.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task21.Location = new System.Drawing.Point(20, 120);
             this.Task21.Name = "Task21";
             this.Task21.Size = new System.Drawing.Size(160, 69);
             this.Task21.TabIndex = 5;
             this.Task21.Text = "1\r\n1\r\n1\r\n";
-            this.Task21.UseVisualStyleBackColor = true;
+            this.Task21.UseVisualStyleBackColor = false;
             this.Task21.Click += new System.EventHandler(this.Task21_Click);
             // 
             // Task2Text
@@ -525,7 +551,7 @@
             // 
             // Task1Panel
             // 
-            this.Task1Panel.BackColor = System.Drawing.SystemColors.Control;
+            this.Task1Panel.BackColor = System.Drawing.Color.Transparent;
             this.Task1Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Task1Panel.Controls.Add(this.Task1ResultButton);
             this.Task1Panel.Controls.Add(this.Task18);
@@ -544,17 +570,19 @@
             // 
             // Task1ResultButton
             // 
+            this.Task1ResultButton.BackColor = System.Drawing.Color.White;
             this.Task1ResultButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task1ResultButton.Location = new System.Drawing.Point(19, 528);
             this.Task1ResultButton.Name = "Task1ResultButton";
             this.Task1ResultButton.Size = new System.Drawing.Size(400, 46);
             this.Task1ResultButton.TabIndex = 14;
             this.Task1ResultButton.Text = "Проверить";
-            this.Task1ResultButton.UseVisualStyleBackColor = true;
+            this.Task1ResultButton.UseVisualStyleBackColor = false;
             this.Task1ResultButton.Click += new System.EventHandler(this.Task1ResultButton_Click);
             // 
             // Task18
             // 
+            this.Task18.BackColor = System.Drawing.Color.White;
             this.Task18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task18.Location = new System.Drawing.Point(10, 442);
             this.Task18.Name = "Task18";
@@ -562,12 +590,12 @@
             this.Task18.TabIndex = 12;
             this.Task18.Text = "Основа этой модели смешанного обучения в том, что ученики не ограничены по времен" +
     "и тем или иным видом учебной деятельности\r\n";
-            this.Task18.UseVisualStyleBackColor = true;
+            this.Task18.UseVisualStyleBackColor = false;
             this.Task18.Click += new System.EventHandler(this.Task11_Click);
             // 
             // Task17
             // 
-            this.Task17.BackColor = System.Drawing.Color.Fuchsia;
+            this.Task17.BackColor = System.Drawing.Color.Violet;
             this.Task17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task17.Location = new System.Drawing.Point(260, 83);
             this.Task17.Name = "Task17";
@@ -579,18 +607,19 @@
             // 
             // Task16
             // 
+            this.Task16.BackColor = System.Drawing.Color.White;
             this.Task16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task16.Location = new System.Drawing.Point(10, 345);
             this.Task16.Name = "Task16";
             this.Task16.Size = new System.Drawing.Size(415, 89);
             this.Task16.TabIndex = 10;
             this.Task16.Text = resources.GetString("Task16.Text");
-            this.Task16.UseVisualStyleBackColor = true;
+            this.Task16.UseVisualStyleBackColor = false;
             this.Task16.Click += new System.EventHandler(this.Task11_Click);
             // 
             // Task15
             // 
-            this.Task15.BackColor = System.Drawing.Color.Red;
+            this.Task15.BackColor = System.Drawing.Color.LightCoral;
             this.Task15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task15.Location = new System.Drawing.Point(13, 83);
             this.Task15.Name = "Task15";
@@ -602,18 +631,19 @@
             // 
             // Task14
             // 
+            this.Task14.BackColor = System.Drawing.Color.White;
             this.Task14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task14.Location = new System.Drawing.Point(10, 197);
             this.Task14.Name = "Task14";
             this.Task14.Size = new System.Drawing.Size(415, 137);
             this.Task14.TabIndex = 8;
             this.Task14.Text = resources.GetString("Task14.Text");
-            this.Task14.UseVisualStyleBackColor = true;
+            this.Task14.UseVisualStyleBackColor = false;
             this.Task14.Click += new System.EventHandler(this.Task11_Click);
             // 
             // Task13
             // 
-            this.Task13.BackColor = System.Drawing.Color.Blue;
+            this.Task13.BackColor = System.Drawing.Color.CornflowerBlue;
             this.Task13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task13.Location = new System.Drawing.Point(260, 45);
             this.Task13.Name = "Task13";
@@ -625,6 +655,7 @@
             // 
             // Task12
             // 
+            this.Task12.BackColor = System.Drawing.Color.White;
             this.Task12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task12.Location = new System.Drawing.Point(10, 124);
             this.Task12.Name = "Task12";
@@ -632,12 +663,12 @@
             this.Task12.TabIndex = 6;
             this.Task12.Text = "Учащиеся работают дома в учебной онлайн-среде: знакомятся с материалом или повтор" +
     "яют изученный. В классе происходит закрепление материала и работа с ним";
-            this.Task12.UseVisualStyleBackColor = true;
+            this.Task12.UseVisualStyleBackColor = false;
             this.Task12.Click += new System.EventHandler(this.Task11_Click);
             // 
             // Task11
             // 
-            this.Task11.BackColor = System.Drawing.Color.Lime;
+            this.Task11.BackColor = System.Drawing.Color.LightGreen;
             this.Task11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Task11.Location = new System.Drawing.Point(13, 45);
             this.Task11.Name = "Task11";
@@ -1019,17 +1050,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1389, 661);
-            this.Controls.Add(this.InformationPanel);
-            this.Controls.Add(this.LiteraturesPanel);
-            this.Controls.Add(this.Task2Panel);
-            this.Controls.Add(this.MainMenuPanel);
-            this.Controls.Add(this.Task1Panel);
-            this.Controls.Add(this.TheoryPanel);
-            this.Controls.Add(this.TasksPanel);
-            this.Controls.Add(this.TheoryTextPanel);
-            this.Controls.Add(this.MainButtonPanel);
             this.Controls.Add(this.Task3Panel);
+            this.Controls.Add(this.MainButtonPanel);
+            this.Controls.Add(this.TheoryTextPanel);
+            this.Controls.Add(this.TasksPanel);
+            this.Controls.Add(this.TheoryPanel);
+            this.Controls.Add(this.Task1Panel);
+            this.Controls.Add(this.MainMenuPanel);
+            this.Controls.Add(this.Task2Panel);
+            this.Controls.Add(this.LiteraturesPanel);
+            this.Controls.Add(this.InformationPanel);
             this.HelpButton = true;
             this.Name = "Form1";
             this.Text = "Form1";
