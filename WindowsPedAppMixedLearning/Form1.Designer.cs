@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             MainMenuPanel = new Panel();
+            OpenSettingButton = new Button();
+            MainMenuOpenRegisterPanel = new Button();
+            MainMenuOpenAuthPanel = new Button();
             OpenInformationButton = new Button();
             OpenLiteraturesButton = new Button();
             OpenTasksButton = new Button();
@@ -39,9 +42,9 @@
             NextButton = new Button();
             BackButton = new Button();
             TheoryPanel = new Panel();
-            TheoryButton4 = new Button();
             TheoryButton3 = new Button();
             TheoryButton2 = new Button();
+            TheoryButton4 = new Button();
             TheoryButton1 = new Button();
             LiteraturesPanel = new Panel();
             LiteraturesTextBox = new RichTextBox();
@@ -108,6 +111,12 @@
             Task3Text1 = new Label();
             Task3Result = new Button();
             RegisterPanel = new Panel();
+            OpenAuthPanel = new Button();
+            RegisterUserPanel = new Panel();
+            RegisterLabelCode = new Label();
+            RegisterCode = new TextBox();
+            RegisterRadioButtonStudent = new RadioButton();
+            RegisterRadioButtonTeacher = new RadioButton();
             RegisterInformation = new Label();
             RegisterErrorPassword = new Label();
             RegisterErrorLogin = new Label();
@@ -119,7 +128,67 @@
             RegisterNameTextBox = new TextBox();
             RegisterText1 = new Label();
             RegisterButton = new Button();
-            RegisterUserPanel = new Panel();
+            AuthPanel = new Panel();
+            OpenRegisterPanel = new Button();
+            AuthInformation = new Label();
+            AuthPasswordTextBox = new TextBox();
+            AuthLabelPassword = new Label();
+            AuthLoginTextBox = new TextBox();
+            AuthLabelLogin = new Label();
+            AuthLoginButton = new Button();
+            SettingPanel = new Panel();
+            SettingLabel = new Label();
+            SettingTextBox = new RichTextBox();
+            OpenSettingStudentButton = new Button();
+            SettingUserPanel = new Panel();
+            SettingUserTaskPanel3 = new Panel();
+            SettingUserTask3Radio1 = new RadioButton();
+            SettingUserTask3Radio0 = new RadioButton();
+            SettingUserTaskPanel2 = new Panel();
+            SettingUserTask2Radio1 = new RadioButton();
+            SettingUserTask2Radio0 = new RadioButton();
+            SettingUserTaskPanel1 = new Panel();
+            SettingUserTask1Radio1 = new RadioButton();
+            SettingUserTask1Radio0 = new RadioButton();
+            SettingUserTaskLabel3 = new Label();
+            SettingUserTaskLabel2 = new Label();
+            SettingUserTaskLabel1 = new Label();
+            SettingUserTheoryPanel8 = new Panel();
+            SettingUserTheory8Radio1 = new RadioButton();
+            SettingUserTheory8Radio0 = new RadioButton();
+            SettingUserTheoryPanel7 = new Panel();
+            SettingUserTheory7Radio1 = new RadioButton();
+            SettingUserTheory7Radio0 = new RadioButton();
+            SettingUserTheoryPanel6 = new Panel();
+            SettingUserTheory6Radio1 = new RadioButton();
+            SettingUserTheory6Radio0 = new RadioButton();
+            SettingUserTheoryPanel5 = new Panel();
+            SettingUserTheory5Radio1 = new RadioButton();
+            SettingUserTheory5Radio0 = new RadioButton();
+            SettingUserTheoryPanel4 = new Panel();
+            SettingUserTheory4Radio1 = new RadioButton();
+            SettingUserTheory4Radio0 = new RadioButton();
+            SettingUserTheoryPanel3 = new Panel();
+            SettingUserTheory3Radio1 = new RadioButton();
+            SettingUserTheory3Radio0 = new RadioButton();
+            SettingUserTheoryPanel2 = new Panel();
+            SettingUserTheory2Radio1 = new RadioButton();
+            SettingUserTheory2Radio0 = new RadioButton();
+            SettingUserTheoryPanel1 = new Panel();
+            SettingUserTheory1Radio1 = new RadioButton();
+            SettingUserTheory1Radio0 = new RadioButton();
+            SettingUserTheoryLabel8 = new Label();
+            SettingUserTheoryLabel7 = new Label();
+            SettingUserTheoryLabel6 = new Label();
+            SettingUserTheoryLabel5 = new Label();
+            SettingUserTheoryLabel4 = new Label();
+            SettingUserTheoryLabel3 = new Label();
+            SettingUserTheoryLabel2 = new Label();
+            SettingUserTheoryLabel1 = new Label();
+            SettingUserLabel2 = new Label();
+            SettingUserLabel1 = new Label();
+            SettingUserLabel = new Label();
+            SettingUserSaveButton = new Button();
             MainMenuPanel.SuspendLayout();
             MainButtonPanel.SuspendLayout();
             TheoryPanel.SuspendLayout();
@@ -136,12 +205,30 @@
             Task3RadioPanel2.SuspendLayout();
             Task3RadioPanel1.SuspendLayout();
             RegisterPanel.SuspendLayout();
+            RegisterUserPanel.SuspendLayout();
+            AuthPanel.SuspendLayout();
+            SettingPanel.SuspendLayout();
+            SettingUserPanel.SuspendLayout();
+            SettingUserTaskPanel3.SuspendLayout();
+            SettingUserTaskPanel2.SuspendLayout();
+            SettingUserTaskPanel1.SuspendLayout();
+            SettingUserTheoryPanel8.SuspendLayout();
+            SettingUserTheoryPanel7.SuspendLayout();
+            SettingUserTheoryPanel6.SuspendLayout();
+            SettingUserTheoryPanel5.SuspendLayout();
+            SettingUserTheoryPanel4.SuspendLayout();
+            SettingUserTheoryPanel3.SuspendLayout();
+            SettingUserTheoryPanel2.SuspendLayout();
+            SettingUserTheoryPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // MainMenuPanel
             // 
             MainMenuPanel.BackColor = Color.Transparent;
             MainMenuPanel.BorderStyle = BorderStyle.FixedSingle;
+            MainMenuPanel.Controls.Add(OpenSettingButton);
+            MainMenuPanel.Controls.Add(MainMenuOpenRegisterPanel);
+            MainMenuPanel.Controls.Add(MainMenuOpenAuthPanel);
             MainMenuPanel.Controls.Add(OpenInformationButton);
             MainMenuPanel.Controls.Add(OpenLiteraturesButton);
             MainMenuPanel.Controls.Add(OpenTasksButton);
@@ -150,6 +237,42 @@
             MainMenuPanel.Name = "MainMenuPanel";
             MainMenuPanel.Size = new Size(440, 580);
             MainMenuPanel.TabIndex = 0;
+            // 
+            // OpenSettingButton
+            // 
+            OpenSettingButton.BackColor = Color.White;
+            OpenSettingButton.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            OpenSettingButton.Location = new Point(80, 472);
+            OpenSettingButton.Name = "OpenSettingButton";
+            OpenSettingButton.Size = new Size(278, 56);
+            OpenSettingButton.TabIndex = 6;
+            OpenSettingButton.Text = "Доступ студентов";
+            OpenSettingButton.UseVisualStyleBackColor = false;
+            OpenSettingButton.Click += OpenSetting;
+            // 
+            // MainMenuOpenRegisterPanel
+            // 
+            MainMenuOpenRegisterPanel.BackColor = Color.White;
+            MainMenuOpenRegisterPanel.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            MainMenuOpenRegisterPanel.Location = new Point(212, 3);
+            MainMenuOpenRegisterPanel.Name = "MainMenuOpenRegisterPanel";
+            MainMenuOpenRegisterPanel.Size = new Size(110, 27);
+            MainMenuOpenRegisterPanel.TabIndex = 5;
+            MainMenuOpenRegisterPanel.Text = "Регистрация";
+            MainMenuOpenRegisterPanel.UseVisualStyleBackColor = false;
+            MainMenuOpenRegisterPanel.Click += OpenRegisterPanel_Click;
+            // 
+            // MainMenuOpenAuthPanel
+            // 
+            MainMenuOpenAuthPanel.BackColor = Color.White;
+            MainMenuOpenAuthPanel.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            MainMenuOpenAuthPanel.Location = new Point(328, 3);
+            MainMenuOpenAuthPanel.Name = "MainMenuOpenAuthPanel";
+            MainMenuOpenAuthPanel.Size = new Size(110, 27);
+            MainMenuOpenAuthPanel.TabIndex = 4;
+            MainMenuOpenAuthPanel.Text = "Авторизация";
+            MainMenuOpenAuthPanel.UseVisualStyleBackColor = false;
+            MainMenuOpenAuthPanel.Click += OpenAuthPanel_Click;
             // 
             // OpenInformationButton
             // 
@@ -252,36 +375,24 @@
             // 
             TheoryPanel.BackColor = Color.Transparent;
             TheoryPanel.BorderStyle = BorderStyle.FixedSingle;
-            TheoryPanel.Controls.Add(TheoryButton4);
             TheoryPanel.Controls.Add(TheoryButton3);
             TheoryPanel.Controls.Add(TheoryButton2);
+            TheoryPanel.Controls.Add(TheoryButton4);
             TheoryPanel.Controls.Add(TheoryButton1);
             TheoryPanel.Location = new Point(474, 12);
             TheoryPanel.Name = "TheoryPanel";
             TheoryPanel.Size = new Size(440, 580);
             TheoryPanel.TabIndex = 1;
             // 
-            // TheoryButton4
-            // 
-            TheoryButton4.BackColor = Color.White;
-            TheoryButton4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TheoryButton4.Location = new Point(54, 312);
-            TheoryButton4.Name = "TheoryButton4";
-            TheoryButton4.Size = new Size(333, 82);
-            TheoryButton4.TabIndex = 7;
-            TheoryButton4.Text = "Преимущества и недостатки смешанного обучения";
-            TheoryButton4.UseVisualStyleBackColor = false;
-            TheoryButton4.Click += TheoryButton4_Click;
-            // 
             // TheoryButton3
             // 
             TheoryButton3.BackColor = Color.White;
             TheoryButton3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TheoryButton3.Location = new Point(54, 184);
+            TheoryButton3.Location = new Point(54, 312);
             TheoryButton3.Name = "TheoryButton3";
             TheoryButton3.Size = new Size(333, 82);
-            TheoryButton3.TabIndex = 6;
-            TheoryButton3.Text = "Модели смешанного обучения";
+            TheoryButton3.TabIndex = 7;
+            TheoryButton3.Text = "Преимущества и недостатки смешанного обучения";
             TheoryButton3.UseVisualStyleBackColor = false;
             TheoryButton3.Click += TheoryButton3_Click;
             // 
@@ -289,13 +400,25 @@
             // 
             TheoryButton2.BackColor = Color.White;
             TheoryButton2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TheoryButton2.Location = new Point(54, 440);
+            TheoryButton2.Location = new Point(54, 184);
             TheoryButton2.Name = "TheoryButton2";
             TheoryButton2.Size = new Size(333, 82);
-            TheoryButton2.TabIndex = 5;
-            TheoryButton2.Text = "Анализ эффективности смешанного обучения";
+            TheoryButton2.TabIndex = 6;
+            TheoryButton2.Text = "Модели смешанного обучения";
             TheoryButton2.UseVisualStyleBackColor = false;
             TheoryButton2.Click += TheoryButton2_Click;
+            // 
+            // TheoryButton4
+            // 
+            TheoryButton4.BackColor = Color.White;
+            TheoryButton4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TheoryButton4.Location = new Point(54, 440);
+            TheoryButton4.Name = "TheoryButton4";
+            TheoryButton4.Size = new Size(333, 82);
+            TheoryButton4.TabIndex = 5;
+            TheoryButton4.Text = "Анализ эффективности смешанного обучения";
+            TheoryButton4.UseVisualStyleBackColor = false;
+            TheoryButton4.Click += TheoryButton4_Click;
             // 
             // TheoryButton1
             // 
@@ -1061,6 +1184,7 @@
             // 
             RegisterPanel.BackColor = Color.Transparent;
             RegisterPanel.BorderStyle = BorderStyle.FixedSingle;
+            RegisterPanel.Controls.Add(OpenAuthPanel);
             RegisterPanel.Controls.Add(RegisterUserPanel);
             RegisterPanel.Controls.Add(RegisterInformation);
             RegisterPanel.Controls.Add(RegisterErrorPassword);
@@ -1077,6 +1201,71 @@
             RegisterPanel.Name = "RegisterPanel";
             RegisterPanel.Size = new Size(440, 580);
             RegisterPanel.TabIndex = 9;
+            // 
+            // OpenAuthPanel
+            // 
+            OpenAuthPanel.BackColor = Color.White;
+            OpenAuthPanel.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            OpenAuthPanel.Location = new Point(54, 528);
+            OpenAuthPanel.Name = "OpenAuthPanel";
+            OpenAuthPanel.Size = new Size(333, 36);
+            OpenAuthPanel.TabIndex = 18;
+            OpenAuthPanel.Text = "У меня есть аккаунт\r\n";
+            OpenAuthPanel.UseVisualStyleBackColor = false;
+            OpenAuthPanel.Click += OpenAuthPanel_Click;
+            // 
+            // RegisterUserPanel
+            // 
+            RegisterUserPanel.Controls.Add(RegisterLabelCode);
+            RegisterUserPanel.Controls.Add(RegisterCode);
+            RegisterUserPanel.Controls.Add(RegisterRadioButtonStudent);
+            RegisterUserPanel.Controls.Add(RegisterRadioButtonTeacher);
+            RegisterUserPanel.Location = new Point(103, 196);
+            RegisterUserPanel.Name = "RegisterUserPanel";
+            RegisterUserPanel.Size = new Size(236, 108);
+            RegisterUserPanel.TabIndex = 17;
+            // 
+            // RegisterLabelCode
+            // 
+            RegisterLabelCode.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            RegisterLabelCode.Location = new Point(12, 41);
+            RegisterLabelCode.Name = "RegisterLabelCode";
+            RegisterLabelCode.Size = new Size(217, 27);
+            RegisterLabelCode.TabIndex = 18;
+            RegisterLabelCode.Text = "Введите код преподавателя";
+            RegisterLabelCode.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // RegisterCode
+            // 
+            RegisterCode.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            RegisterCode.Location = new Point(37, 75);
+            RegisterCode.Name = "RegisterCode";
+            RegisterCode.Size = new Size(160, 26);
+            RegisterCode.TabIndex = 13;
+            // 
+            // RegisterRadioButtonStudent
+            // 
+            RegisterRadioButtonStudent.AutoSize = true;
+            RegisterRadioButtonStudent.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            RegisterRadioButtonStudent.Location = new Point(147, 15);
+            RegisterRadioButtonStudent.Name = "RegisterRadioButtonStudent";
+            RegisterRadioButtonStudent.Size = new Size(82, 23);
+            RegisterRadioButtonStudent.TabIndex = 1;
+            RegisterRadioButtonStudent.Text = "Студент";
+            RegisterRadioButtonStudent.UseVisualStyleBackColor = true;
+            RegisterRadioButtonStudent.CheckedChanged += RegisterRadioButtonStudent_CheckedChanged;
+            // 
+            // RegisterRadioButtonTeacher
+            // 
+            RegisterRadioButtonTeacher.AutoSize = true;
+            RegisterRadioButtonTeacher.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            RegisterRadioButtonTeacher.Location = new Point(12, 15);
+            RegisterRadioButtonTeacher.Name = "RegisterRadioButtonTeacher";
+            RegisterRadioButtonTeacher.Size = new Size(129, 23);
+            RegisterRadioButtonTeacher.TabIndex = 0;
+            RegisterRadioButtonTeacher.Text = "Преподаватель";
+            RegisterRadioButtonTeacher.UseVisualStyleBackColor = true;
+            RegisterRadioButtonTeacher.CheckedChanged += RegisterRadioButtonTeacher_CheckedChanged;
             // 
             // RegisterInformation
             // 
@@ -1171,20 +1360,671 @@
             // 
             RegisterButton.BackColor = Color.White;
             RegisterButton.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            RegisterButton.Location = new Point(54, 492);
+            RegisterButton.Location = new Point(150, 386);
             RegisterButton.Name = "RegisterButton";
-            RegisterButton.Size = new Size(333, 82);
+            RegisterButton.Size = new Size(150, 40);
             RegisterButton.TabIndex = 6;
             RegisterButton.Text = "Регистрация";
             RegisterButton.UseVisualStyleBackColor = false;
             RegisterButton.Click += RegisterButton_Click;
             // 
-            // RegisterUserPanel
+            // AuthPanel
             // 
-            RegisterUserPanel.Location = new Point(54, 182);
-            RegisterUserPanel.Name = "RegisterUserPanel";
-            RegisterUserPanel.Size = new Size(333, 56);
-            RegisterUserPanel.TabIndex = 17;
+            AuthPanel.BackColor = Color.Transparent;
+            AuthPanel.BorderStyle = BorderStyle.FixedSingle;
+            AuthPanel.Controls.Add(OpenRegisterPanel);
+            AuthPanel.Controls.Add(AuthInformation);
+            AuthPanel.Controls.Add(AuthPasswordTextBox);
+            AuthPanel.Controls.Add(AuthLabelPassword);
+            AuthPanel.Controls.Add(AuthLoginTextBox);
+            AuthPanel.Controls.Add(AuthLabelLogin);
+            AuthPanel.Controls.Add(AuthLoginButton);
+            AuthPanel.Location = new Point(12, 12);
+            AuthPanel.Name = "AuthPanel";
+            AuthPanel.Size = new Size(440, 580);
+            AuthPanel.TabIndex = 12;
+            // 
+            // OpenRegisterPanel
+            // 
+            OpenRegisterPanel.BackColor = Color.White;
+            OpenRegisterPanel.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            OpenRegisterPanel.Location = new Point(54, 528);
+            OpenRegisterPanel.Name = "OpenRegisterPanel";
+            OpenRegisterPanel.Size = new Size(333, 36);
+            OpenRegisterPanel.TabIndex = 17;
+            OpenRegisterPanel.Text = "У меня нет аккаунта";
+            OpenRegisterPanel.UseVisualStyleBackColor = false;
+            OpenRegisterPanel.Click += OpenRegisterPanel_Click;
+            // 
+            // AuthInformation
+            // 
+            AuthInformation.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AuthInformation.Location = new Point(54, 315);
+            AuthInformation.Name = "AuthInformation";
+            AuthInformation.Size = new Size(333, 68);
+            AuthInformation.TabIndex = 16;
+            // 
+            // AuthPasswordTextBox
+            // 
+            AuthPasswordTextBox.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AuthPasswordTextBox.Location = new Point(129, 150);
+            AuthPasswordTextBox.Name = "AuthPasswordTextBox";
+            AuthPasswordTextBox.Size = new Size(258, 26);
+            AuthPasswordTextBox.TabIndex = 12;
+            // 
+            // AuthLabelPassword
+            // 
+            AuthLabelPassword.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AuthLabelPassword.Location = new Point(54, 150);
+            AuthLabelPassword.Name = "AuthLabelPassword";
+            AuthLabelPassword.Size = new Size(69, 26);
+            AuthLabelPassword.TabIndex = 11;
+            AuthLabelPassword.Text = "Password";
+            AuthLabelPassword.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // AuthLoginTextBox
+            // 
+            AuthLoginTextBox.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AuthLoginTextBox.Location = new Point(129, 100);
+            AuthLoginTextBox.Name = "AuthLoginTextBox";
+            AuthLoginTextBox.Size = new Size(258, 26);
+            AuthLoginTextBox.TabIndex = 10;
+            // 
+            // AuthLabelLogin
+            // 
+            AuthLabelLogin.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AuthLabelLogin.Location = new Point(54, 100);
+            AuthLabelLogin.Name = "AuthLabelLogin";
+            AuthLabelLogin.Size = new Size(69, 26);
+            AuthLabelLogin.TabIndex = 9;
+            AuthLabelLogin.Text = "Login";
+            AuthLabelLogin.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // AuthLoginButton
+            // 
+            AuthLoginButton.BackColor = Color.White;
+            AuthLoginButton.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AuthLoginButton.Location = new Point(150, 199);
+            AuthLoginButton.Name = "AuthLoginButton";
+            AuthLoginButton.Size = new Size(150, 40);
+            AuthLoginButton.TabIndex = 6;
+            AuthLoginButton.Text = "Войти";
+            AuthLoginButton.UseVisualStyleBackColor = false;
+            AuthLoginButton.Click += AuthLoginButton_Click;
+            // 
+            // SettingPanel
+            // 
+            SettingPanel.BackColor = Color.Transparent;
+            SettingPanel.BorderStyle = BorderStyle.FixedSingle;
+            SettingPanel.Controls.Add(SettingLabel);
+            SettingPanel.Controls.Add(SettingTextBox);
+            SettingPanel.Controls.Add(OpenSettingStudentButton);
+            SettingPanel.Location = new Point(12, 12);
+            SettingPanel.Name = "SettingPanel";
+            SettingPanel.Size = new Size(440, 580);
+            SettingPanel.TabIndex = 13;
+            // 
+            // SettingLabel
+            // 
+            SettingLabel.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingLabel.Location = new Point(19, 24);
+            SettingLabel.Name = "SettingLabel";
+            SettingLabel.Size = new Size(400, 52);
+            SettingLabel.TabIndex = 12;
+            SettingLabel.Text = "Выделите Login пользователя и нажмите на кнопку \"Настроить\"";
+            SettingLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingTextBox
+            // 
+            SettingTextBox.BackColor = Color.AntiqueWhite;
+            SettingTextBox.BorderStyle = BorderStyle.FixedSingle;
+            SettingTextBox.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingTextBox.Location = new Point(19, 83);
+            SettingTextBox.Name = "SettingTextBox";
+            SettingTextBox.ReadOnly = true;
+            SettingTextBox.Size = new Size(400, 445);
+            SettingTextBox.TabIndex = 7;
+            SettingTextBox.Text = "";
+            // 
+            // OpenSettingStudentButton
+            // 
+            OpenSettingStudentButton.BackColor = Color.White;
+            OpenSettingStudentButton.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            OpenSettingStudentButton.Location = new Point(54, 534);
+            OpenSettingStudentButton.Name = "OpenSettingStudentButton";
+            OpenSettingStudentButton.Size = new Size(333, 40);
+            OpenSettingStudentButton.TabIndex = 6;
+            OpenSettingStudentButton.Text = "Настроить";
+            OpenSettingStudentButton.UseVisualStyleBackColor = false;
+            OpenSettingStudentButton.Click += OpenSettingStudent;
+            // 
+            // SettingUserPanel
+            // 
+            SettingUserPanel.BackColor = Color.Transparent;
+            SettingUserPanel.BorderStyle = BorderStyle.FixedSingle;
+            SettingUserPanel.Controls.Add(SettingUserTaskPanel3);
+            SettingUserPanel.Controls.Add(SettingUserTaskPanel2);
+            SettingUserPanel.Controls.Add(SettingUserTaskPanel1);
+            SettingUserPanel.Controls.Add(SettingUserTaskLabel3);
+            SettingUserPanel.Controls.Add(SettingUserTaskLabel2);
+            SettingUserPanel.Controls.Add(SettingUserTaskLabel1);
+            SettingUserPanel.Controls.Add(SettingUserTheoryPanel8);
+            SettingUserPanel.Controls.Add(SettingUserTheoryPanel7);
+            SettingUserPanel.Controls.Add(SettingUserTheoryPanel6);
+            SettingUserPanel.Controls.Add(SettingUserTheoryPanel5);
+            SettingUserPanel.Controls.Add(SettingUserTheoryPanel4);
+            SettingUserPanel.Controls.Add(SettingUserTheoryPanel3);
+            SettingUserPanel.Controls.Add(SettingUserTheoryPanel2);
+            SettingUserPanel.Controls.Add(SettingUserTheoryPanel1);
+            SettingUserPanel.Controls.Add(SettingUserTheoryLabel8);
+            SettingUserPanel.Controls.Add(SettingUserTheoryLabel7);
+            SettingUserPanel.Controls.Add(SettingUserTheoryLabel6);
+            SettingUserPanel.Controls.Add(SettingUserTheoryLabel5);
+            SettingUserPanel.Controls.Add(SettingUserTheoryLabel4);
+            SettingUserPanel.Controls.Add(SettingUserTheoryLabel3);
+            SettingUserPanel.Controls.Add(SettingUserTheoryLabel2);
+            SettingUserPanel.Controls.Add(SettingUserTheoryLabel1);
+            SettingUserPanel.Controls.Add(SettingUserLabel2);
+            SettingUserPanel.Controls.Add(SettingUserLabel1);
+            SettingUserPanel.Controls.Add(SettingUserLabel);
+            SettingUserPanel.Controls.Add(SettingUserSaveButton);
+            SettingUserPanel.Location = new Point(12, 12);
+            SettingUserPanel.Name = "SettingUserPanel";
+            SettingUserPanel.Size = new Size(440, 580);
+            SettingUserPanel.TabIndex = 14;
+            // 
+            // SettingUserTaskPanel3
+            // 
+            SettingUserTaskPanel3.Controls.Add(SettingUserTask3Radio1);
+            SettingUserTaskPanel3.Controls.Add(SettingUserTask3Radio0);
+            SettingUserTaskPanel3.Location = new Point(224, 440);
+            SettingUserTaskPanel3.Name = "SettingUserTaskPanel3";
+            SettingUserTaskPanel3.Size = new Size(115, 26);
+            SettingUserTaskPanel3.TabIndex = 35;
+            // 
+            // SettingUserTask3Radio1
+            // 
+            SettingUserTask3Radio1.AutoSize = true;
+            SettingUserTask3Radio1.Location = new Point(54, 3);
+            SettingUserTask3Radio1.Name = "SettingUserTask3Radio1";
+            SettingUserTask3Radio1.Size = new Size(54, 19);
+            SettingUserTask3Radio1.TabIndex = 1;
+            SettingUserTask3Radio1.TabStop = true;
+            SettingUserTask3Radio1.Text = "Выкл";
+            SettingUserTask3Radio1.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTask3Radio0
+            // 
+            SettingUserTask3Radio0.AutoSize = true;
+            SettingUserTask3Radio0.Location = new Point(3, 3);
+            SettingUserTask3Radio0.Name = "SettingUserTask3Radio0";
+            SettingUserTask3Radio0.Size = new Size(45, 19);
+            SettingUserTask3Radio0.TabIndex = 0;
+            SettingUserTask3Radio0.TabStop = true;
+            SettingUserTask3Radio0.Text = "Вкл";
+            SettingUserTask3Radio0.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTaskPanel2
+            // 
+            SettingUserTaskPanel2.Controls.Add(SettingUserTask2Radio1);
+            SettingUserTaskPanel2.Controls.Add(SettingUserTask2Radio0);
+            SettingUserTaskPanel2.Location = new Point(224, 410);
+            SettingUserTaskPanel2.Name = "SettingUserTaskPanel2";
+            SettingUserTaskPanel2.Size = new Size(115, 26);
+            SettingUserTaskPanel2.TabIndex = 34;
+            // 
+            // SettingUserTask2Radio1
+            // 
+            SettingUserTask2Radio1.AutoSize = true;
+            SettingUserTask2Radio1.Location = new Point(54, 3);
+            SettingUserTask2Radio1.Name = "SettingUserTask2Radio1";
+            SettingUserTask2Radio1.Size = new Size(54, 19);
+            SettingUserTask2Radio1.TabIndex = 1;
+            SettingUserTask2Radio1.TabStop = true;
+            SettingUserTask2Radio1.Text = "Выкл";
+            SettingUserTask2Radio1.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTask2Radio0
+            // 
+            SettingUserTask2Radio0.AutoSize = true;
+            SettingUserTask2Radio0.Location = new Point(3, 3);
+            SettingUserTask2Radio0.Name = "SettingUserTask2Radio0";
+            SettingUserTask2Radio0.Size = new Size(45, 19);
+            SettingUserTask2Radio0.TabIndex = 0;
+            SettingUserTask2Radio0.TabStop = true;
+            SettingUserTask2Radio0.Text = "Вкл";
+            SettingUserTask2Radio0.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTaskPanel1
+            // 
+            SettingUserTaskPanel1.Controls.Add(SettingUserTask1Radio1);
+            SettingUserTaskPanel1.Controls.Add(SettingUserTask1Radio0);
+            SettingUserTaskPanel1.Location = new Point(224, 381);
+            SettingUserTaskPanel1.Name = "SettingUserTaskPanel1";
+            SettingUserTaskPanel1.Size = new Size(115, 26);
+            SettingUserTaskPanel1.TabIndex = 33;
+            // 
+            // SettingUserTask1Radio1
+            // 
+            SettingUserTask1Radio1.AutoSize = true;
+            SettingUserTask1Radio1.Location = new Point(54, 3);
+            SettingUserTask1Radio1.Name = "SettingUserTask1Radio1";
+            SettingUserTask1Radio1.Size = new Size(54, 19);
+            SettingUserTask1Radio1.TabIndex = 1;
+            SettingUserTask1Radio1.TabStop = true;
+            SettingUserTask1Radio1.Text = "Выкл";
+            SettingUserTask1Radio1.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTask1Radio0
+            // 
+            SettingUserTask1Radio0.AutoSize = true;
+            SettingUserTask1Radio0.Location = new Point(3, 3);
+            SettingUserTask1Radio0.Name = "SettingUserTask1Radio0";
+            SettingUserTask1Radio0.Size = new Size(45, 19);
+            SettingUserTask1Radio0.TabIndex = 0;
+            SettingUserTask1Radio0.TabStop = true;
+            SettingUserTask1Radio0.Text = "Вкл";
+            SettingUserTask1Radio0.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTaskLabel3
+            // 
+            SettingUserTaskLabel3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserTaskLabel3.Location = new Point(54, 440);
+            SettingUserTaskLabel3.Name = "SettingUserTaskLabel3";
+            SettingUserTaskLabel3.Size = new Size(124, 26);
+            SettingUserTaskLabel3.TabIndex = 32;
+            SettingUserTaskLabel3.Text = "Лекция 3";
+            SettingUserTaskLabel3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingUserTaskLabel2
+            // 
+            SettingUserTaskLabel2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserTaskLabel2.Location = new Point(54, 410);
+            SettingUserTaskLabel2.Name = "SettingUserTaskLabel2";
+            SettingUserTaskLabel2.Size = new Size(124, 26);
+            SettingUserTaskLabel2.TabIndex = 31;
+            SettingUserTaskLabel2.Text = "Лекция 2";
+            SettingUserTaskLabel2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingUserTaskLabel1
+            // 
+            SettingUserTaskLabel1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserTaskLabel1.Location = new Point(54, 380);
+            SettingUserTaskLabel1.Name = "SettingUserTaskLabel1";
+            SettingUserTaskLabel1.Size = new Size(124, 26);
+            SettingUserTaskLabel1.TabIndex = 30;
+            SettingUserTaskLabel1.Text = "Лекция 1";
+            SettingUserTaskLabel1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingUserTheoryPanel8
+            // 
+            SettingUserTheoryPanel8.Controls.Add(SettingUserTheory8Radio1);
+            SettingUserTheoryPanel8.Controls.Add(SettingUserTheory8Radio0);
+            SettingUserTheoryPanel8.Location = new Point(224, 309);
+            SettingUserTheoryPanel8.Name = "SettingUserTheoryPanel8";
+            SettingUserTheoryPanel8.Size = new Size(115, 26);
+            SettingUserTheoryPanel8.TabIndex = 29;
+            // 
+            // SettingUserTheory8Radio1
+            // 
+            SettingUserTheory8Radio1.AutoSize = true;
+            SettingUserTheory8Radio1.Location = new Point(54, 3);
+            SettingUserTheory8Radio1.Name = "SettingUserTheory8Radio1";
+            SettingUserTheory8Radio1.Size = new Size(54, 19);
+            SettingUserTheory8Radio1.TabIndex = 1;
+            SettingUserTheory8Radio1.TabStop = true;
+            SettingUserTheory8Radio1.Text = "Выкл";
+            SettingUserTheory8Radio1.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheory8Radio0
+            // 
+            SettingUserTheory8Radio0.AutoSize = true;
+            SettingUserTheory8Radio0.Location = new Point(3, 3);
+            SettingUserTheory8Radio0.Name = "SettingUserTheory8Radio0";
+            SettingUserTheory8Radio0.Size = new Size(45, 19);
+            SettingUserTheory8Radio0.TabIndex = 0;
+            SettingUserTheory8Radio0.TabStop = true;
+            SettingUserTheory8Radio0.Text = "Вкл";
+            SettingUserTheory8Radio0.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheoryPanel7
+            // 
+            SettingUserTheoryPanel7.Controls.Add(SettingUserTheory7Radio1);
+            SettingUserTheoryPanel7.Controls.Add(SettingUserTheory7Radio0);
+            SettingUserTheoryPanel7.Location = new Point(224, 279);
+            SettingUserTheoryPanel7.Name = "SettingUserTheoryPanel7";
+            SettingUserTheoryPanel7.Size = new Size(115, 26);
+            SettingUserTheoryPanel7.TabIndex = 28;
+            // 
+            // SettingUserTheory7Radio1
+            // 
+            SettingUserTheory7Radio1.AutoSize = true;
+            SettingUserTheory7Radio1.Location = new Point(54, 3);
+            SettingUserTheory7Radio1.Name = "SettingUserTheory7Radio1";
+            SettingUserTheory7Radio1.Size = new Size(54, 19);
+            SettingUserTheory7Radio1.TabIndex = 1;
+            SettingUserTheory7Radio1.TabStop = true;
+            SettingUserTheory7Radio1.Text = "Выкл";
+            SettingUserTheory7Radio1.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheory7Radio0
+            // 
+            SettingUserTheory7Radio0.AutoSize = true;
+            SettingUserTheory7Radio0.Location = new Point(3, 3);
+            SettingUserTheory7Radio0.Name = "SettingUserTheory7Radio0";
+            SettingUserTheory7Radio0.Size = new Size(45, 19);
+            SettingUserTheory7Radio0.TabIndex = 0;
+            SettingUserTheory7Radio0.TabStop = true;
+            SettingUserTheory7Radio0.Text = "Вкл";
+            SettingUserTheory7Radio0.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheoryPanel6
+            // 
+            SettingUserTheoryPanel6.Controls.Add(SettingUserTheory6Radio1);
+            SettingUserTheoryPanel6.Controls.Add(SettingUserTheory6Radio0);
+            SettingUserTheoryPanel6.Location = new Point(224, 249);
+            SettingUserTheoryPanel6.Name = "SettingUserTheoryPanel6";
+            SettingUserTheoryPanel6.Size = new Size(115, 26);
+            SettingUserTheoryPanel6.TabIndex = 27;
+            // 
+            // SettingUserTheory6Radio1
+            // 
+            SettingUserTheory6Radio1.AutoSize = true;
+            SettingUserTheory6Radio1.Location = new Point(54, 3);
+            SettingUserTheory6Radio1.Name = "SettingUserTheory6Radio1";
+            SettingUserTheory6Radio1.Size = new Size(54, 19);
+            SettingUserTheory6Radio1.TabIndex = 1;
+            SettingUserTheory6Radio1.TabStop = true;
+            SettingUserTheory6Radio1.Text = "Выкл";
+            SettingUserTheory6Radio1.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheory6Radio0
+            // 
+            SettingUserTheory6Radio0.AutoSize = true;
+            SettingUserTheory6Radio0.Location = new Point(3, 3);
+            SettingUserTheory6Radio0.Name = "SettingUserTheory6Radio0";
+            SettingUserTheory6Radio0.Size = new Size(45, 19);
+            SettingUserTheory6Radio0.TabIndex = 0;
+            SettingUserTheory6Radio0.TabStop = true;
+            SettingUserTheory6Radio0.Text = "Вкл";
+            SettingUserTheory6Radio0.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheoryPanel5
+            // 
+            SettingUserTheoryPanel5.Controls.Add(SettingUserTheory5Radio1);
+            SettingUserTheoryPanel5.Controls.Add(SettingUserTheory5Radio0);
+            SettingUserTheoryPanel5.Location = new Point(224, 219);
+            SettingUserTheoryPanel5.Name = "SettingUserTheoryPanel5";
+            SettingUserTheoryPanel5.Size = new Size(115, 26);
+            SettingUserTheoryPanel5.TabIndex = 26;
+            // 
+            // SettingUserTheory5Radio1
+            // 
+            SettingUserTheory5Radio1.AutoSize = true;
+            SettingUserTheory5Radio1.Location = new Point(54, 3);
+            SettingUserTheory5Radio1.Name = "SettingUserTheory5Radio1";
+            SettingUserTheory5Radio1.Size = new Size(54, 19);
+            SettingUserTheory5Radio1.TabIndex = 1;
+            SettingUserTheory5Radio1.TabStop = true;
+            SettingUserTheory5Radio1.Text = "Выкл";
+            SettingUserTheory5Radio1.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheory5Radio0
+            // 
+            SettingUserTheory5Radio0.AutoSize = true;
+            SettingUserTheory5Radio0.Location = new Point(3, 3);
+            SettingUserTheory5Radio0.Name = "SettingUserTheory5Radio0";
+            SettingUserTheory5Radio0.Size = new Size(45, 19);
+            SettingUserTheory5Radio0.TabIndex = 0;
+            SettingUserTheory5Radio0.TabStop = true;
+            SettingUserTheory5Radio0.Text = "Вкл";
+            SettingUserTheory5Radio0.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheoryPanel4
+            // 
+            SettingUserTheoryPanel4.Controls.Add(SettingUserTheory4Radio1);
+            SettingUserTheoryPanel4.Controls.Add(SettingUserTheory4Radio0);
+            SettingUserTheoryPanel4.Location = new Point(224, 189);
+            SettingUserTheoryPanel4.Name = "SettingUserTheoryPanel4";
+            SettingUserTheoryPanel4.Size = new Size(115, 26);
+            SettingUserTheoryPanel4.TabIndex = 25;
+            // 
+            // SettingUserTheory4Radio1
+            // 
+            SettingUserTheory4Radio1.AutoSize = true;
+            SettingUserTheory4Radio1.Location = new Point(54, 3);
+            SettingUserTheory4Radio1.Name = "SettingUserTheory4Radio1";
+            SettingUserTheory4Radio1.Size = new Size(54, 19);
+            SettingUserTheory4Radio1.TabIndex = 1;
+            SettingUserTheory4Radio1.TabStop = true;
+            SettingUserTheory4Radio1.Text = "Выкл";
+            SettingUserTheory4Radio1.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheory4Radio0
+            // 
+            SettingUserTheory4Radio0.AutoSize = true;
+            SettingUserTheory4Radio0.Location = new Point(3, 3);
+            SettingUserTheory4Radio0.Name = "SettingUserTheory4Radio0";
+            SettingUserTheory4Radio0.Size = new Size(45, 19);
+            SettingUserTheory4Radio0.TabIndex = 0;
+            SettingUserTheory4Radio0.TabStop = true;
+            SettingUserTheory4Radio0.Text = "Вкл";
+            SettingUserTheory4Radio0.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheoryPanel3
+            // 
+            SettingUserTheoryPanel3.Controls.Add(SettingUserTheory3Radio1);
+            SettingUserTheoryPanel3.Controls.Add(SettingUserTheory3Radio0);
+            SettingUserTheoryPanel3.Location = new Point(224, 159);
+            SettingUserTheoryPanel3.Name = "SettingUserTheoryPanel3";
+            SettingUserTheoryPanel3.Size = new Size(115, 26);
+            SettingUserTheoryPanel3.TabIndex = 24;
+            // 
+            // SettingUserTheory3Radio1
+            // 
+            SettingUserTheory3Radio1.AutoSize = true;
+            SettingUserTheory3Radio1.Location = new Point(54, 3);
+            SettingUserTheory3Radio1.Name = "SettingUserTheory3Radio1";
+            SettingUserTheory3Radio1.Size = new Size(54, 19);
+            SettingUserTheory3Radio1.TabIndex = 1;
+            SettingUserTheory3Radio1.TabStop = true;
+            SettingUserTheory3Radio1.Text = "Выкл";
+            SettingUserTheory3Radio1.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheory3Radio0
+            // 
+            SettingUserTheory3Radio0.AutoSize = true;
+            SettingUserTheory3Radio0.Location = new Point(3, 3);
+            SettingUserTheory3Radio0.Name = "SettingUserTheory3Radio0";
+            SettingUserTheory3Radio0.Size = new Size(45, 19);
+            SettingUserTheory3Radio0.TabIndex = 0;
+            SettingUserTheory3Radio0.TabStop = true;
+            SettingUserTheory3Radio0.Text = "Вкл";
+            SettingUserTheory3Radio0.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheoryPanel2
+            // 
+            SettingUserTheoryPanel2.Controls.Add(SettingUserTheory2Radio1);
+            SettingUserTheoryPanel2.Controls.Add(SettingUserTheory2Radio0);
+            SettingUserTheoryPanel2.Location = new Point(224, 129);
+            SettingUserTheoryPanel2.Name = "SettingUserTheoryPanel2";
+            SettingUserTheoryPanel2.Size = new Size(115, 26);
+            SettingUserTheoryPanel2.TabIndex = 23;
+            // 
+            // SettingUserTheory2Radio1
+            // 
+            SettingUserTheory2Radio1.AutoSize = true;
+            SettingUserTheory2Radio1.Location = new Point(54, 3);
+            SettingUserTheory2Radio1.Name = "SettingUserTheory2Radio1";
+            SettingUserTheory2Radio1.Size = new Size(54, 19);
+            SettingUserTheory2Radio1.TabIndex = 1;
+            SettingUserTheory2Radio1.TabStop = true;
+            SettingUserTheory2Radio1.Text = "Выкл";
+            SettingUserTheory2Radio1.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheory2Radio0
+            // 
+            SettingUserTheory2Radio0.AutoSize = true;
+            SettingUserTheory2Radio0.Location = new Point(3, 3);
+            SettingUserTheory2Radio0.Name = "SettingUserTheory2Radio0";
+            SettingUserTheory2Radio0.Size = new Size(45, 19);
+            SettingUserTheory2Radio0.TabIndex = 0;
+            SettingUserTheory2Radio0.TabStop = true;
+            SettingUserTheory2Radio0.Text = "Вкл";
+            SettingUserTheory2Radio0.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheoryPanel1
+            // 
+            SettingUserTheoryPanel1.Controls.Add(SettingUserTheory1Radio1);
+            SettingUserTheoryPanel1.Controls.Add(SettingUserTheory1Radio0);
+            SettingUserTheoryPanel1.Location = new Point(224, 100);
+            SettingUserTheoryPanel1.Name = "SettingUserTheoryPanel1";
+            SettingUserTheoryPanel1.Size = new Size(115, 26);
+            SettingUserTheoryPanel1.TabIndex = 22;
+            // 
+            // SettingUserTheory1Radio1
+            // 
+            SettingUserTheory1Radio1.AutoSize = true;
+            SettingUserTheory1Radio1.Location = new Point(54, 3);
+            SettingUserTheory1Radio1.Name = "SettingUserTheory1Radio1";
+            SettingUserTheory1Radio1.Size = new Size(54, 19);
+            SettingUserTheory1Radio1.TabIndex = 1;
+            SettingUserTheory1Radio1.TabStop = true;
+            SettingUserTheory1Radio1.Text = "Выкл";
+            SettingUserTheory1Radio1.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheory1Radio0
+            // 
+            SettingUserTheory1Radio0.AutoSize = true;
+            SettingUserTheory1Radio0.Location = new Point(3, 3);
+            SettingUserTheory1Radio0.Name = "SettingUserTheory1Radio0";
+            SettingUserTheory1Radio0.Size = new Size(45, 19);
+            SettingUserTheory1Radio0.TabIndex = 0;
+            SettingUserTheory1Radio0.TabStop = true;
+            SettingUserTheory1Radio0.Text = "Вкл";
+            SettingUserTheory1Radio0.UseVisualStyleBackColor = true;
+            // 
+            // SettingUserTheoryLabel8
+            // 
+            SettingUserTheoryLabel8.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserTheoryLabel8.Location = new Point(54, 309);
+            SettingUserTheoryLabel8.Name = "SettingUserTheoryLabel8";
+            SettingUserTheoryLabel8.Size = new Size(124, 26);
+            SettingUserTheoryLabel8.TabIndex = 29;
+            SettingUserTheoryLabel8.Text = "Лекция 8";
+            SettingUserTheoryLabel8.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingUserTheoryLabel7
+            // 
+            SettingUserTheoryLabel7.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserTheoryLabel7.Location = new Point(54, 279);
+            SettingUserTheoryLabel7.Name = "SettingUserTheoryLabel7";
+            SettingUserTheoryLabel7.Size = new Size(124, 26);
+            SettingUserTheoryLabel7.TabIndex = 21;
+            SettingUserTheoryLabel7.Text = "Лекция 7";
+            SettingUserTheoryLabel7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingUserTheoryLabel6
+            // 
+            SettingUserTheoryLabel6.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserTheoryLabel6.Location = new Point(54, 249);
+            SettingUserTheoryLabel6.Name = "SettingUserTheoryLabel6";
+            SettingUserTheoryLabel6.Size = new Size(124, 26);
+            SettingUserTheoryLabel6.TabIndex = 20;
+            SettingUserTheoryLabel6.Text = "Лекция 6";
+            SettingUserTheoryLabel6.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingUserTheoryLabel5
+            // 
+            SettingUserTheoryLabel5.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserTheoryLabel5.Location = new Point(54, 219);
+            SettingUserTheoryLabel5.Name = "SettingUserTheoryLabel5";
+            SettingUserTheoryLabel5.Size = new Size(124, 26);
+            SettingUserTheoryLabel5.TabIndex = 19;
+            SettingUserTheoryLabel5.Text = "Лекция 5";
+            SettingUserTheoryLabel5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingUserTheoryLabel4
+            // 
+            SettingUserTheoryLabel4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserTheoryLabel4.Location = new Point(54, 189);
+            SettingUserTheoryLabel4.Name = "SettingUserTheoryLabel4";
+            SettingUserTheoryLabel4.Size = new Size(124, 26);
+            SettingUserTheoryLabel4.TabIndex = 18;
+            SettingUserTheoryLabel4.Text = "Лекция 4";
+            SettingUserTheoryLabel4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingUserTheoryLabel3
+            // 
+            SettingUserTheoryLabel3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserTheoryLabel3.Location = new Point(54, 159);
+            SettingUserTheoryLabel3.Name = "SettingUserTheoryLabel3";
+            SettingUserTheoryLabel3.Size = new Size(124, 26);
+            SettingUserTheoryLabel3.TabIndex = 17;
+            SettingUserTheoryLabel3.Text = "Лекция 3";
+            SettingUserTheoryLabel3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingUserTheoryLabel2
+            // 
+            SettingUserTheoryLabel2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserTheoryLabel2.Location = new Point(54, 129);
+            SettingUserTheoryLabel2.Name = "SettingUserTheoryLabel2";
+            SettingUserTheoryLabel2.Size = new Size(124, 26);
+            SettingUserTheoryLabel2.TabIndex = 16;
+            SettingUserTheoryLabel2.Text = "Лекция 2";
+            SettingUserTheoryLabel2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingUserTheoryLabel1
+            // 
+            SettingUserTheoryLabel1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserTheoryLabel1.Location = new Point(54, 99);
+            SettingUserTheoryLabel1.Name = "SettingUserTheoryLabel1";
+            SettingUserTheoryLabel1.Size = new Size(124, 26);
+            SettingUserTheoryLabel1.TabIndex = 15;
+            SettingUserTheoryLabel1.Text = "Лекция 1";
+            SettingUserTheoryLabel1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingUserLabel2
+            // 
+            SettingUserLabel2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserLabel2.Location = new Point(-1, 345);
+            SettingUserLabel2.Name = "SettingUserLabel2";
+            SettingUserLabel2.Size = new Size(440, 26);
+            SettingUserLabel2.TabIndex = 14;
+            SettingUserLabel2.Text = "Задания";
+            SettingUserLabel2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingUserLabel1
+            // 
+            SettingUserLabel1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserLabel1.Location = new Point(-1, 74);
+            SettingUserLabel1.Name = "SettingUserLabel1";
+            SettingUserLabel1.Size = new Size(440, 26);
+            SettingUserLabel1.TabIndex = 13;
+            SettingUserLabel1.Text = "Лекции";
+            SettingUserLabel1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingUserLabel
+            // 
+            SettingUserLabel.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserLabel.Location = new Point(19, 24);
+            SettingUserLabel.Name = "SettingUserLabel";
+            SettingUserLabel.Size = new Size(400, 52);
+            SettingUserLabel.TabIndex = 12;
+            SettingUserLabel.Text = "Выберите настройки";
+            SettingUserLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SettingUserSaveButton
+            // 
+            SettingUserSaveButton.BackColor = Color.White;
+            SettingUserSaveButton.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingUserSaveButton.Location = new Point(54, 534);
+            SettingUserSaveButton.Name = "SettingUserSaveButton";
+            SettingUserSaveButton.Size = new Size(333, 40);
+            SettingUserSaveButton.TabIndex = 6;
+            SettingUserSaveButton.Text = "Настроить";
+            SettingUserSaveButton.UseVisualStyleBackColor = false;
+            SettingUserSaveButton.Click += SettingUserSaveButton_Click;
             // 
             // Form1
             // 
@@ -1193,14 +2033,17 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1389, 661);
+            Controls.Add(SettingUserPanel);
+            Controls.Add(SettingPanel);
             Controls.Add(RegisterPanel);
+            Controls.Add(MainMenuPanel);
+            Controls.Add(AuthPanel);
+            Controls.Add(TasksPanel);
+            Controls.Add(TheoryPanel);
             Controls.Add(Task3Panel);
             Controls.Add(MainButtonPanel);
             Controls.Add(TheoryTextPanel);
-            Controls.Add(TasksPanel);
-            Controls.Add(TheoryPanel);
             Controls.Add(Task1Panel);
-            Controls.Add(MainMenuPanel);
             Controls.Add(Task2Panel);
             Controls.Add(LiteraturesPanel);
             Controls.Add(InformationPanel);
@@ -1229,6 +2072,34 @@
             Task3RadioPanel1.PerformLayout();
             RegisterPanel.ResumeLayout(false);
             RegisterPanel.PerformLayout();
+            RegisterUserPanel.ResumeLayout(false);
+            RegisterUserPanel.PerformLayout();
+            AuthPanel.ResumeLayout(false);
+            AuthPanel.PerformLayout();
+            SettingPanel.ResumeLayout(false);
+            SettingUserPanel.ResumeLayout(false);
+            SettingUserTaskPanel3.ResumeLayout(false);
+            SettingUserTaskPanel3.PerformLayout();
+            SettingUserTaskPanel2.ResumeLayout(false);
+            SettingUserTaskPanel2.PerformLayout();
+            SettingUserTaskPanel1.ResumeLayout(false);
+            SettingUserTaskPanel1.PerformLayout();
+            SettingUserTheoryPanel8.ResumeLayout(false);
+            SettingUserTheoryPanel8.PerformLayout();
+            SettingUserTheoryPanel7.ResumeLayout(false);
+            SettingUserTheoryPanel7.PerformLayout();
+            SettingUserTheoryPanel6.ResumeLayout(false);
+            SettingUserTheoryPanel6.PerformLayout();
+            SettingUserTheoryPanel5.ResumeLayout(false);
+            SettingUserTheoryPanel5.PerformLayout();
+            SettingUserTheoryPanel4.ResumeLayout(false);
+            SettingUserTheoryPanel4.PerformLayout();
+            SettingUserTheoryPanel3.ResumeLayout(false);
+            SettingUserTheoryPanel3.PerformLayout();
+            SettingUserTheoryPanel2.ResumeLayout(false);
+            SettingUserTheoryPanel2.PerformLayout();
+            SettingUserTheoryPanel1.ResumeLayout(false);
+            SettingUserTheoryPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1248,9 +2119,9 @@
         private RichTextBox LiteraturesTextBox;
         private Panel InformationPanel;
         private RichTextBox InformationTextBox;
-        private Button TheoryButton4;
         private Button TheoryButton3;
         private Button TheoryButton2;
+        private Button TheoryButton4;
         private Button TheoryButton1;
         private Panel TheoryTextPanel;
         private RichTextBox TheoryTextBox1;
@@ -1325,5 +2196,74 @@
         private Label RegisterErrorFIO;
         private Label RegisterInformation;
         private Panel RegisterUserPanel;
+        private RadioButton RegisterRadioButtonStudent;
+        private RadioButton RegisterRadioButtonTeacher;
+        private TextBox RegisterCode;
+        private Label RegisterLabelCode;
+        private Panel AuthPanel;
+        private Label AuthInformation;
+        private Label SettingUserTheoryLabel4;
+        private Label SettingUserTheoryLabel5;
+        private TextBox AuthPasswordTextBox;
+        private Label AuthLabelPassword;
+        private TextBox AuthLoginTextBox;
+        private Label AuthLabelLogin;
+        private Button AuthLoginButton;
+        private Button OpenRegisterPanel;
+        private Button OpenAuthPanel;
+        private Button MainMenuOpenRegisterPanel;
+        private Button MainMenuOpenAuthPanel;
+        private Button OpenSettingButton;
+        private Panel SettingPanel;
+        private RichTextBox SettingTextBox;
+        private Button OpenSettingStudentButton;
+        private Label SettingLabel;
+        private Panel SettingUserPanel;
+        private Label SettingUserLabel;
+        private Button SettingUserSaveButton;
+        private Label SettingUserLabel2;
+        private Label SettingUserLabel1;
+        private Label SettingUserTheoryLabel7;
+        private Label SettingUserTheoryLabel6;
+        private Label SettingUserTheoryLabel3;
+        private Label SettingUserTheoryLabel2;
+        private Label SettingUserTheoryLabel1;
+        private Panel SettingUserTheoryPanel1;
+        private RadioButton SettingUserTheory1Radio1;
+        private RadioButton SettingUserTheory1Radio0;
+        private Panel SettingUserTheoryPanel7;
+        private RadioButton SettingUserTheory7Radio1;
+        private RadioButton SettingUserTheory7Radio0;
+        private Panel SettingUserTheoryPanel6;
+        private RadioButton SettingUserTheory6Radio1;
+        private RadioButton SettingUserTheory6Radio0;
+        private Panel SettingUserTheoryPanel5;
+        private RadioButton SettingUserTheory5Radio1;
+        private RadioButton SettingUserTheory5Radio0;
+        private Panel SettingUserTheoryPanel4;
+        private RadioButton SettingUserTheory4Radio1;
+        private RadioButton SettingUserTheory4Radio0;
+        private Panel SettingUserTheoryPanel3;
+        private RadioButton SettingUserTheory3Radio1;
+        private RadioButton SettingUserTheory3Radio0;
+        private Panel SettingUserTheoryPanel2;
+        private RadioButton SettingUserTheory2Radio1;
+        private RadioButton SettingUserTheory2Radio0;
+        private Panel SettingUserTheoryPanel8;
+        private RadioButton SettingUserTheory8Radio1;
+        private RadioButton SettingUserTheory8Radio0;
+        private Label SettingUserTheoryLabel8;
+        private Panel SettingUserTaskPanel3;
+        private RadioButton SettingUserTask3Radio1;
+        private RadioButton SettingUserTask3Radio0;
+        private Panel SettingUserTaskPanel2;
+        private RadioButton SettingUserTask2Radio1;
+        private RadioButton SettingUserTask2Radio0;
+        private Panel SettingUserTaskPanel1;
+        private RadioButton SettingUserTask1Radio1;
+        private RadioButton SettingUserTask1Radio0;
+        private Label SettingUserTaskLabel3;
+        private Label SettingUserTaskLabel2;
+        private Label SettingUserTaskLabel1;
     }
 }
