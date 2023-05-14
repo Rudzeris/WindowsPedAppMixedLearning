@@ -1,9 +1,66 @@
+using System.CodeDom.Compiler;
+using System.Configuration;
 using System.Diagnostics.Eventing.Reader;
+using System.Drawing.Text;
+using System.Numerics;
 
 namespace WindowsPedAppMixedLearning
 {
     public partial class Form1 : Form
     {
+        // Пользователь
+        class User
+        {
+            string name;
+            string login;
+            string password;
+            bool teacher;
+            public User(string name, string login, string password, bool teacher = true)
+            {
+                this.name = name;
+                this.login = login;
+                this.password = password;
+                this.teacher = teacher;
+            }
+            public string GetName()
+            {
+                return name;
+            }
+            public bool IsLogin(string login)
+            {
+                return this.login == login;
+            }
+            public bool IsPassword(string password)
+            {
+                return this.password == password;
+            }
+        }
+
+        // Права пользователя (Студента)
+        class Student : User
+        {
+            bool[] access = { false, false, false, false, false, false, false };
+            public Student(string name, string login, string password) : base(name, login, password, false)
+            {
+            }
+            public void SetAccess(bool[] access)
+            {
+                for (int i = 0; i < access.Length && i < this.access.Length; i++)
+                {
+                    this.access[i] = access[i];
+                }
+            }
+            public bool[] GetAccess()
+            {
+                return access;
+            }
+        }
+
+        List<User> users = new List<User>();
+        User user;
+
+        string typeUser;
+
         Point sizeDefault = new Point(440, 580);
         Point locationDefault = new Point(12, 12);
         string TextPanel = "Main Menu";
@@ -30,31 +87,31 @@ namespace WindowsPedAppMixedLearning
             MainButtonPanel.Size = new Size(440, 56);
 
             MainMenuPanel.Location = locationDefault;
-            MainMenuPanel.Size = new Size(sizeDefault.X,sizeDefault.Y);
+            MainMenuPanel.Size = new Size(sizeDefault.X, sizeDefault.Y);
 
             LiteraturesPanel.Location = locationDefault;
-            LiteraturesPanel.Size = new Size(sizeDefault.X,sizeDefault.Y);
+            LiteraturesPanel.Size = new Size(sizeDefault.X, sizeDefault.Y);
 
             TheoryPanel.Location = locationDefault;
-            TheoryPanel.Size = new Size(sizeDefault.X,sizeDefault.Y);
+            TheoryPanel.Size = new Size(sizeDefault.X, sizeDefault.Y);
 
             InformationPanel.Location = locationDefault;
-            InformationPanel.Size = new Size(sizeDefault.X,sizeDefault.Y);
+            InformationPanel.Size = new Size(sizeDefault.X, sizeDefault.Y);
 
-            TheoryTextPanel.Location= locationDefault;
-            TheoryTextPanel.Size = new Size(sizeDefault.X,sizeDefault.Y);
+            TheoryTextPanel.Location = locationDefault;
+            TheoryTextPanel.Size = new Size(sizeDefault.X, sizeDefault.Y);
 
-            TasksPanel.Location= locationDefault;
-            TasksPanel.Size = new Size(sizeDefault.X,sizeDefault.Y);
+            TasksPanel.Location = locationDefault;
+            TasksPanel.Size = new Size(sizeDefault.X, sizeDefault.Y);
 
-            Task2Panel.Location= locationDefault;
-            Task2Panel.Size = new Size(sizeDefault.X,sizeDefault.Y);
+            Task2Panel.Location = locationDefault;
+            Task2Panel.Size = new Size(sizeDefault.X, sizeDefault.Y);
 
-            Task1Panel.Location= locationDefault;
-            Task1Panel.Size = new Size(sizeDefault.X,sizeDefault.Y);
+            Task1Panel.Location = locationDefault;
+            Task1Panel.Size = new Size(sizeDefault.X, sizeDefault.Y);
 
-            Task3Panel.Location= locationDefault;
-            Task3Panel.Size = new Size(sizeDefault.X,sizeDefault.Y);
+            Task3Panel.Location = locationDefault;
+            Task3Panel.Size = new Size(sizeDefault.X, sizeDefault.Y);
         }
 
         private void CloseAll()
@@ -68,7 +125,7 @@ namespace WindowsPedAppMixedLearning
             TheoryTextPanel.Visible = false;
             NextButton.Enabled = false;
             Task2Panel.Visible = false;
-            TasksPanel.Visible= false;
+            TasksPanel.Visible = false;
             Task1Panel.Visible = false;
             Task3Panel.Visible = false;
         }
@@ -112,7 +169,7 @@ namespace WindowsPedAppMixedLearning
             if (TextPanel == "Task2")
             {
                 if (Task2Char == '1') Task2_2();
-                else if (Task2Char=='2') Task2_Result();
+                else if (Task2Char == '2') Task2_Result();
                 //else if (Task2Char=='3') Task2_Result();
             }
         }
@@ -235,14 +292,14 @@ namespace WindowsPedAppMixedLearning
             Task28.BackColor = Color.White;
         }
 
-        int[] Task2Answer = {0,0,0,0,0,0,0,0};
+        int[] Task2Answer = { 0, 0, 0, 0, 0, 0, 0, 0 };
         int[] Task2Question = { 0, 0, 0, 0, 0, 0, 0, 0 };
         int[] Points = { 0, 0, 0 };
         int[] Points2 = { 0, 0, 0 };
 
         private void Task2_PointDelete(int x)
         {
-            for (int i = 2; i >= x-1; i--)
+            for (int i = 2; i >= x - 1; i--)
             {
                 Points[i] = 0;
             }
@@ -368,7 +425,7 @@ namespace WindowsPedAppMixedLearning
         private void Task2_Result()
         {
             Task2ButtonVisible(false);
-            Task2Text.Text = "Ваш результат: "+(Points.Sum()).ToString() + " из "+(Points2.Sum()).ToString();
+            Task2Text.Text = "Ваш результат: " + (Points.Sum()).ToString() + " из " + (Points2.Sum()).ToString();
             NextButton.Enabled = false;
             Task2Char = '1';
         }
@@ -408,7 +465,7 @@ namespace WindowsPedAppMixedLearning
                 if (i > 0)
                     b += i;
             }
-            Task2Text.Text="Вы набрали: "+(a).ToString()+" из "+(b).ToString();
+            Task2Text.Text = "Вы набрали: " + (a).ToString() + " из " + (b).ToString();
             if (Task2Char == '1')
             {
                 Points[0] = a;
@@ -430,7 +487,7 @@ namespace WindowsPedAppMixedLearning
         {
             if (Task21.BackColor != Color.Blue)
             {
-                Task21.BackColor= Color.Blue;
+                Task21.BackColor = Color.Blue;
                 Task2Answer[0] = Task2Question[0];
             }
             else
@@ -569,12 +626,12 @@ namespace WindowsPedAppMixedLearning
                 Task12.BackColor = Color.White;
                 cs1 = true;
             }
-            if(Task14.BackColor==C)
+            if (Task14.BackColor == C)
             {
                 Task14.BackColor = Color.White;
                 cs1 = true;
             }
-            if (Task16.BackColor==C)
+            if (Task16.BackColor == C)
             {
                 Task16.BackColor = Color.White;
                 cs1 = true;
@@ -587,7 +644,7 @@ namespace WindowsPedAppMixedLearning
             return cs1;
         }
 
-        Color A=Color.White;
+        Color A = Color.White;
         private void Task11_Click(object sender, EventArgs e)
         {
             if (((Button)sender).BackColor == Color.White)
@@ -600,8 +657,8 @@ namespace WindowsPedAppMixedLearning
                 return;
             else
                 A = ((Button)sender).BackColor;
-            
-            
+
+
         }
 
         private void Task1ButtonVisible(bool x)
@@ -623,19 +680,22 @@ namespace WindowsPedAppMixedLearning
             if (Task11.BackColor == Task12.BackColor)
             {
                 k++;
-            }if (Task13.BackColor == Task14.BackColor)
+            }
+            if (Task13.BackColor == Task14.BackColor)
             {
                 k++;
-            }if (Task15.BackColor == Task16.BackColor)
+            }
+            if (Task15.BackColor == Task16.BackColor)
             {
                 k++;
-            }if (Task17.BackColor == Task18.BackColor)
+            }
+            if (Task17.BackColor == Task18.BackColor)
             {
                 k++;
             }
             Task1ButtonVisible(false);
             Task1Text.Text = "Верно";
-            if(k!=4)
+            if (k != 4)
                 Task1Text.Text = "Неверно";
         }
 
@@ -692,6 +752,60 @@ namespace WindowsPedAppMixedLearning
             }
             Task3RadioDefaultChecked();
             Task3Result.Text = "Верно: " + k.ToString() + " из 7";
+        }
+
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
+            string[] temp = { RegisterNameTextBox.Text, RegisterLoginTextBox.Text, RegisterPasswordTextBox.Text };
+            bool isExit = false;
+            if (temp[0].Length < 1)
+            {
+                RegisterErrorFIO.Text = "ФИО пустое";
+                isExit = true;
+            }
+            else RegisterErrorFIO.Text = "";
+            if (temp[1].Length < 4)
+            {
+                RegisterErrorLogin.Text = "Короткий Login";
+                isExit = true;
+                if (temp[1].Length > 0)
+                    if (!char.IsLetter(temp[1][0]))
+                    {
+                        RegisterErrorLogin.Text += ", начни с буквы";
+                    }
+            }
+            else
+            {
+                RegisterErrorLogin.Text = "";
+                if (temp[1].Length > 0)
+                    if (!char.IsLetter(temp[1][0]))
+                    {
+                        RegisterErrorLogin.Text += "Начни с буквы";
+                    }
+            }
+
+            if (temp[2].Length < 4)
+            {
+                RegisterErrorPassword.Text = "Короткий Password";
+                isExit = true;
+            }
+            else RegisterErrorPassword.Text = "";
+            if (isExit) return;
+
+            bool add = true;
+            foreach (var i in users)
+            {
+                if (i.IsLogin(temp[0]))
+                    add = false;
+            }
+            if (!add)
+            {
+                RegisterErrorLogin.Text = "Такой login уже существует";
+                return;
+            }
+            User tempUser = new User(temp[0], temp[1], temp[2]);
+            users.Add(tempUser);
+            RegisterInformation.Text = "Пользователь успешно зарегистрирован.\nФИО: " + temp[0] + "\nLogin: " + temp[1];
         }
     }
 }
