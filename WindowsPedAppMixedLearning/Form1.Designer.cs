@@ -53,6 +53,8 @@
             TheoryTextPanel = new Panel();
             TheoryTextBox1 = new RichTextBox();
             TasksPanel = new Panel();
+            TasksLabel = new Label();
+            TasksResultTextBox = new RichTextBox();
             OpenTask3Button = new Button();
             OpenTask2Button = new Button();
             OpenTask1Button = new Button();
@@ -502,6 +504,8 @@
             // 
             TasksPanel.BackColor = Color.Transparent;
             TasksPanel.BorderStyle = BorderStyle.FixedSingle;
+            TasksPanel.Controls.Add(TasksLabel);
+            TasksPanel.Controls.Add(TasksResultTextBox);
             TasksPanel.Controls.Add(OpenTask3Button);
             TasksPanel.Controls.Add(OpenTask2Button);
             TasksPanel.Controls.Add(OpenTask1Button);
@@ -509,6 +513,28 @@
             TasksPanel.Name = "TasksPanel";
             TasksPanel.Size = new Size(440, 580);
             TasksPanel.TabIndex = 8;
+            // 
+            // TasksLabel
+            // 
+            TasksLabel.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TasksLabel.Location = new Point(19, 245);
+            TasksLabel.Name = "TasksLabel";
+            TasksLabel.Size = new Size(400, 30);
+            TasksLabel.TabIndex = 13;
+            TasksLabel.Text = "Результаты";
+            TasksLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // TasksResultTextBox
+            // 
+            TasksResultTextBox.BackColor = Color.AntiqueWhite;
+            TasksResultTextBox.BorderStyle = BorderStyle.FixedSingle;
+            TasksResultTextBox.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TasksResultTextBox.Location = new Point(54, 282);
+            TasksResultTextBox.Name = "TasksResultTextBox";
+            TasksResultTextBox.ReadOnly = true;
+            TasksResultTextBox.Size = new Size(333, 204);
+            TasksResultTextBox.TabIndex = 8;
+            TasksResultTextBox.Text = "";
             // 
             // OpenTask3Button
             // 
@@ -1633,7 +1659,7 @@
             SettingUserTaskLabel3.Name = "SettingUserTaskLabel3";
             SettingUserTaskLabel3.Size = new Size(124, 26);
             SettingUserTaskLabel3.TabIndex = 32;
-            SettingUserTaskLabel3.Text = "Лекция 3";
+            SettingUserTaskLabel3.Text = "Задание 3";
             SettingUserTaskLabel3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // SettingUserTaskLabel2
@@ -1643,7 +1669,7 @@
             SettingUserTaskLabel2.Name = "SettingUserTaskLabel2";
             SettingUserTaskLabel2.Size = new Size(124, 26);
             SettingUserTaskLabel2.TabIndex = 31;
-            SettingUserTaskLabel2.Text = "Лекция 2";
+            SettingUserTaskLabel2.Text = "Задание 2";
             SettingUserTaskLabel2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // SettingUserTaskLabel1
@@ -1653,7 +1679,7 @@
             SettingUserTaskLabel1.Name = "SettingUserTaskLabel1";
             SettingUserTaskLabel1.Size = new Size(124, 26);
             SettingUserTaskLabel1.TabIndex = 30;
-            SettingUserTaskLabel1.Text = "Лекция 1";
+            SettingUserTaskLabel1.Text = "Задание 1";
             SettingUserTaskLabel1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // SettingUserTheoryPanel8
@@ -2034,11 +2060,11 @@
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1389, 661);
             Controls.Add(SettingUserPanel);
+            Controls.Add(TasksPanel);
             Controls.Add(SettingPanel);
             Controls.Add(RegisterPanel);
             Controls.Add(MainMenuPanel);
             Controls.Add(AuthPanel);
-            Controls.Add(TasksPanel);
             Controls.Add(TheoryPanel);
             Controls.Add(Task3Panel);
             Controls.Add(MainButtonPanel);
@@ -2265,5 +2291,7 @@
         private Label SettingUserTaskLabel3;
         private Label SettingUserTaskLabel2;
         private Label SettingUserTaskLabel1;
+        private Label TasksLabel;
+        private RichTextBox TasksResultTextBox;
     }
 }

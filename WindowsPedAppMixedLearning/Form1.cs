@@ -16,6 +16,13 @@ namespace WindowsPedAppMixedLearning
             string login;
             string password;
             bool teacher;
+
+            int[] tasks =
+            {
+                0,
+                0,
+                0,
+            };
             public User(string name, string login, string password, bool teacher = true)
             {
                 this.name = name;
@@ -42,6 +49,21 @@ namespace WindowsPedAppMixedLearning
             public bool IsTeacher()
             {
                 return teacher;
+            }
+            public void SetTasks(int i, int x)
+            {
+                tasks[i] = x;
+            }
+            public void SetTasks(int[] tasks)
+            {
+                for (int i = 0; i < tasks.Length; i++)
+                {
+                    this.tasks[i] = tasks[i];
+                }
+            }
+            public int[] GetTasks()
+            {
+                return tasks;
             }
         }
 
@@ -256,16 +278,28 @@ namespace WindowsPedAppMixedLearning
                 switch (TheoryPoint)
                 {
                     case '1':
-                        TheoryPoint = '2';
-                        OpenTheoryText(sender, e);
+                        if (TheoryButton2.Enabled)
+                        {
+                            TheoryPoint = '2';
+                            OpenTheoryText(sender, e);
+                        }
+                        else OpenTheory(sender, e);
                         break;
                     case '2':
-                        TheoryPoint = '3';
-                        OpenTheoryText(sender, e);
+                        if (TheoryButton3.Enabled)
+                        {
+                            TheoryPoint = '3';
+                            OpenTheoryText(sender, e);
+                        }
+                        else OpenTheory(sender, e);
                         break;
                     case '3':
-                        TheoryPoint = '4';
-                        OpenTheoryText(sender, e);
+                        if (TheoryButton4.Enabled)
+                        {
+                            TheoryPoint = '4';
+                            OpenTheoryText(sender, e);
+                        }
+                        else OpenTheory(sender, e);
                         break;
                     case '4':
                         OpenTheory(sender, e);
@@ -407,6 +441,36 @@ namespace WindowsPedAppMixedLearning
             CloseAll();
             TasksPanel.Visible = true;
             NextButton.Enabled = false;
+
+            TasksLabel.Visible = typeUser;
+            TasksResultTextBox.Visible = typeUser;
+            if (typeUser)
+            {
+                TasksResultTextBox.Text = "";
+                List<User> userList = new List<User>();
+                foreach (var i in users)
+                {
+                    if (i.IsTeacher()) userList.Add(i);
+                    else
+                    {
+                        int[] tasks = i.GetTasks();
+                        TasksResultTextBox.Text += "Студент: " + i.GetName() + "\nОценки:\n";
+                        for (int j = 0; j < tasks.Length; j++)
+                        {
+                            TasksResultTextBox.Text += "Задание " + (j + 1).ToString() + " - " + (tasks[j]).ToString() + ((j != tasks.Length - 1) ? ("\n") : ("\n\n"));
+                        }
+                    }
+                }
+                foreach (var i in userList)
+                {
+                    int[] tasks = i.GetTasks();
+                    TasksResultTextBox.Text += "Преподаватель: " + i.GetName() + "\nОценки:\n";
+                    for (int j = 0; j < tasks.Length; j++)
+                    {
+                        TasksResultTextBox.Text += "Задание " + (j + 1).ToString() + " - " + (tasks[j]).ToString() + ((j != tasks.Length - 1) ? ("\n") : ("\n\n"));
+                    }
+                }
+            }
         }
 
         private void OpenTask1(object sender, EventArgs e)
@@ -575,6 +639,7 @@ namespace WindowsPedAppMixedLearning
         {
             Task2ButtonVisible(false);
             Task2Text.Text = "Ваш результат: " + (Points.Sum()).ToString() + " из " + (Points2.Sum()).ToString();
+            user.SetTasks(1, Points.Sum());
             NextButton.Enabled = false;
             Task2Char = '1';
         }
@@ -746,6 +811,7 @@ namespace WindowsPedAppMixedLearning
 
         private void Task1ButtonDefault()
         {
+            Task1Text.Text = "Найди пару";
             k = 0;
             Task11.Enabled = true;
             Task12.Enabled = true;
@@ -843,6 +909,7 @@ namespace WindowsPedAppMixedLearning
                 k++;
             }
             Task1ButtonVisible(false);
+            user.SetTasks(0, k);
             Task1Text.Text = "Верно";
             if (k != 4)
                 Task1Text.Text = "Неверно";
@@ -901,6 +968,7 @@ namespace WindowsPedAppMixedLearning
             }
             Task3RadioDefaultChecked();
             Task3Result.Text = "Верно: " + k.ToString() + " из 7";
+            user.SetTasks(2, k);
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
