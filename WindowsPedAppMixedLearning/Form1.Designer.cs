@@ -747,9 +747,9 @@
             // 
             Task18.BackColor = Color.White;
             Task18.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Task18.Location = new Point(10, 442);
+            Task18.Location = new Point(10, 430);
             Task18.Name = "Task18";
-            Task18.Size = new Size(415, 70);
+            Task18.Size = new Size(415, 80);
             Task18.TabIndex = 12;
             Task18.Text = "Основа этой модели смешанного обучения в том, что ученики не ограничены по времени тем или иным видом учебной деятельности\r\n";
             Task18.UseVisualStyleBackColor = false;
@@ -771,9 +771,9 @@
             // 
             Task16.BackColor = Color.White;
             Task16.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Task16.Location = new Point(10, 345);
+            Task16.Location = new Point(10, 330);
             Task16.Name = "Task16";
-            Task16.Size = new Size(415, 89);
+            Task16.Size = new Size(415, 80);
             Task16.TabIndex = 10;
             Task16.Text = resources.GetString("Task16.Text");
             Task16.UseVisualStyleBackColor = false;
@@ -795,9 +795,9 @@
             // 
             Task14.BackColor = Color.White;
             Task14.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Task14.Location = new Point(10, 197);
+            Task14.Location = new Point(10, 230);
             Task14.Name = "Task14";
-            Task14.Size = new Size(415, 137);
+            Task14.Size = new Size(415, 80);
             Task14.TabIndex = 8;
             Task14.Text = resources.GetString("Task14.Text");
             Task14.UseVisualStyleBackColor = false;
@@ -819,9 +819,9 @@
             // 
             Task12.BackColor = Color.White;
             Task12.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Task12.Location = new Point(10, 124);
+            Task12.Location = new Point(10, 130);
             Task12.Name = "Task12";
-            Task12.Size = new Size(415, 65);
+            Task12.Size = new Size(415, 80);
             Task12.TabIndex = 6;
             Task12.Text = "Учащиеся работают дома в учебной онлайн-среде: знакомятся с материалом или повторяют изученный. В классе происходит закрепление материала и работа с ним";
             Task12.UseVisualStyleBackColor = false;
@@ -2060,6 +2060,7 @@
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1389, 661);
             Controls.Add(SettingUserPanel);
+            Controls.Add(Task1Panel);
             Controls.Add(TasksPanel);
             Controls.Add(SettingPanel);
             Controls.Add(RegisterPanel);
@@ -2069,7 +2070,6 @@
             Controls.Add(Task3Panel);
             Controls.Add(MainButtonPanel);
             Controls.Add(TheoryTextPanel);
-            Controls.Add(Task1Panel);
             Controls.Add(Task2Panel);
             Controls.Add(LiteraturesPanel);
             Controls.Add(InformationPanel);
