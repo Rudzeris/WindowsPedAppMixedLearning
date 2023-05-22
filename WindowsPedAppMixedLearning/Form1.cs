@@ -385,7 +385,7 @@ namespace WindowsPedAppMixedLearning
 
             NextButton.Enabled = true;
 
-            TheoryTextBox1.LoadFile("Theory\\Theory" + TheoryPoint);
+            TheoryTextBox1.LoadFile("Theory\\Theory" + TheoryPoint+".rtf");
             //switch (TheoryPoint)
             //{
             //    case '1':
