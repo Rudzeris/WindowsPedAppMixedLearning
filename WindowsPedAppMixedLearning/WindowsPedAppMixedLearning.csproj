@@ -15,6 +15,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="bin\Debug\net6.0-windows\Theory\Theory1.rtf" />
+    <None Include="bin\Debug\net6.0-windows\Theory\Theory2.rtf" />
+    <None Include="bin\Debug\net6.0-windows\Theory\Theory3.rtf" />
+    <None Include="bin\Debug\net6.0-windows\Theory\Theory4.rtf" />
+    <None Include="bin\Debug\net6.0-windows\Theory\Theory5.rtf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Resource1.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -26,6 +34,7 @@
     <EmbeddedResource Update="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
 

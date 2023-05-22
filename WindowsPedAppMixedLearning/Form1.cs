@@ -384,12 +384,21 @@ namespace WindowsPedAppMixedLearning
             TheoryTextPanel.Visible = true;
 
             NextButton.Enabled = true;
-
-            TheoryTextBox1.LoadFile("Theory\\Theory" + TheoryPoint+".rtf");
+            string filename = "Theory\\Theory" + TheoryPoint + ".rtf";
+            if(File.Exists(filename))
+                TheoryTextBox1.LoadFile(filename);
+            else
+            {
+                filename = "..\\..\\..\\" + filename;
+                if(File.Exists (filename))
+                    TheoryTextBox1.LoadFile(filename);
+                else
+                    TheoryTextBox1.LoadFile("Нет теории");
+            }
             //switch (TheoryPoint)
             //{
             //    case '1':
-                    
+
             //        break;
             //    case '2':
             //        TheoryTextBox1.Text = Theory2;
