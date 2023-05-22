@@ -42,6 +42,7 @@
             NextButton = new Button();
             BackButton = new Button();
             TheoryPanel = new Panel();
+            TheoryButton5 = new Button();
             TheoryButton3 = new Button();
             TheoryButton2 = new Button();
             TheoryButton4 = new Button();
@@ -275,6 +276,7 @@
             MainMenuOpenAuthPanel.Text = "Авторизация";
             MainMenuOpenAuthPanel.UseVisualStyleBackColor = false;
             MainMenuOpenAuthPanel.Click += OpenAuthPanel_Click;
+            MainMenuOpenAuthPanel.MouseDown += MainMenuOpenAuthPanel_MouseDown;
             // 
             // OpenInformationButton
             // 
@@ -377,6 +379,7 @@
             // 
             TheoryPanel.BackColor = Color.Transparent;
             TheoryPanel.BorderStyle = BorderStyle.FixedSingle;
+            TheoryPanel.Controls.Add(TheoryButton5);
             TheoryPanel.Controls.Add(TheoryButton3);
             TheoryPanel.Controls.Add(TheoryButton2);
             TheoryPanel.Controls.Add(TheoryButton4);
@@ -386,15 +389,27 @@
             TheoryPanel.Size = new Size(440, 580);
             TheoryPanel.TabIndex = 1;
             // 
+            // TheoryButton5
+            // 
+            TheoryButton5.BackColor = Color.White;
+            TheoryButton5.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TheoryButton5.Location = new Point(53, 456);
+            TheoryButton5.Name = "TheoryButton5";
+            TheoryButton5.Size = new Size(333, 70);
+            TheoryButton5.TabIndex = 8;
+            TheoryButton5.Text = "Циклы";
+            TheoryButton5.UseVisualStyleBackColor = false;
+            TheoryButton5.Click += TheoryButton5_Click;
+            // 
             // TheoryButton3
             // 
             TheoryButton3.BackColor = Color.White;
             TheoryButton3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TheoryButton3.Location = new Point(54, 312);
+            TheoryButton3.Location = new Point(54, 256);
             TheoryButton3.Name = "TheoryButton3";
-            TheoryButton3.Size = new Size(333, 82);
+            TheoryButton3.Size = new Size(333, 70);
             TheoryButton3.TabIndex = 7;
-            TheoryButton3.Text = "Преимущества и недостатки смешанного обучения";
+            TheoryButton3.Text = "Переменные";
             TheoryButton3.UseVisualStyleBackColor = false;
             TheoryButton3.Click += TheoryButton3_Click;
             // 
@@ -402,11 +417,11 @@
             // 
             TheoryButton2.BackColor = Color.White;
             TheoryButton2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TheoryButton2.Location = new Point(54, 184);
+            TheoryButton2.Location = new Point(54, 156);
             TheoryButton2.Name = "TheoryButton2";
-            TheoryButton2.Size = new Size(333, 82);
+            TheoryButton2.Size = new Size(333, 70);
             TheoryButton2.TabIndex = 6;
-            TheoryButton2.Text = "Модели смешанного обучения";
+            TheoryButton2.Text = "Python как калькулятор";
             TheoryButton2.UseVisualStyleBackColor = false;
             TheoryButton2.Click += TheoryButton2_Click;
             // 
@@ -414,11 +429,11 @@
             // 
             TheoryButton4.BackColor = Color.White;
             TheoryButton4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TheoryButton4.Location = new Point(54, 440);
+            TheoryButton4.Location = new Point(54, 356);
             TheoryButton4.Name = "TheoryButton4";
-            TheoryButton4.Size = new Size(333, 82);
+            TheoryButton4.Size = new Size(333, 70);
             TheoryButton4.TabIndex = 5;
-            TheoryButton4.Text = "Анализ эффективности смешанного обучения";
+            TheoryButton4.Text = "Операторы ветвлений";
             TheoryButton4.UseVisualStyleBackColor = false;
             TheoryButton4.Click += TheoryButton4_Click;
             // 
@@ -428,9 +443,9 @@
             TheoryButton1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TheoryButton1.Location = new Point(54, 56);
             TheoryButton1.Name = "TheoryButton1";
-            TheoryButton1.Size = new Size(333, 83);
+            TheoryButton1.Size = new Size(333, 70);
             TheoryButton1.TabIndex = 4;
-            TheoryButton1.Text = "Основы смешанного обучения";
+            TheoryButton1.Text = "Что такое Python?";
             TheoryButton1.UseVisualStyleBackColor = false;
             TheoryButton1.Click += TheoryButton1_Click;
             // 
@@ -546,7 +561,6 @@
             OpenTask3Button.TabIndex = 6;
             OpenTask3Button.Text = "Тест";
             OpenTask3Button.UseVisualStyleBackColor = false;
-            OpenTask3Button.Visible = false;
             OpenTask3Button.Click += OpenTask3;
             // 
             // OpenTask2Button
@@ -2059,14 +2073,14 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1389, 661);
+            Controls.Add(TheoryPanel);
+            Controls.Add(MainMenuPanel);
+            Controls.Add(TasksPanel);
             Controls.Add(SettingUserPanel);
             Controls.Add(Task1Panel);
-            Controls.Add(TasksPanel);
             Controls.Add(SettingPanel);
             Controls.Add(RegisterPanel);
-            Controls.Add(MainMenuPanel);
             Controls.Add(AuthPanel);
-            Controls.Add(TheoryPanel);
             Controls.Add(Task3Panel);
             Controls.Add(MainButtonPanel);
             Controls.Add(TheoryTextPanel);
@@ -2293,5 +2307,6 @@
         private Label SettingUserTaskLabel1;
         private Label TasksLabel;
         private RichTextBox TasksResultTextBox;
+        private Button TheoryButton5;
     }
 }
