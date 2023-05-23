@@ -906,6 +906,7 @@
             Task3_54.TabStop = true;
             Task3_54.Text = "radioButton4";
             Task3_54.UseVisualStyleBackColor = true;
+            Task3_54.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_53
             // 
@@ -917,6 +918,7 @@
             Task3_53.TabStop = true;
             Task3_53.Text = "radioButton3";
             Task3_53.UseVisualStyleBackColor = true;
+            Task3_53.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_52
             // 
@@ -928,6 +930,7 @@
             Task3_52.TabStop = true;
             Task3_52.Text = "radioButton2";
             Task3_52.UseVisualStyleBackColor = true;
+            Task3_52.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_51
             // 
@@ -939,6 +942,7 @@
             Task3_51.TabStop = true;
             Task3_51.Text = "radioButton1";
             Task3_51.UseVisualStyleBackColor = true;
+            Task3_51.CheckedChanged += Task3RadioChanged;
             // 
             // Task3Text5
             // 
@@ -971,6 +975,7 @@
             Task3_44.TabStop = true;
             Task3_44.Text = "radioButton4";
             Task3_44.UseVisualStyleBackColor = true;
+            Task3_44.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_43
             // 
@@ -982,6 +987,7 @@
             Task3_43.TabStop = true;
             Task3_43.Text = "radioButton3";
             Task3_43.UseVisualStyleBackColor = true;
+            Task3_43.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_42
             // 
@@ -993,6 +999,7 @@
             Task3_42.TabStop = true;
             Task3_42.Text = "radioButton2";
             Task3_42.UseVisualStyleBackColor = true;
+            Task3_42.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_41
             // 
@@ -1004,6 +1011,7 @@
             Task3_41.TabStop = true;
             Task3_41.Text = "radioButton1";
             Task3_41.UseVisualStyleBackColor = true;
+            Task3_41.CheckedChanged += Task3RadioChanged;
             // 
             // Task3Text4
             // 
@@ -1036,6 +1044,7 @@
             Task3_34.TabStop = true;
             Task3_34.Text = "radioButton4";
             Task3_34.UseVisualStyleBackColor = true;
+            Task3_34.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_33
             // 
@@ -1047,6 +1056,7 @@
             Task3_33.TabStop = true;
             Task3_33.Text = "radioButton3";
             Task3_33.UseVisualStyleBackColor = true;
+            Task3_33.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_32
             // 
@@ -1058,6 +1068,7 @@
             Task3_32.TabStop = true;
             Task3_32.Text = "radioButton2";
             Task3_32.UseVisualStyleBackColor = true;
+            Task3_32.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_31
             // 
@@ -1069,6 +1080,7 @@
             Task3_31.TabStop = true;
             Task3_31.Text = "radioButton1";
             Task3_31.UseVisualStyleBackColor = true;
+            Task3_31.CheckedChanged += Task3RadioChanged;
             // 
             // Task3Text3
             // 
@@ -1101,6 +1113,7 @@
             Task3_24.TabStop = true;
             Task3_24.Text = "radioButton4";
             Task3_24.UseVisualStyleBackColor = true;
+            Task3_24.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_23
             // 
@@ -1112,6 +1125,7 @@
             Task3_23.TabStop = true;
             Task3_23.Text = "radioButton3";
             Task3_23.UseVisualStyleBackColor = true;
+            Task3_23.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_22
             // 
@@ -1123,6 +1137,7 @@
             Task3_22.TabStop = true;
             Task3_22.Text = "radioButton2";
             Task3_22.UseVisualStyleBackColor = true;
+            Task3_22.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_21
             // 
@@ -1134,6 +1149,7 @@
             Task3_21.TabStop = true;
             Task3_21.Text = "radioButton1";
             Task3_21.UseVisualStyleBackColor = true;
+            Task3_21.CheckedChanged += Task3RadioChanged;
             // 
             // Task3Text2
             // 
@@ -1166,6 +1182,7 @@
             Task3_14.TabStop = true;
             Task3_14.Text = "квест-урок";
             Task3_14.UseVisualStyleBackColor = true;
+            Task3_14.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_13
             // 
@@ -1176,6 +1193,7 @@
             Task3_13.TabIndex = 2;
             Task3_13.Text = "Ротация лабораторий";
             Task3_13.UseVisualStyleBackColor = true;
+            Task3_13.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_12
             // 
@@ -1187,6 +1205,7 @@
             Task3_12.TabStop = true;
             Task3_12.Text = "блог-урок";
             Task3_12.UseVisualStyleBackColor = true;
+            Task3_12.CheckedChanged += Task3RadioChanged;
             // 
             // Task3_11
             // 
@@ -1198,6 +1217,7 @@
             Task3_11.TabStop = true;
             Task3_11.Text = "Перевернутый класс, гибкая модель";
             Task3_11.UseVisualStyleBackColor = true;
+            Task3_11.CheckedChanged += Task3RadioChanged;
             // 
             // Task3Text1
             // 
@@ -2073,6 +2093,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1389, 661);
+            Controls.Add(Task3Panel);
             Controls.Add(TheoryPanel);
             Controls.Add(MainMenuPanel);
             Controls.Add(TasksPanel);
@@ -2081,7 +2102,6 @@
             Controls.Add(SettingPanel);
             Controls.Add(RegisterPanel);
             Controls.Add(AuthPanel);
-            Controls.Add(Task3Panel);
             Controls.Add(MainButtonPanel);
             Controls.Add(TheoryTextPanel);
             Controls.Add(Task2Panel);

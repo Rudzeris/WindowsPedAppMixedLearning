@@ -266,7 +266,7 @@ namespace WindowsPedAppMixedLearning
         {
             if (TextPanel == "Setting" || TextPanel == "Theory" || TextPanel == "Literatures" || TextPanel == "Information" || TextPanel == "Tasks") OpenMainMenu(sender, e);
             else if (TextPanel == "TheoryText") OpenTheory(sender, e);
-            else if (TextPanel == "Task1" || TextPanel == "Task3") OpenTasks(sender, e);
+            else if (TextPanel == "Task1") OpenTasks(sender, e);
             else if (TextPanel == "Task2")
             {
                 if (Task2Char == '1') OpenTasks(sender, e);
@@ -274,6 +274,12 @@ namespace WindowsPedAppMixedLearning
                 else if (Task2Char == '3') Task2_2();
             }
             else if (TextPanel == "Setting Student") OpenSetting(sender, e);
+            else if (TextPanel == "Task3")
+            {
+                if (task3 == 1) OpenTasks(sender, e);
+                else if (task3 == 2) Task3_1();
+                else OpenTasks(sender, e);
+            }
         }
 
         private void PrevButton_Click(object sender, EventArgs e)
@@ -316,6 +322,17 @@ namespace WindowsPedAppMixedLearning
                 if (Task2Char == '1') Task2_2();
                 else if (Task2Char == '2') Task2_Result();
                 //else if (Task2Char=='3') Task2_Result();
+            }
+            if (TextPanel == "Task3")
+            {
+                if (task3 == 1)
+                {
+                    Task3Result_click(sender, e);
+                }else if (task3 == 2)
+                {
+                    Task3Result_click(sender, e);
+                    OpenTasks(sender, e);
+                }
             }
         }
 
@@ -385,12 +402,12 @@ namespace WindowsPedAppMixedLearning
 
             NextButton.Enabled = true;
             string filename = "Theory\\Theory" + TheoryPoint + ".rtf";
-            if(File.Exists(filename))
+            if (File.Exists(filename))
                 TheoryTextBox1.LoadFile(filename);
             else
             {
                 filename = "..\\..\\..\\" + filename;
-                if(File.Exists (filename))
+                if (File.Exists(filename))
                     TheoryTextBox1.LoadFile(filename);
                 else
                     TheoryTextBox1.LoadFile("Нет теории");
@@ -512,327 +529,6 @@ namespace WindowsPedAppMixedLearning
             Task1ResultButton.Visible = true;
             Task1ResultButton.Text = "Проверить";
             //Task1ButtonSwitch();
-        }
-        private void OpenTask2(object sender, EventArgs e)
-        {
-            TextPanel = "Task2";
-            CloseAll();
-            Task2Panel.Visible = true;
-            Task2ButtonVisible(true);
-            Task2_1();
-            Task2B2.Text = "Ответить";
-        }
-
-        private void DefaultTask2()
-        {
-            Task21.BackColor = Color.White;
-            Task22.BackColor = Color.White;
-            Task23.BackColor = Color.White;
-            Task24.BackColor = Color.White;
-            Task25.BackColor = Color.White;
-            Task26.BackColor = Color.White;
-            Task27.BackColor = Color.White;
-            Task28.BackColor = Color.White;
-        }
-
-        int[] Task2Answer = { 0, 0, 0, 0, 0, 0, 0, 0 };
-        int[] Task2Question = { 0, 0, 0, 0, 0, 0, 0, 0 };
-        int[] Points = { 0, 0, 0 };
-        int[] Points2 = { 0, 0, 0 };
-
-        private void Task2_PointDelete(int x)
-        {
-            for (int i = 2; i >= x - 1; i--)
-            {
-                Points[i] = 0;
-            }
-        }
-
-        private void Task2_1()
-        {
-            NextButton.Enabled = false;
-            Task2_PointDelete(1);
-            Task2Char = '1';
-            Task2Text.Text = "Из каких частей состоит программа, которая выводит \"Hello World!\"";
-            DefaultTask2();
-            // Сколько баллов будет давать каждый ответ:
-            Task2Question[0] = 1;
-            Task21.Text = "Открывающая круглая скобка";
-            Task2Question[1] = -1;
-            Task22.Text = "Точка с запятой";
-            Task2Question[2] = 1;
-            Task23.Text = "Строка текста: \"Hello, World!\"";
-            Task2Question[3] = 1;
-            Task24.Text = "Кавычки";
-            Task2Question[4] = 1;
-            Task25.Text = "Оператор \"print\"";
-            Task2Question[5] = 1;
-            Task26.Text = "Закрывающая круглая скобка";
-
-            Task27.Visible = false;
-            Task28.Visible = false;
-
-            Task2Question[6] = 0;
-            Task27.Text = "";
-            Task2Question[7] = 0;
-            Task28.Text = "";
-
-            // Дальше не менять - там будем записывать ответы
-            Task2Answer[0] = 0;
-            Task2Answer[1] = 0;
-            Task2Answer[2] = 0;
-            Task2Answer[3] = 0;
-            Task2Answer[4] = 0;
-            Task2Answer[5] = 0;
-            Task2Answer[6] = 0;
-            Task2Answer[7] = 0;
-            //Task2B2.Text = "Проверить";
-        }
-        private void Task2_2()
-        {
-            NextButton.Enabled = false;
-            Task2_PointDelete(2);
-            Task2Char = '2';
-            Task2Text.Text = "Выберите правильные имена переменных";
-            DefaultTask2();
-            // Сколько баллов будет давать каждый ответ:
-            Task2Question[0] = 1;
-            Task21.Text = "MyVariable";
-            Task2Question[1] = 1;
-            Task22.Text = "Adiós_Señora";
-            Task2Question[2] = -1;
-            Task23.Text = "Exchange Rate";
-            Task2Question[3] = -1;
-            Task24.Text = "10т";
-            Task2Question[4] = -1;
-            Task25.Text = "break";
-            Task2Question[5] = 1;
-            Task26.Text = "t34";
-
-            Task27.Visible = false;
-            Task28.Visible = false;
-
-            // Дальше не менять - там будем записывать ответы
-            Task2Answer[0] = 0;
-            Task2Answer[1] = 0;
-            Task2Answer[2] = 0;
-            Task2Answer[3] = 0;
-            Task2Answer[4] = 0;
-            Task2Answer[5] = 0;
-            Task2Answer[6] = 0;
-            Task2Answer[7] = 0;
-            //Task2B2.Text = "Проверить";
-        }
-
-        private void Task2_3()
-        {
-            NextButton.Enabled = false;
-            Task2_PointDelete(3);
-            Task2Char = '3';
-            Task2Text.Text = "Text3";
-            DefaultTask2();
-            // Сколько баллов будет давать каждый ответ:
-            Task2Question[0] = 1;
-            Task21.Text = "1";
-            Task2Question[1] = 1;
-            Task22.Text = "2";
-            Task2Question[2] = 1;
-            Task23.Text = "3";
-            Task2Question[3] = -1;
-            Task24.Text = "4";
-            Task2Question[4] = -1;
-            Task25.Text = "5";
-            Task2Question[5] = -1;
-            Task26.Text = "6";
-            Task2Question[6] = -1;
-            Task27.Text = "7";
-            Task2Question[7] = 1;
-            Task28.Text = "8";
-
-            // Дальше не менять - там будем записывать ответы
-            Task2Answer[0] = 0;
-            Task2Answer[1] = 0;
-            Task2Answer[2] = 0;
-            Task2Answer[3] = 0;
-            Task2Answer[4] = 0;
-            Task2Answer[5] = 0;
-            Task2Answer[6] = 0;
-            Task2Answer[7] = 0;
-            //Task2B2.Text = "Проверить";
-        }
-
-        private void Task2_Result()
-        {
-            Task2ButtonVisible(false);
-            Task2Text.Text = "Ваш результат: " + (Points.Sum()).ToString() + " из " + (Points2.Sum()).ToString();
-            user.SetTasks(1, Points.Sum());
-            NextButton.Enabled = false;
-            Task2Char = '1';
-        }
-
-        private void Task2ButtonVisible(bool x)
-        {
-            Task21.Visible = x;
-            Task22.Visible = x;
-            Task23.Visible = x;
-            Task24.Visible = x;
-            Task25.Visible = x;
-            Task26.Visible = x;
-            Task27.Visible = x;
-            Task28.Visible = x;
-            Task2B2.Visible = x;
-        }
-        private void OpenTask3(object sender, EventArgs e)
-        {
-            TextPanel = "Task3";
-            CloseAll();
-            Task3Panel.Visible = true;
-            Task3Result.Text = "Проверить";
-        }
-
-        private void Task2B2_Click(object sender, EventArgs e)
-        {
-            NextButton.Enabled = true;
-            int a = Task2Answer.Sum();
-            if (a < 0)
-            {
-                a = 0;
-            }
-
-            int b = 0;
-            foreach (int i in Task2Question)
-            {
-                if (i > 0)
-                    b += i;
-            }
-            Task2Text.Text = "Вы набрали: " + (a).ToString() + " из " + (b).ToString();
-            if (Task2Char == '1')
-            {
-                Points[0] = a;
-                Points2[0] = b;
-            }
-            if (Task2Char == '2')
-            {
-                Points[1] = a;
-                Points2[1] = b;
-            }
-            if (Task2Char == '3')
-            {
-                Points[2] = a;
-                Points2[2] = b;
-            }
-        }
-
-        private void Task21_Click(object sender, EventArgs e)
-        {
-            if (Task21.BackColor != Color.Blue)
-            {
-                Task21.BackColor = Color.Blue;
-                Task2Answer[0] = Task2Question[0];
-            }
-            else
-            {
-                Task2Answer[0] = 0;
-                Task21.BackColor = Color.White;
-            }
-        }
-
-        private void Task22_Click(object sender, EventArgs e)
-        {
-            if (Task22.BackColor != Color.Blue)
-            {
-                Task22.BackColor = Color.Blue;
-                Task2Answer[1] = Task2Question[1];
-            }
-            else
-            {
-                Task2Answer[1] = 0;
-                Task22.BackColor = Color.White;
-            }
-        }
-
-        private void Task23_Click(object sender, EventArgs e)
-        {
-            if (Task23.BackColor != Color.Blue)
-            {
-                Task23.BackColor = Color.Blue;
-                Task2Answer[2] = Task2Question[2];
-            }
-            else
-            {
-                Task2Answer[2] = 0;
-                Task23.BackColor = Color.White;
-            }
-        }
-
-        private void Task24_Click(object sender, EventArgs e)
-        {
-            if (Task24.BackColor != Color.Blue)
-            {
-                Task24.BackColor = Color.Blue;
-                Task2Answer[3] = Task2Question[3];
-            }
-            else
-            {
-                Task2Answer[3] = 0;
-                Task24.BackColor = Color.White;
-            }
-        }
-
-        private void Task25_Click(object sender, EventArgs e)
-        {
-            if (Task25.BackColor != Color.Blue)
-            {
-                Task25.BackColor = Color.Blue;
-                Task2Answer[4] = Task2Question[4];
-            }
-            else
-            {
-                Task2Answer[4] = 0;
-                Task25.BackColor = Color.White;
-            }
-        }
-
-        private void Task26_Click(object sender, EventArgs e)
-        {
-            if (Task26.BackColor != Color.Blue)
-            {
-                Task26.BackColor = Color.Blue;
-                Task2Answer[5] = Task2Question[5];
-            }
-            else
-            {
-                Task2Answer[5] = 0;
-                Task26.BackColor = Color.White;
-            }
-        }
-
-        private void Task27_Click(object sender, EventArgs e)
-        {
-            if (Task27.BackColor != Color.Blue)
-            {
-                Task27.BackColor = Color.Blue;
-                Task2Answer[6] = Task2Question[6];
-            }
-            else
-            {
-                Task2Answer[6] = 0;
-                Task27.BackColor = Color.White;
-            }
-        }
-
-        private void Task28_Click(object sender, EventArgs e)
-        {
-            if (Task28.BackColor != Color.Blue)
-            {
-                Task28.BackColor = Color.Blue;
-                Task2Answer[7] = Task2Question[7];
-            }
-            else
-            {
-                Task2Answer[7] = 0;
-                Task28.BackColor = Color.White;
-            }
         }
 
         private void Task1ButtonDefault()
@@ -1007,6 +703,407 @@ namespace WindowsPedAppMixedLearning
             user.SetTasks(0, (task1Num > (byte)user.GetTasks(0)) ? (task1Num) : (user.GetTasks(0)));
         }
 
+        private void OpenTask2(object sender, EventArgs e)
+        {
+            TextPanel = "Task2";
+            CloseAll();
+            Task2Panel.Visible = true;
+            Task2ButtonVisible(true);
+            Task2_1();
+            Task2B2.Text = "Ответить";
+        }
+
+        private void DefaultTask2()
+        {
+            Task21.BackColor = Color.White;
+            Task22.BackColor = Color.White;
+            Task23.BackColor = Color.White;
+            Task24.BackColor = Color.White;
+            Task25.BackColor = Color.White;
+            Task26.BackColor = Color.White;
+            Task27.BackColor = Color.White;
+            Task28.BackColor = Color.White;
+        }
+
+        int[] Task2Answer = { 0, 0, 0, 0, 0, 0, 0, 0 };
+        int[] Task2Question = { 0, 0, 0, 0, 0, 0, 0, 0 };
+        int[] Points = { 0, 0, 0 };
+        int[] Points2 = { 0, 0, 0 };
+
+        private void Task2_PointDelete(int x)
+        {
+            for (int i = 2; i >= x - 1; i--)
+            {
+                Points[i] = 0;
+            }
+        }
+
+        private void Task2_1()
+        {
+            NextButton.Enabled = false;
+            Task2_PointDelete(1);
+            Task2Char = '1';
+            Task2Text.Text = "Из каких частей состоит программа, которая выводит \"Hello World!\"";
+            DefaultTask2();
+            // Сколько баллов будет давать каждый ответ:
+            Task2Question[0] = 1;
+            Task21.Text = "Открывающая круглая скобка";
+            Task2Question[1] = -1;
+            Task22.Text = "Точка с запятой";
+            Task2Question[2] = 1;
+            Task23.Text = "Строка текста: \"Hello, World!\"";
+            Task2Question[3] = 1;
+            Task24.Text = "Кавычки";
+            Task2Question[4] = 1;
+            Task25.Text = "Оператор \"print\"";
+            Task2Question[5] = 1;
+            Task26.Text = "Закрывающая круглая скобка";
+
+            Task27.Visible = false;
+            Task28.Visible = false;
+
+            Task2Question[6] = 0;
+            Task27.Text = "";
+            Task2Question[7] = 0;
+            Task28.Text = "";
+
+            // Дальше не менять - там будем записывать ответы
+            Task2Answer[0] = 0;
+            Task2Answer[1] = 0;
+            Task2Answer[2] = 0;
+            Task2Answer[3] = 0;
+            Task2Answer[4] = 0;
+            Task2Answer[5] = 0;
+            Task2Answer[6] = 0;
+            Task2Answer[7] = 0;
+            //Task2B2.Text = "Проверить";
+        }
+        private void Task2_2()
+        {
+            NextButton.Enabled = false;
+            Task2_PointDelete(2);
+            Task2Char = '2';
+            Task2Text.Text = "Выберите правильные имена переменных";
+            DefaultTask2();
+            // Сколько баллов будет давать каждый ответ:
+            Task2Question[0] = 1;
+            Task21.Text = "MyVariable";
+            Task2Question[1] = 1;
+            Task22.Text = "Adiós_Señora";
+            Task2Question[2] = -1;
+            Task23.Text = "Exchange Rate";
+            Task2Question[3] = -1;
+            Task24.Text = "10т";
+            Task2Question[4] = -1;
+            Task25.Text = "break";
+            Task2Question[5] = 1;
+            Task26.Text = "t34";
+
+            Task27.Visible = false;
+            Task28.Visible = false;
+
+            // Дальше не менять - там будем записывать ответы
+            Task2Answer[0] = 0;
+            Task2Answer[1] = 0;
+            Task2Answer[2] = 0;
+            Task2Answer[3] = 0;
+            Task2Answer[4] = 0;
+            Task2Answer[5] = 0;
+            Task2Answer[6] = 0;
+            Task2Answer[7] = 0;
+            //Task2B2.Text = "Проверить";
+        }
+
+        private void Task2_3()
+        {
+            NextButton.Enabled = false;
+            Task2_PointDelete(3);
+            Task2Char = '3';
+            Task2Text.Text = "Text3";
+            DefaultTask2();
+            // Сколько баллов будет давать каждый ответ:
+            Task2Question[0] = 1;
+            Task21.Text = "1";
+            Task2Question[1] = 1;
+            Task22.Text = "2";
+            Task2Question[2] = 1;
+            Task23.Text = "3";
+            Task2Question[3] = -1;
+            Task24.Text = "4";
+            Task2Question[4] = -1;
+            Task25.Text = "5";
+            Task2Question[5] = -1;
+            Task26.Text = "6";
+            Task2Question[6] = -1;
+            Task27.Text = "7";
+            Task2Question[7] = 1;
+            Task28.Text = "8";
+
+            // Дальше не менять - там будем записывать ответы
+            Task2Answer[0] = 0;
+            Task2Answer[1] = 0;
+            Task2Answer[2] = 0;
+            Task2Answer[3] = 0;
+            Task2Answer[4] = 0;
+            Task2Answer[5] = 0;
+            Task2Answer[6] = 0;
+            Task2Answer[7] = 0;
+            //Task2B2.Text = "Проверить";
+        }
+
+        private void Task2_Result()
+        {
+            Task2ButtonVisible(false);
+            Task2Text.Text = "Ваш результат: " + (Points.Sum()).ToString() + " из " + (Points2.Sum()).ToString();
+            user.SetTasks(1, Points.Sum());
+            NextButton.Enabled = false;
+            Task2Char = '1';
+        }
+
+        private void Task2ButtonVisible(bool x)
+        {
+            Task21.Visible = x;
+            Task22.Visible = x;
+            Task23.Visible = x;
+            Task24.Visible = x;
+            Task25.Visible = x;
+            Task26.Visible = x;
+            Task27.Visible = x;
+            Task28.Visible = x;
+            Task2B2.Visible = x;
+        }
+
+        private void Task2B2_Click(object sender, EventArgs e)
+        {
+            NextButton.Enabled = true;
+            int a = Task2Answer.Sum();
+            if (a < 0)
+            {
+                a = 0;
+            }
+
+            int b = 0;
+            foreach (int i in Task2Question)
+            {
+                if (i > 0)
+                    b += i;
+            }
+            Task2Text.Text = "Вы набрали: " + (a).ToString() + " из " + (b).ToString();
+            if (Task2Char == '1')
+            {
+                Points[0] = a;
+                Points2[0] = b;
+            }
+            if (Task2Char == '2')
+            {
+                Points[1] = a;
+                Points2[1] = b;
+            }
+            if (Task2Char == '3')
+            {
+                Points[2] = a;
+                Points2[2] = b;
+            }
+        }
+
+        private void Task21_Click(object sender, EventArgs e)
+        {
+            if (Task21.BackColor != Color.Blue)
+            {
+                Task21.BackColor = Color.Blue;
+                Task2Answer[0] = Task2Question[0];
+            }
+            else
+            {
+                Task2Answer[0] = 0;
+                Task21.BackColor = Color.White;
+            }
+        }
+
+        private void Task22_Click(object sender, EventArgs e)
+        {
+            if (Task22.BackColor != Color.Blue)
+            {
+                Task22.BackColor = Color.Blue;
+                Task2Answer[1] = Task2Question[1];
+            }
+            else
+            {
+                Task2Answer[1] = 0;
+                Task22.BackColor = Color.White;
+            }
+        }
+
+        private void Task23_Click(object sender, EventArgs e)
+        {
+            if (Task23.BackColor != Color.Blue)
+            {
+                Task23.BackColor = Color.Blue;
+                Task2Answer[2] = Task2Question[2];
+            }
+            else
+            {
+                Task2Answer[2] = 0;
+                Task23.BackColor = Color.White;
+            }
+        }
+
+        private void Task24_Click(object sender, EventArgs e)
+        {
+            if (Task24.BackColor != Color.Blue)
+            {
+                Task24.BackColor = Color.Blue;
+                Task2Answer[3] = Task2Question[3];
+            }
+            else
+            {
+                Task2Answer[3] = 0;
+                Task24.BackColor = Color.White;
+            }
+        }
+
+        private void Task25_Click(object sender, EventArgs e)
+        {
+            if (Task25.BackColor != Color.Blue)
+            {
+                Task25.BackColor = Color.Blue;
+                Task2Answer[4] = Task2Question[4];
+            }
+            else
+            {
+                Task2Answer[4] = 0;
+                Task25.BackColor = Color.White;
+            }
+        }
+
+        private void Task26_Click(object sender, EventArgs e)
+        {
+            if (Task26.BackColor != Color.Blue)
+            {
+                Task26.BackColor = Color.Blue;
+                Task2Answer[5] = Task2Question[5];
+            }
+            else
+            {
+                Task2Answer[5] = 0;
+                Task26.BackColor = Color.White;
+            }
+        }
+
+        private void Task27_Click(object sender, EventArgs e)
+        {
+            if (Task27.BackColor != Color.Blue)
+            {
+                Task27.BackColor = Color.Blue;
+                Task2Answer[6] = Task2Question[6];
+            }
+            else
+            {
+                Task2Answer[6] = 0;
+                Task27.BackColor = Color.White;
+            }
+        }
+
+        private void Task28_Click(object sender, EventArgs e)
+        {
+            if (Task28.BackColor != Color.Blue)
+            {
+                Task28.BackColor = Color.Blue;
+                Task2Answer[7] = Task2Question[7];
+            }
+            else
+            {
+                Task2Answer[7] = 0;
+                Task28.BackColor = Color.White;
+            }
+        }
+        private void OpenTask3(object sender, EventArgs e)
+        {
+            TextPanel = "Task3";
+            CloseAll();
+            Task3Panel.Visible = true;
+            Task3Result.Text = "Проверить";
+            Task3_1();
+            for (byte i = 0; i < task3RadioChecked.Length; i++)
+            {
+                task3RadioChecked[i] = 0;
+            }
+        }
+
+        byte task3 = 0;
+        byte[] task3RadioChecked = new byte[10];
+        private void Task3_1()
+        {
+            NextButton.Enabled = true;
+            Task3RadioDefaultChecked();
+            Task3Result.Visible = false;
+            if (task3 == 2)
+            {
+                Task3LoadCheched(1);
+            }
+            task3 = 1;
+            Task3Text1.Text = "[name = \"John\"]\n[print('Hi, %s' % name)]";
+            Task3_11.Text = "\"Hi, John\""; // o
+            Task3_12.Text = "\"Hi, name\"";
+            Task3_13.Text = "Ошибка";
+            Task3_14.Text = "\"Hi,\"";
+            Task3Text2.Text = "[x = 23] [num = 0 if x > 10 else 11]\n[print(num)]";
+            Task3_21.Text = "0"; // o
+            Task3_22.Text = "Ошибка";
+            Task3_23.Text = "23";
+            Task3_24.Text = "10";
+            Task3Text3.Text = "Какая функция выводит что-либо в консоль?";
+            Task3_31.Text = "print()"; // o
+            Task3_32.Text = "write()";
+            Task3_33.Text = "out()";
+            Task3_34.Text = "log()";
+            Task3Text4.Text = "Есть ошибка?[def factorial(n): [if n == 0: return 1] [else: return n * factorial(n - 1)]]\n[print(factorial(5))]";
+            Task3_41.Text = "Функция всегда будет возвращать";
+            Task3_42.Text = "Необходимо указать тип возвращаемого значения";
+            Task3_43.Text = "Функция не может вызывать сама себя";
+            Task3_44.Text = "В коде нет никаких ошибок"; // o
+            Task3Text5.Text = "";
+            Task3_51.Text = "";
+            Task3_52.Text = "";
+            Task3_53.Text = "";
+            Task3_54.Text = "";
+
+        }
+        private void Task3_2()
+        {
+            Task3Result.Visible = true;
+            Task3Result.Text = "Проверить";
+            Task3RadioDefaultChecked();
+            Task3LoadCheched(2);
+            task3 = 2;
+            Task3Text1.Text = "";
+            Task3_11.Text = "";
+            Task3_12.Text = "";
+            Task3_13.Text = "";
+            Task3_14.Text = "";
+            Task3Text2.Text = "";
+            Task3_21.Text = "";
+            Task3_22.Text = "";
+            Task3_23.Text = "";
+            Task3_24.Text = "";
+            Task3Text3.Text = "";
+            Task3_31.Text = "";
+            Task3_32.Text = "";
+            Task3_33.Text = "";
+            Task3_34.Text = "";
+            Task3Text4.Text = "";
+            Task3_41.Text = "";
+            Task3_42.Text = "";
+            Task3_43.Text = "";
+            Task3_44.Text = "";
+            Task3Text5.Text = "";
+            Task3_51.Text = "";
+            Task3_52.Text = "";
+            Task3_53.Text = "";
+            Task3_54.Text = "";
+
+        }
+
         private void Task3RadioDefaultChecked()
         {
             Task3_11.Checked = false;
@@ -1035,32 +1132,119 @@ namespace WindowsPedAppMixedLearning
             Task3_54.Checked = false;
         }
 
+        private void Task3LoadCheched(byte x)
+        {
+            (Task3_11.Checked) = ((task3RadioChecked[x - 1 + 0] == 1) ? (true) : (false));
+            (Task3_12.Checked) = ((task3RadioChecked[x - 1 + 0] == 2) ? (true) : (false));
+            (Task3_13.Checked) = ((task3RadioChecked[x - 1 + 0] == 3) ? (true) : (false));
+            (Task3_14.Checked) = ((task3RadioChecked[x - 1 + 0] == 4) ? (true) : (false));
+            (Task3_21.Checked) = ((task3RadioChecked[x - 1 + 1] == 1) ? (true) : (false));
+            (Task3_22.Checked) = ((task3RadioChecked[x - 1 + 1] == 2) ? (true) : (false));
+            (Task3_23.Checked) = ((task3RadioChecked[x - 1 + 1] == 3) ? (true) : (false));
+            (Task3_24.Checked) = ((task3RadioChecked[x - 1 + 1] == 4) ? (true) : (false));
+            (Task3_31.Checked) = ((task3RadioChecked[x - 1 + 2] == 1) ? (true) : (false));
+            (Task3_32.Checked) = ((task3RadioChecked[x - 1 + 2] == 2) ? (true) : (false));
+            (Task3_33.Checked) = ((task3RadioChecked[x - 1 + 2] == 3) ? (true) : (false));
+            (Task3_34.Checked) = ((task3RadioChecked[x - 1 + 2] == 4) ? (true) : (false));
+            (Task3_41.Checked) = ((task3RadioChecked[x - 1 + 3] == 1) ? (true) : (false));
+            (Task3_42.Checked) = ((task3RadioChecked[x - 1 + 3] == 2) ? (true) : (false));
+            (Task3_43.Checked) = ((task3RadioChecked[x - 1 + 3] == 3) ? (true) : (false));
+            (Task3_44.Checked) = ((task3RadioChecked[x - 1 + 3] == 4) ? (true) : (false));
+            (Task3_51.Checked) = ((task3RadioChecked[x - 1 + 4] == 1) ? (true) : (false));
+            (Task3_52.Checked) = ((task3RadioChecked[x - 1 + 4] == 2) ? (true) : (false));
+            (Task3_53.Checked) = ((task3RadioChecked[x - 1 + 4] == 3) ? (true) : (false));
+            (Task3_54.Checked) = ((task3RadioChecked[x - 1 + 4] == 4) ? (true) : (false));
+        }
+
+        private void Task3SaveChecked(byte x)
+        {
+            task3RadioChecked[x - 1 + 0] += (byte)((Task3_11.Checked) ? (1) : (0));
+            task3RadioChecked[x - 1 + 0] += (byte)((Task3_12.Checked) ? (2) : (0));
+            task3RadioChecked[x - 1 + 0] += (byte)((Task3_13.Checked) ? (3) : (0));
+            task3RadioChecked[x - 1 + 0] += (byte)((Task3_14.Checked) ? (4) : (0));
+            task3RadioChecked[x - 1 + 1] += (byte)((Task3_21.Checked) ? (1) : (0));
+            task3RadioChecked[x - 1 + 1] += (byte)((Task3_22.Checked) ? (2) : (0));
+            task3RadioChecked[x - 1 + 1] += (byte)((Task3_23.Checked) ? (3) : (0));
+            task3RadioChecked[x - 1 + 1] += (byte)((Task3_24.Checked) ? (4) : (0));
+            task3RadioChecked[x - 1 + 2] += (byte)((Task3_31.Checked) ? (1) : (0));
+            task3RadioChecked[x - 1 + 2] += (byte)((Task3_32.Checked) ? (2) : (0));
+            task3RadioChecked[x - 1 + 2] += (byte)((Task3_33.Checked) ? (3) : (0));
+            task3RadioChecked[x - 1 + 2] += (byte)((Task3_34.Checked) ? (4) : (0));
+            task3RadioChecked[x - 1 + 3] += (byte)((Task3_41.Checked) ? (1) : (0));
+            task3RadioChecked[x - 1 + 3] += (byte)((Task3_42.Checked) ? (2) : (0));
+            task3RadioChecked[x - 1 + 3] += (byte)((Task3_43.Checked) ? (3) : (0));
+            task3RadioChecked[x - 1 + 3] += (byte)((Task3_44.Checked) ? (4) : (0));
+            task3RadioChecked[x - 1 + 4] += (byte)((Task3_51.Checked) ? (1) : (0));
+            task3RadioChecked[x - 1 + 4] += (byte)((Task3_52.Checked) ? (2) : (0));
+            task3RadioChecked[x - 1 + 4] += (byte)((Task3_53.Checked) ? (3) : (0));
+            task3RadioChecked[x - 1 + 4] += (byte)((Task3_54.Checked) ? (4) : (0));
+        }
+        private void Task3RadioChanged(object sender, EventArgs e)
+        {
+            Task3Result.Text = "Проверить";
+        }
+
+        byte task3Rating = 0;
         private void Task3Result_click(object sender, EventArgs e)
         {
-            int k = 0;
-            if (Task3_11.Checked)
+            if (task3 == 1)
             {
-                k++;
+                task3Rating = 0;
+                if (Task3_11.Checked)
+                {
+                    task3Rating++;
+                }
+                if (Task3_21.Checked)
+                {
+                    task3Rating++;
+                }
+                if (Task3_31.Checked)
+                {
+                    task3Rating++;
+                }
+                if (Task3_44.Checked)
+                {
+                    task3Rating++;
+                }
+                if (Task3_52.Checked)
+                {
+                    task3Rating++;
+                }
+                Task3RadioDefaultChecked();
+                Task3_2();
+                Task3SaveChecked(1);
             }
-            if (Task3_21.Checked)
+            else
             {
-                k++;
+                if (task3 == 2)
+                {
+                    if (Task3_12.Checked)
+                    {
+                        task3Rating++;
+                    }
+                    if (Task3_23.Checked)
+                    {
+                        task3Rating++;
+                    }
+                    if (Task3_31.Checked)
+                    {
+                        task3Rating++;
+                    }
+                    if (Task3_43.Checked)
+                    {
+                        task3Rating++;
+                    }
+                    if (Task3_52.Checked)
+                    {
+                        task3Rating++;
+                    }
+                    //Task3RadioDefaultChecked();
+                    Task3Result.Text = "Верно: " + task3Rating.ToString() + " из 10";
+                    user.SetTasks(2, ((task3Rating > (byte)user.GetTasks(2)) ? (task3Rating) : ((byte)user.GetTasks(2))));
+                    Task3SaveChecked(2);
+                    NextButton.Enabled = false;
+                }
             }
-            if (Task3_31.Checked)
-            {
-                k++;
-            }
-            if (Task3_41.Checked)
-            {
-                k++;
-            }
-            if (Task3_51.Checked)
-            {
-                k++;
-            }
-            Task3RadioDefaultChecked();
-            Task3Result.Text = "Верно: " + k.ToString() + " из 7";
-            user.SetTasks(2, k);
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
