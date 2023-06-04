@@ -197,6 +197,7 @@
             OpenTheoryPButton3 = new Button();
             OpenTheoryPButton2 = new Button();
             OpenTheoryPButton1 = new Button();
+            TheoryLabel = new Label();
             MainMenuPanel.SuspendLayout();
             MainButtonPanel.SuspendLayout();
             TheoryPanel.SuspendLayout();
@@ -398,6 +399,7 @@
             // 
             TheoryPanel.BackColor = Color.Transparent;
             TheoryPanel.BorderStyle = BorderStyle.FixedSingle;
+            TheoryPanel.Controls.Add(TheoryLabel);
             TheoryPanel.Controls.Add(TheoryButton5);
             TheoryPanel.Controls.Add(TheoryButton3);
             TheoryPanel.Controls.Add(TheoryButton2);
@@ -2153,6 +2155,16 @@
             OpenTheoryPButton1.UseVisualStyleBackColor = false;
             OpenTheoryPButton1.Click += OpenTheoryP_1;
             // 
+            // TheoryLabel
+            // 
+            TheoryLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            TheoryLabel.Location = new Point(54, 15);
+            TheoryLabel.Name = "TheoryLabel";
+            TheoryLabel.Size = new Size(333, 23);
+            TheoryLabel.TabIndex = 9;
+            TheoryLabel.Text = "TheoryLabel";
+            TheoryLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -2160,8 +2172,8 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1389, 661);
-            Controls.Add(TheoryPPanel);
             Controls.Add(TheoryPanel);
+            Controls.Add(TheoryPPanel);
             Controls.Add(Task3Panel);
             Controls.Add(MainMenuPanel);
             Controls.Add(TasksPanel);
@@ -2402,5 +2414,6 @@
         private Button OpenTheoryPButton3;
         private Button OpenTheoryPButton2;
         private Button OpenTheoryPButton1;
+        private Label TheoryLabel;
     }
 }

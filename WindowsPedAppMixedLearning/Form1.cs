@@ -295,7 +295,8 @@ namespace WindowsPedAppMixedLearning
                     case 4: OpenTheoryP(sender, e); break;
                     default: OpenMainMenu(sender, e); break;
                 }
-            }else if (TextPanel == "TheoryMLText")
+            }
+            else if (TextPanel == "TheoryMLText")
             {
                 OpenTheory(sender, e);
             }
@@ -303,7 +304,7 @@ namespace WindowsPedAppMixedLearning
 
         private void PrevButton_Click(object sender, EventArgs e)
         {
-            if (TextPanel == "TheoryText" || TextPanel=="TheoryMLText")
+            if (TextPanel == "TheoryText" || TextPanel == "TheoryMLText")
             {
                 switch (TheoryPoint)
                 {
@@ -332,6 +333,14 @@ namespace WindowsPedAppMixedLearning
                         else OpenTheory(sender, e);
                         break;
                     case '4':
+                        if (TheoryButton4.Enabled)
+                        {
+                            TheoryPoint = '5';
+                            TheoryText();
+                        }
+                        else OpenTheory(sender, e);
+                        break;
+                    case '5':
                         OpenTheory(sender, e);
                         break;
                 }
@@ -420,13 +429,14 @@ namespace WindowsPedAppMixedLearning
 
         private void OpenTheory(object sender, EventArgs e)
         {
+            TheoryLabel.Text = "";
             TextPanel = "Theory";
             CloseAll();
             TheoryPanel.Visible = true;
             TheoryPoint = '#';
             // Текст кнопочек
             string t1 = "", t2 = "", t3 = "", t4 = "", t5 = "";
-            NextButton.Enabled= true;
+            NextButton.Enabled = true;
             if (theoryML == 1) // Теория студента
             {
                 NextButton.Enabled = false;
@@ -435,30 +445,34 @@ namespace WindowsPedAppMixedLearning
                 t3 = "Переменные";
                 t4 = "Операторы ветвления";
                 t5 = "Циклы";
+                TheoryLabel.Text = "Python";
             }
             else if (theoryML == 2) // Теория препода 1
             {
-                t1 = "";
-                t2 = "";
-                t3 = "";
-                t4 = "";
-                t5 = "";
+                t1 = "Что это?";
+                t2 = "Формы";
+                t3 = "Методы";
+                t4 = "Виды деятельности";
+                t5 = "Условия реализации";
+                TheoryLabel.Text = "Гибкая модель";
             }
             else if (theoryML == 3) // Теория препода 2
             {
-                t1 = "";
-                t2 = "";
-                t3 = "";
-                t4 = "";
-                t5 = "";
+                t1 = "Что это?";
+                t2 = "Формы";
+                t3 = "Методы";
+                t4 = "Виды деятельности";
+                t5 = "Условия реализации";
+                TheoryLabel.Text = "Перевернутый класс";
             }
             else if (theoryML == 4) // Теория препода 3
             {
-                t1 = "";
-                t2 = "";
-                t3 = "";
-                t4 = "";
-                t5 = "";
+                t1 = "Что это?";
+                t2 = "Формы";
+                t3 = "Методы";
+                t4 = "Виды деятельности";
+                t5 = "Условия реализации";
+                TheoryLabel.Text = "Смешанный курс";
             }
             else
             {
@@ -1581,24 +1595,24 @@ namespace WindowsPedAppMixedLearning
         {
             CloseAll();
             TextPanel = "TheoryMLText";
-            OpenTheory(sender, e);
             theoryML = 2;
+            OpenTheory(sender, e);
         }
 
         private void OpenTheoryP_2(object sender, EventArgs e) // Перевернутый класс
         {
             CloseAll();
             TextPanel = "TheoryMLText";
-            OpenTheory(sender, e);
             theoryML = 3;
+            OpenTheory(sender, e);
         }
 
         private void OpenTheoryP_3(object sender, EventArgs e) // Смешанный курс
         {
             CloseAll();
             TextPanel = "TheoryMLText";
-            OpenTheory(sender, e);
             theoryML = 4;
+            OpenTheory(sender, e);
         }
     }
 }
