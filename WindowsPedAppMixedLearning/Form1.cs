@@ -80,6 +80,7 @@ namespace WindowsPedAppMixedLearning
                 false, // Лекция 2
                 false, // Лекция 3
                 false, // Лекция 4
+                false, // Лекция 5
                 },
                 new bool[]{
                 false, // Задание 1 - найди пару
@@ -119,11 +120,6 @@ namespace WindowsPedAppMixedLearning
         Point sizeDefault = new Point(440, 580);
         Point locationDefault = new Point(12, 12);
         string TextPanel = "Main Menu";
-        string Theory1 = "Theory\\Theory1";
-        string Theory2 = "Theory\\Theory2";
-        string Theory3 = "Theory\\Theory3";
-        string Theory4 = "Theory\\Theory4";
-        string Theory5 = "Theory\\Theory5";
         char TheoryPoint = '#';
         char Task2Char = '#';
 
@@ -171,6 +167,7 @@ namespace WindowsPedAppMixedLearning
             A.Add(TheoryButton2);
             A.Add(TheoryButton3);
             A.Add(TheoryButton4);
+            A.Add(TheoryButton5);
             // Добавляем кнопки заданий
             List<Button> B = new List<Button>();
             B.Add(OpenTask1Button); // найди пару
@@ -240,6 +237,9 @@ namespace WindowsPedAppMixedLearning
 
             SettingUserPanel.Location = locationDefault;
             SettingUserPanel.Size = new Size(sizeDefault.X, sizeDefault.Y);
+
+            TheoryPPanel.Location = locationDefault;
+            TheoryPPanel.Size = new Size(sizeDefault.X, sizeDefault.Y);
         }
 
         private void CloseAll()
@@ -260,11 +260,12 @@ namespace WindowsPedAppMixedLearning
             AuthPanel.Visible = false;
             SettingPanel.Visible = false;
             SettingUserPanel.Visible = false;
+            TheoryPPanel.Visible = false;
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            if (TextPanel == "Setting" || TextPanel == "Theory" || TextPanel == "Literatures" || TextPanel == "Information" || TextPanel == "Tasks") OpenMainMenu(sender, e);
+            if (TextPanel == "Setting" || TextPanel == "Literatures" || TextPanel == "Information" || TextPanel == "Tasks") OpenMainMenu(sender, e);
             else if (TextPanel == "TheoryText") OpenTheory(sender, e);
             else if (TextPanel == "Task1") OpenTasks(sender, e);
             else if (TextPanel == "Task2")
@@ -280,11 +281,29 @@ namespace WindowsPedAppMixedLearning
                 else if (task3 == 2) Task3_1();
                 else OpenTasks(sender, e);
             }
+            else if (TextPanel == "TheoryML")
+            {
+                if (theoryML != 0) OpenTheoryP(sender, e);
+                else OpenMainMenu(sender, e);
+            }
+            else if (TextPanel == "Theory")
+            {
+                switch (theoryML)
+                {
+                    case 2: OpenTheoryP(sender, e); break;
+                    case 3: OpenTheoryP(sender, e); break;
+                    case 4: OpenTheoryP(sender, e); break;
+                    default: OpenMainMenu(sender, e); break;
+                }
+            }else if (TextPanel == "TheoryMLText")
+            {
+                OpenTheory(sender, e);
+            }
         }
 
         private void PrevButton_Click(object sender, EventArgs e)
         {
-            if (TextPanel == "TheoryText")
+            if (TextPanel == "TheoryText" || TextPanel=="TheoryMLText")
             {
                 switch (TheoryPoint)
                 {
@@ -292,7 +311,7 @@ namespace WindowsPedAppMixedLearning
                         if (TheoryButton2.Enabled)
                         {
                             TheoryPoint = '2';
-                            OpenTheoryText(sender, e);
+                            TheoryText();
                         }
                         else OpenTheory(sender, e);
                         break;
@@ -300,7 +319,7 @@ namespace WindowsPedAppMixedLearning
                         if (TheoryButton3.Enabled)
                         {
                             TheoryPoint = '3';
-                            OpenTheoryText(sender, e);
+                            TheoryText();
                         }
                         else OpenTheory(sender, e);
                         break;
@@ -308,7 +327,7 @@ namespace WindowsPedAppMixedLearning
                         if (TheoryButton4.Enabled)
                         {
                             TheoryPoint = '4';
-                            OpenTheoryText(sender, e);
+                            TheoryText();
                         }
                         else OpenTheory(sender, e);
                         break;
@@ -317,21 +336,31 @@ namespace WindowsPedAppMixedLearning
                         break;
                 }
             }
-            if (TextPanel == "Task2")
+            else if (TextPanel == "Task2")
             {
                 if (Task2Char == '1') Task2_2();
                 else if (Task2Char == '2') Task2_Result();
                 //else if (Task2Char=='3') Task2_Result();
             }
-            if (TextPanel == "Task3")
+            else if (TextPanel == "Task3")
             {
                 if (task3 == 1)
                 {
                     Task3Result_click(sender, e);
-                }else if (task3 == 2)
+                }
+                else if (task3 == 2)
                 {
                     Task3Result_click(sender, e);
                     OpenTasks(sender, e);
+                }
+            }
+            else if (TextPanel == "Theory")
+            {
+                switch (theoryML)
+                {
+                    case 2: theoryML++; OpenTheory(sender, e); break;
+                    case 3: theoryML++; OpenTheory(sender, e); break;
+                    case 4: OpenTheoryP(sender, e); break;
                 }
             }
         }
@@ -340,6 +369,7 @@ namespace WindowsPedAppMixedLearning
         {
             SettingPanel.Visible = false;
             OpenSettingButton.Visible = false;
+            OpenTheoryPButton.Visible = false;
             bool[][] temp = ((Student)user).GetAccess();
             bool Theory = false, Task = false;
             for (short i = 0; i < AccessButtons.Count && i < temp.Length; i++)
@@ -369,6 +399,7 @@ namespace WindowsPedAppMixedLearning
         {
             TextPanel = "Main Menu";
             CloseAll();
+            theoryML = 1;
             MainMenuPanel.Visible = true;
             if (!typeUser) CheckAccess();
             else
@@ -382,6 +413,7 @@ namespace WindowsPedAppMixedLearning
                 OpenTheoryButton.Enabled = true;
                 OpenTasksButton.Enabled = true;
                 OpenSettingButton.Visible = true;
+                OpenTheoryPButton.Visible = true;
             }
             BackButton.Enabled = true;
         }
@@ -392,44 +424,147 @@ namespace WindowsPedAppMixedLearning
             CloseAll();
             TheoryPanel.Visible = true;
             TheoryPoint = '#';
+            // Текст кнопочек
+            string t1 = "", t2 = "", t3 = "", t4 = "", t5 = "";
+            NextButton.Enabled= true;
+            if (theoryML == 1) // Теория студента
+            {
+                NextButton.Enabled = false;
+                t1 = "Что такое Python?";
+                t2 = "Python как калькулятор";
+                t3 = "Переменные";
+                t4 = "Операторы ветвления";
+                t5 = "Циклы";
+            }
+            else if (theoryML == 2) // Теория препода 1
+            {
+                t1 = "";
+                t2 = "";
+                t3 = "";
+                t4 = "";
+                t5 = "";
+            }
+            else if (theoryML == 3) // Теория препода 2
+            {
+                t1 = "";
+                t2 = "";
+                t3 = "";
+                t4 = "";
+                t5 = "";
+            }
+            else if (theoryML == 4) // Теория препода 3
+            {
+                t1 = "";
+                t2 = "";
+                t3 = "";
+                t4 = "";
+                t5 = "";
+            }
+            else
+            {
+                t1 = "";
+                t2 = "";
+                t3 = "";
+                t4 = "";
+                t5 = "";
+            }
+            TheoryButton1.Text = t1;
+            TheoryButton2.Text = t2;
+            TheoryButton3.Text = t3;
+            TheoryButton4.Text = t4;
+            TheoryButton5.Text = t5;
         }
 
-        private void OpenTheoryText(object sender, EventArgs e)
+        private void OpenTheoryText(string theoryText)
         {
-            TextPanel = "TheoryText";
+            //TextPanel = "TheoryText";
             CloseAll();
             TheoryTextPanel.Visible = true;
-
             NextButton.Enabled = true;
-            string filename = "Theory\\Theory" + TheoryPoint + ".rtf";
+            string filename = "Theory\\" + theoryText + "\\Theory" + TheoryPoint.ToString() + ".rtf";
             if (File.Exists(filename))
                 TheoryTextBox1.LoadFile(filename);
             else
             {
-                filename = "..\\..\\..\\" + filename;
+                filename = "..\\" + filename;
                 if (File.Exists(filename))
                     TheoryTextBox1.LoadFile(filename);
                 else
-                    TheoryTextBox1.LoadFile("Нет теории");
+                {
+                    filename = "..\\" + filename;
+                    if (File.Exists(filename))
+                        TheoryTextBox1.LoadFile(filename);
+                    else
+                    {
+                        filename = "..\\" + filename;
+                        if (File.Exists(filename))
+                            TheoryTextBox1.LoadFile(filename);
+                        else
+                            TheoryTextBox1.Text = "Ошибочка какая-то.\nНе удалось найти лекцию.\nФункция - OpenTheoryText";
+                    }
+                }
             }
-            //switch (TheoryPoint)
-            //{
-            //    case '1':
+        }
 
-            //        break;
-            //    case '2':
-            //        TheoryTextBox1.Text = Theory2;
-            //        break;
-            //    case '3':
-            //        TheoryTextBox1.Text = Theory3;
-            //        break;
-            //    case '4':
-            //        TheoryTextBox1.Text = Theory4;
-            //        break;
-            //    case '5':
-            //        TheoryTextBox1.Text = Theory4;
-            //        break;
-            //}
+        byte theoryML = 1;
+
+        private void TheoryText()
+        {
+            string x = "";
+            TextPanel = "TheoryMLText";
+            switch (theoryML)
+            {
+                case 1:
+                    TextPanel = "TheoryText";
+                    x += "Student";
+                    break;
+                case 2:
+                    x += "GM";
+                    break;
+                case 3:
+                    x += "PK";
+                    break;
+                case 4:
+                    x += "SK";
+                    break;
+                default:
+                    x = "0";
+                    break;
+            }
+            if (x != "0")
+            {
+                //x += TheoryPoint;
+                OpenTheoryText(x);
+            }
+            else
+            {
+                TheoryTextBox1.Text = "Ошибочка какая-то.\nНе удалось выбрать лекцию.\nФункция - TheoryText";
+            }
+        }
+
+        private void TheoryButton1_Click(object sender, EventArgs e)
+        {
+            TheoryPoint = '1'; TheoryText();
+        }
+
+        private void TheoryButton2_Click(object sender, EventArgs e)
+        {
+            TheoryPoint = '2'; TheoryText();
+        }
+
+        private void TheoryButton3_Click(object sender, EventArgs e)
+        {
+            TheoryPoint = '3'; TheoryText();
+        }
+
+        private void TheoryButton4_Click(object sender, EventArgs e)
+        {
+            TheoryPoint = '4'; TheoryText();
+        }
+
+        private void TheoryButton5_Click(object sender, EventArgs e)
+        {
+            TheoryPoint = '5'; TheoryText();
         }
 
         private void OpenLiteratures(object sender, EventArgs e)
@@ -445,38 +580,6 @@ namespace WindowsPedAppMixedLearning
             CloseAll();
             InformationPanel.Visible = true;
         }
-
-        private void TheoryButton1_Click(object sender, EventArgs e)
-        {
-            TheoryPoint = '1';
-            OpenTheoryText(sender, e);
-        }
-
-        private void TheoryButton2_Click(object sender, EventArgs e)
-        {
-            TheoryPoint = '2';
-            OpenTheoryText(sender, e);
-        }
-
-        private void TheoryButton3_Click(object sender, EventArgs e)
-        {
-            TheoryPoint = '3';
-            OpenTheoryText(sender, e);
-        }
-
-        private void TheoryButton4_Click(object sender, EventArgs e)
-        {
-            TheoryPoint = '4';
-            OpenTheoryText(sender, e);
-        }
-
-
-        private void TheoryButton5_Click(object sender, EventArgs e)
-        {
-            TheoryPoint = '5';
-            OpenTheoryText(sender, e);
-        }
-
         private void OpenTasks(object sender, EventArgs e)
         {
             TextPanel = "Tasks";
@@ -1456,11 +1559,6 @@ namespace WindowsPedAppMixedLearning
             settingUser.SetAccess(tempAccess);
         }
 
-        private void MainMenuOpenAuthPanel_MouseCaptureChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void MainMenuOpenAuthPanel_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right && users.Count == 0)
@@ -1471,5 +1569,36 @@ namespace WindowsPedAppMixedLearning
             }
         }
 
+        private void OpenTheoryP(object sender, EventArgs e) // Открыть теорию для препода
+        {
+            CloseAll();
+            TextPanel = "TheoryML";
+            TheoryPPanel.Visible = true;
+            theoryML = 0;
+        }
+
+        private void OpenTheoryP_1(object sender, EventArgs e) // Гибкая модель
+        {
+            CloseAll();
+            TextPanel = "TheoryMLText";
+            OpenTheory(sender, e);
+            theoryML = 2;
+        }
+
+        private void OpenTheoryP_2(object sender, EventArgs e) // Перевернутый класс
+        {
+            CloseAll();
+            TextPanel = "TheoryMLText";
+            OpenTheory(sender, e);
+            theoryML = 3;
+        }
+
+        private void OpenTheoryP_3(object sender, EventArgs e) // Смешанный курс
+        {
+            CloseAll();
+            TextPanel = "TheoryMLText";
+            OpenTheory(sender, e);
+            theoryML = 4;
+        }
     }
 }

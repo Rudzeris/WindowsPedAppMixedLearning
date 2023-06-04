@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             MainMenuPanel = new Panel();
+            OpenTheoryPButton = new Button();
             OpenSettingButton = new Button();
             MainMenuOpenRegisterPanel = new Button();
             MainMenuOpenAuthPanel = new Button();
@@ -192,6 +193,10 @@
             SettingUserLabel1 = new Label();
             SettingUserLabel = new Label();
             SettingUserSaveButton = new Button();
+            TheoryPPanel = new Panel();
+            OpenTheoryPButton3 = new Button();
+            OpenTheoryPButton2 = new Button();
+            OpenTheoryPButton1 = new Button();
             MainMenuPanel.SuspendLayout();
             MainButtonPanel.SuspendLayout();
             TheoryPanel.SuspendLayout();
@@ -223,12 +228,14 @@
             SettingUserTheoryPanel3.SuspendLayout();
             SettingUserTheoryPanel2.SuspendLayout();
             SettingUserTheoryPanel1.SuspendLayout();
+            TheoryPPanel.SuspendLayout();
             SuspendLayout();
             // 
             // MainMenuPanel
             // 
             MainMenuPanel.BackColor = Color.Transparent;
             MainMenuPanel.BorderStyle = BorderStyle.FixedSingle;
+            MainMenuPanel.Controls.Add(OpenTheoryPButton);
             MainMenuPanel.Controls.Add(OpenSettingButton);
             MainMenuPanel.Controls.Add(MainMenuOpenRegisterPanel);
             MainMenuPanel.Controls.Add(MainMenuOpenAuthPanel);
@@ -240,6 +247,18 @@
             MainMenuPanel.Name = "MainMenuPanel";
             MainMenuPanel.Size = new Size(440, 580);
             MainMenuPanel.TabIndex = 0;
+            // 
+            // OpenTheoryPButton
+            // 
+            OpenTheoryPButton.BackColor = Color.White;
+            OpenTheoryPButton.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            OpenTheoryPButton.Location = new Point(80, 42);
+            OpenTheoryPButton.Name = "OpenTheoryPButton";
+            OpenTheoryPButton.Size = new Size(278, 56);
+            OpenTheoryPButton.TabIndex = 7;
+            OpenTheoryPButton.Text = "Теория для преподавателя";
+            OpenTheoryPButton.UseVisualStyleBackColor = false;
+            OpenTheoryPButton.Click += OpenTheoryP;
             // 
             // OpenSettingButton
             // 
@@ -2086,6 +2105,54 @@
             SettingUserSaveButton.UseVisualStyleBackColor = false;
             SettingUserSaveButton.Click += SettingUserSaveButton_Click;
             // 
+            // TheoryPPanel
+            // 
+            TheoryPPanel.BackColor = Color.Transparent;
+            TheoryPPanel.BorderStyle = BorderStyle.FixedSingle;
+            TheoryPPanel.Controls.Add(OpenTheoryPButton3);
+            TheoryPPanel.Controls.Add(OpenTheoryPButton2);
+            TheoryPPanel.Controls.Add(OpenTheoryPButton1);
+            TheoryPPanel.Location = new Point(474, 12);
+            TheoryPPanel.Name = "TheoryPPanel";
+            TheoryPPanel.Size = new Size(440, 580);
+            TheoryPPanel.TabIndex = 9;
+            // 
+            // OpenTheoryPButton3
+            // 
+            OpenTheoryPButton3.BackColor = Color.White;
+            OpenTheoryPButton3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            OpenTheoryPButton3.Location = new Point(54, 323);
+            OpenTheoryPButton3.Name = "OpenTheoryPButton3";
+            OpenTheoryPButton3.Size = new Size(333, 70);
+            OpenTheoryPButton3.TabIndex = 7;
+            OpenTheoryPButton3.Text = "Смешанный курс";
+            OpenTheoryPButton3.UseVisualStyleBackColor = false;
+            OpenTheoryPButton3.Click += OpenTheoryP_3;
+            // 
+            // OpenTheoryPButton2
+            // 
+            OpenTheoryPButton2.BackColor = Color.White;
+            OpenTheoryPButton2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            OpenTheoryPButton2.Location = new Point(54, 223);
+            OpenTheoryPButton2.Name = "OpenTheoryPButton2";
+            OpenTheoryPButton2.Size = new Size(333, 70);
+            OpenTheoryPButton2.TabIndex = 6;
+            OpenTheoryPButton2.Text = "Перевернутый класс";
+            OpenTheoryPButton2.UseVisualStyleBackColor = false;
+            OpenTheoryPButton2.Click += OpenTheoryP_2;
+            // 
+            // OpenTheoryPButton1
+            // 
+            OpenTheoryPButton1.BackColor = Color.White;
+            OpenTheoryPButton1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            OpenTheoryPButton1.Location = new Point(54, 123);
+            OpenTheoryPButton1.Name = "OpenTheoryPButton1";
+            OpenTheoryPButton1.Size = new Size(333, 70);
+            OpenTheoryPButton1.TabIndex = 4;
+            OpenTheoryPButton1.Text = "Гибкая модель";
+            OpenTheoryPButton1.UseVisualStyleBackColor = false;
+            OpenTheoryPButton1.Click += OpenTheoryP_1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -2093,8 +2160,9 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1389, 661);
-            Controls.Add(Task3Panel);
+            Controls.Add(TheoryPPanel);
             Controls.Add(TheoryPanel);
+            Controls.Add(Task3Panel);
             Controls.Add(MainMenuPanel);
             Controls.Add(TasksPanel);
             Controls.Add(SettingUserPanel);
@@ -2160,6 +2228,7 @@
             SettingUserTheoryPanel2.PerformLayout();
             SettingUserTheoryPanel1.ResumeLayout(false);
             SettingUserTheoryPanel1.PerformLayout();
+            TheoryPPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -2328,5 +2397,10 @@
         private Label TasksLabel;
         private RichTextBox TasksResultTextBox;
         private Button TheoryButton5;
+        private Button OpenTheoryPButton;
+        private Panel TheoryPPanel;
+        private Button OpenTheoryPButton3;
+        private Button OpenTheoryPButton2;
+        private Button OpenTheoryPButton1;
     }
 }
