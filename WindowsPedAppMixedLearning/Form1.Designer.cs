@@ -43,6 +43,7 @@
             NextButton = new Button();
             BackButton = new Button();
             TheoryPanel = new Panel();
+            TheoryLabel = new Label();
             TheoryButton5 = new Button();
             TheoryButton3 = new Button();
             TheoryButton2 = new Button();
@@ -197,7 +198,6 @@
             OpenTheoryPButton3 = new Button();
             OpenTheoryPButton2 = new Button();
             OpenTheoryPButton1 = new Button();
-            TheoryLabel = new Label();
             MainMenuPanel.SuspendLayout();
             MainButtonPanel.SuspendLayout();
             TheoryPanel.SuspendLayout();
@@ -409,6 +409,16 @@
             TheoryPanel.Name = "TheoryPanel";
             TheoryPanel.Size = new Size(440, 580);
             TheoryPanel.TabIndex = 1;
+            // 
+            // TheoryLabel
+            // 
+            TheoryLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            TheoryLabel.Location = new Point(54, 15);
+            TheoryLabel.Name = "TheoryLabel";
+            TheoryLabel.Size = new Size(333, 23);
+            TheoryLabel.TabIndex = 9;
+            TheoryLabel.Text = "TheoryLabel";
+            TheoryLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // TheoryButton5
             // 
@@ -2155,16 +2165,6 @@
             OpenTheoryPButton1.UseVisualStyleBackColor = false;
             OpenTheoryPButton1.Click += OpenTheoryP_1;
             // 
-            // TheoryLabel
-            // 
-            TheoryLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            TheoryLabel.Location = new Point(54, 15);
-            TheoryLabel.Name = "TheoryLabel";
-            TheoryLabel.Size = new Size(333, 23);
-            TheoryLabel.TabIndex = 9;
-            TheoryLabel.Text = "TheoryLabel";
-            TheoryLabel.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -2189,7 +2189,7 @@
             Controls.Add(InformationPanel);
             HelpButton = true;
             Name = "Form1";
-            Text = "Form1";
+            Text = "Приложение";
             MainMenuPanel.ResumeLayout(false);
             MainButtonPanel.ResumeLayout(false);
             TheoryPanel.ResumeLayout(false);

@@ -119,7 +119,7 @@ namespace WindowsPedAppMixedLearning
 
         Point sizeDefault = new Point(440, 580);
         Point locationDefault = new Point(12, 12);
-        string TextPanel = "Main Menu";
+        string SetingText = "Main Menu";
         char TheoryPoint = '#';
         char Task2Char = '#';
 
@@ -150,6 +150,11 @@ namespace WindowsPedAppMixedLearning
                         y.Enabled = true;
                 }
             }
+
+            Student temp = new Student("Иванов Иван Иванович", "i", "i");
+            users.Add(temp);
+            temp = new Student("Гумеров Халиль Хамитович", "x", "x");
+            users.Add(temp);
         }
 
         public int CountAccessButtons()
@@ -244,7 +249,7 @@ namespace WindowsPedAppMixedLearning
 
         private void CloseAll()
         {
-            Text = TextPanel;
+            //Text = SetingText;
             NextButton.Enabled = false;
             MainMenuPanel.Visible = false;
             LiteraturesPanel.Visible = false;
@@ -265,28 +270,28 @@ namespace WindowsPedAppMixedLearning
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            if (TextPanel == "Setting" || TextPanel == "Literatures" || TextPanel == "Information" || TextPanel == "Tasks") OpenMainMenu(sender, e);
-            else if (TextPanel == "TheoryText") OpenTheory(sender, e);
-            else if (TextPanel == "Task1") OpenTasks(sender, e);
-            else if (TextPanel == "Task2")
+            if (SetingText == "Setting" || SetingText == "Literatures" || SetingText == "Information" || SetingText == "Tasks") OpenMainMenu(sender, e);
+            else if (SetingText == "TheoryText") OpenTheory(sender, e);
+            else if (SetingText == "Task1") OpenTasks(sender, e);
+            else if (SetingText == "Task2")
             {
                 if (Task2Char == '1') OpenTasks(sender, e);
                 else if (Task2Char == '2') Task2_1();
                 else if (Task2Char == '3') Task2_2();
             }
-            else if (TextPanel == "Setting Student") OpenSetting(sender, e);
-            else if (TextPanel == "Task3")
+            else if (SetingText == "Setting Student") OpenSetting(sender, e);
+            else if (SetingText == "Task3")
             {
                 if (task3 == 1) OpenTasks(sender, e);
                 else if (task3 == 2) Task3_1();
                 else OpenTasks(sender, e);
             }
-            else if (TextPanel == "TheoryML")
+            else if (SetingText == "TheoryML")
             {
                 if (theoryML != 0) OpenTheoryP(sender, e);
                 else OpenMainMenu(sender, e);
             }
-            else if (TextPanel == "Theory")
+            else if (SetingText == "Theory")
             {
                 switch (theoryML)
                 {
@@ -296,7 +301,7 @@ namespace WindowsPedAppMixedLearning
                     default: OpenMainMenu(sender, e); break;
                 }
             }
-            else if (TextPanel == "TheoryMLText")
+            else if (SetingText == "TheoryMLText")
             {
                 OpenTheory(sender, e);
             }
@@ -304,7 +309,7 @@ namespace WindowsPedAppMixedLearning
 
         private void PrevButton_Click(object sender, EventArgs e)
         {
-            if (TextPanel == "TheoryText" || TextPanel == "TheoryMLText")
+            if (SetingText == "TheoryText" || SetingText == "TheoryMLText")
             {
                 switch (TheoryPoint)
                 {
@@ -345,13 +350,13 @@ namespace WindowsPedAppMixedLearning
                         break;
                 }
             }
-            else if (TextPanel == "Task2")
+            else if (SetingText == "Task2")
             {
                 if (Task2Char == '1') Task2_2();
                 else if (Task2Char == '2') Task2_Result();
                 //else if (Task2Char=='3') Task2_Result();
             }
-            else if (TextPanel == "Task3")
+            else if (SetingText == "Task3")
             {
                 if (task3 == 1)
                 {
@@ -363,7 +368,7 @@ namespace WindowsPedAppMixedLearning
                     OpenTasks(sender, e);
                 }
             }
-            else if (TextPanel == "Theory")
+            else if (SetingText == "Theory")
             {
                 switch (theoryML)
                 {
@@ -406,7 +411,7 @@ namespace WindowsPedAppMixedLearning
 
         private void OpenMainMenu(object sender, EventArgs e)
         {
-            TextPanel = "Main Menu";
+            SetingText = "Main Menu";
             CloseAll();
             theoryML = 1;
             MainMenuPanel.Visible = true;
@@ -430,7 +435,7 @@ namespace WindowsPedAppMixedLearning
         private void OpenTheory(object sender, EventArgs e)
         {
             TheoryLabel.Text = "";
-            TextPanel = "Theory";
+            SetingText = "Theory";
             CloseAll();
             TheoryPanel.Visible = true;
             TheoryPoint = '#';
@@ -525,11 +530,11 @@ namespace WindowsPedAppMixedLearning
         private void TheoryText()
         {
             string x = "";
-            TextPanel = "TheoryMLText";
+            SetingText = "TheoryMLText";
             switch (theoryML)
             {
                 case 1:
-                    TextPanel = "TheoryText";
+                    SetingText = "TheoryText";
                     x += "Student";
                     break;
                 case 2:
@@ -583,20 +588,20 @@ namespace WindowsPedAppMixedLearning
 
         private void OpenLiteratures(object sender, EventArgs e)
         {
-            TextPanel = "Literatures";
+            SetingText = "Literatures";
             CloseAll();
             LiteraturesPanel.Visible = true;
         }
 
         private void OpenInformation(object sender, EventArgs e)
         {
-            TextPanel = "Information";
+            SetingText = "Information";
             CloseAll();
             InformationPanel.Visible = true;
         }
         private void OpenTasks(object sender, EventArgs e)
         {
-            TextPanel = "Tasks";
+            SetingText = "Tasks";
             CloseAll();
             TasksPanel.Visible = true;
             NextButton.Enabled = false;
@@ -634,7 +639,7 @@ namespace WindowsPedAppMixedLearning
 
         private void OpenTask1(object sender, EventArgs e)
         {
-            TextPanel = "Task1";
+            SetingText = "Task1";
             task1Num = 0;
             task1 = '1';
             Task11Text();
@@ -822,7 +827,7 @@ namespace WindowsPedAppMixedLearning
 
         private void OpenTask2(object sender, EventArgs e)
         {
-            TextPanel = "Task2";
+            SetingText = "Task2";
             CloseAll();
             Task2Panel.Visible = true;
             Task2ButtonVisible(true);
@@ -1136,7 +1141,7 @@ namespace WindowsPedAppMixedLearning
         }
         private void OpenTask3(object sender, EventArgs e)
         {
-            TextPanel = "Task3";
+            SetingText = "Task3";
             CloseAll();
             Task3Panel.Visible = true;
             Task3Result.Text = "Проверить";
@@ -1416,7 +1421,7 @@ namespace WindowsPedAppMixedLearning
                 RegisterErrorLogin.Text = "Такой login уже существует";
                 return;
             }
-            if (RegisterCode.Text != codeX)
+            if (RegisterCode.Text != codeX&&RegisterLabelCode.Visible)
             {
                 RegisterInformation.Text = "Код преподавателя не подходит.";
                 return;
@@ -1428,7 +1433,7 @@ namespace WindowsPedAppMixedLearning
             // Добавляем в список пользователей
             users.Add(tempUser);
             // Информацию даем пользователю
-            if (RegisterLabelCode.Visible) RegisterInformation.Text = "Препод";
+            if (RegisterLabelCode.Visible) RegisterInformation.Text = "Преподаватель";
             else RegisterInformation.Text = "Студент";
             RegisterInformation.Text += " успешно зарегистрирован.\nФИО: " + temp[0] + "\nLogin: " + temp[1];
         }
@@ -1451,7 +1456,7 @@ namespace WindowsPedAppMixedLearning
 
         private void OpenAuthPanel_Click(object sender, EventArgs e)
         {
-            TextPanel = "Authentication";
+            SetingText = "Authentication";
             CloseAll();
             AuthLoginTextBox.Text = "";
             AuthPasswordTextBox.Text = "";
@@ -1462,7 +1467,7 @@ namespace WindowsPedAppMixedLearning
 
         private void OpenRegisterPanel_Click(object sender, EventArgs e)
         {
-            TextPanel = "Registration";
+            SetingText = "Registration";
             CloseAll();
             RegisterNameTextBox.Text = "";
             RegisterLoginTextBox.Text = "";
@@ -1507,7 +1512,7 @@ namespace WindowsPedAppMixedLearning
 
         private void OpenSetting(object sender, EventArgs e)
         {
-            TextPanel = "Setting";
+            SetingText = "Setting";
             CloseAll();
             SettingPanel.Visible = true;
             SettingTextBox.Text = "";
@@ -1543,7 +1548,7 @@ namespace WindowsPedAppMixedLearning
                 SettingLabel.Text = "Вы выделили " + selectedText + ", это не логин";
                 return;
             }
-            TextPanel = "Setting Student";
+            SetingText = "Setting Student";
             CloseAll();
             SettingUserPanel.Visible = true;
             if (settingUser != null)
@@ -1575,18 +1580,30 @@ namespace WindowsPedAppMixedLearning
 
         private void MainMenuOpenAuthPanel_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right && users.Count == 0)
+            if (e.Button == MouseButtons.Right)
             {
-                user = new User("Admin", "12345", "12345");
+                
+                foreach (var i in users)
+                {
+                    if (i.IsLogin("Admin")) // Если нашли схожий логин, то добавлять не будем
+                    {
+                        user = i;
+                        typeUser = true;
+                        OpenMainMenu(sender, new EventArgs());
+                        return;
+                    }
+                }
+                user = new User("Admin", "Admin", "12345");
                 users.Add(user);
                 typeUser = true;
+                OpenMainMenu(sender, new EventArgs());
             }
         }
 
         private void OpenTheoryP(object sender, EventArgs e) // Открыть теорию для препода
         {
             CloseAll();
-            TextPanel = "TheoryML";
+            SetingText = "TheoryML";
             TheoryPPanel.Visible = true;
             theoryML = 0;
         }
@@ -1594,7 +1611,7 @@ namespace WindowsPedAppMixedLearning
         private void OpenTheoryP_1(object sender, EventArgs e) // Гибкая модель
         {
             CloseAll();
-            TextPanel = "TheoryMLText";
+            SetingText = "TheoryMLText";
             theoryML = 2;
             OpenTheory(sender, e);
         }
@@ -1602,7 +1619,7 @@ namespace WindowsPedAppMixedLearning
         private void OpenTheoryP_2(object sender, EventArgs e) // Перевернутый класс
         {
             CloseAll();
-            TextPanel = "TheoryMLText";
+            SetingText = "TheoryMLText";
             theoryML = 3;
             OpenTheory(sender, e);
         }
@@ -1610,7 +1627,7 @@ namespace WindowsPedAppMixedLearning
         private void OpenTheoryP_3(object sender, EventArgs e) // Смешанный курс
         {
             CloseAll();
-            TextPanel = "TheoryMLText";
+            SetingText = "TheoryMLText";
             theoryML = 4;
             OpenTheory(sender, e);
         }
